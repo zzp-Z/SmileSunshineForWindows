@@ -1,0 +1,7 @@
+﻿/.idea/
+/DesktopApp/bin/Debug
+.vs
+/DesktopApp/obj/Debug
+/DesktopApp/DesktopApp.csproj.DotSettings.user
+/packages
+SmileSunshine.sln.DotSettings.user
