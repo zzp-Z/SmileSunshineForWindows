@@ -56,5 +56,10 @@ namespace DesktopApp
                 chkRememberMe.Checked = true;
             }
         }
+        
+        private void linkForgotPassword_Click(object sender, EventArgs e)
+        {
+            System.Windows.Forms.MessageBox.Show("Please contact the administrator or use the password recovery function.", "Recover your password", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Information);
+        }
     }
 }
