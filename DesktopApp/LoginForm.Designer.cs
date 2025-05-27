@@ -117,7 +117,7 @@ namespace DesktopApp
             this.chkRememberMe.Name = "chkRememberMe";
             this.chkRememberMe.Size = new System.Drawing.Size(84, 24);
             this.chkRememberMe.TabIndex = 4;
-            this.chkRememberMe.Text = "memory";
+            this.chkRememberMe.Text = "Remember me";
             this.chkRememberMe.UseVisualStyleBackColor = true;
             this.chkRememberMe.Cursor = System.Windows.Forms.Cursors.Hand;
             // 
