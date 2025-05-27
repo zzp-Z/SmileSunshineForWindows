@@ -6,6 +6,8 @@ namespace DesktopApp
         /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
+        // 在字段声明区添加
+        private System.Windows.Forms.LinkLabel linkForgotPassword;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -100,11 +102,11 @@ namespace DesktopApp
             this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogin.Font = new System.Drawing.Font("Microsoft YaHei", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnLogin.ForeColor = System.Drawing.Color.White;
-            this.btnLogin.Location = new System.Drawing.Point(150, 260);
+            this.btnLogin.Location = new System.Drawing.Point(100, 260);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(280, 40);
             this.btnLogin.TabIndex = 5;
-            this.btnLogin.Text = "Sign in";
+            this.btnLogin.Text = "Login in";
             this.btnLogin.UseVisualStyleBackColor = false;
             this.btnLogin.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
@@ -113,7 +115,7 @@ namespace DesktopApp
             // 
             this.chkRememberMe.AutoSize = true;
             this.chkRememberMe.Font = new System.Drawing.Font("Microsoft YaHei", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.chkRememberMe.Location = new System.Drawing.Point(150, 220);
+            this.chkRememberMe.Location = new System.Drawing.Point(70, 220);
             this.chkRememberMe.Name = "chkRememberMe";
             this.chkRememberMe.Size = new System.Drawing.Size(84, 24);
             this.chkRememberMe.TabIndex = 4;
@@ -133,12 +135,13 @@ namespace DesktopApp
             // 
             // lblTitle
             // 
-            this.lblTitle.AutoSize = true;
+            this.lblTitle.AutoSize = false;
+            this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblTitle.Size = new System.Drawing.Size(500, 31);
+            this.lblTitle.Location = new System.Drawing.Point(0, 25);
             this.lblTitle.Font = new System.Drawing.Font("Microsoft YaHei", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.lblTitle.ForeColor = System.Drawing.Color.White;
-            this.lblTitle.Location = new System.Drawing.Point(170, 25);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(158, 31);
             this.lblTitle.TabIndex = 0;
             this.lblTitle.Text = "Smile Sunshine";
             // 
@@ -186,9 +189,28 @@ namespace DesktopApp
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
+            
+            //
+            // linkForgotPassword
+            this.linkForgotPassword = new System.Windows.Forms.LinkLabel();
+            this.linkForgotPassword.AutoSize = true;
+            this.linkForgotPassword.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.linkForgotPassword.Location = new System.Drawing.Point(450 - 80 - 30, 222); // 500 is form width, 80 is link width, 30 is right margin
+            this.linkForgotPassword.Name = "linkForgotPassword";
+            this.linkForgotPassword.Size = new System.Drawing.Size(80, 17);
+            this.linkForgotPassword.TabIndex = 9;
+            this.linkForgotPassword.TabStop = true;
+            this.linkForgotPassword.Text = "Forgot Password?";
+            this.linkForgotPassword.LinkColor = System.Drawing.Color.FromArgb(64, 158, 255);
+            this.linkForgotPassword.Click += new System.EventHandler(this.linkForgotPassword_Click);
+            this.Controls.Add(this.linkForgotPassword);
 
+            // Adjust control order
+            this.Controls.SetChildIndex(this.chkRememberMe, 0);
+            this.Controls.SetChildIndex(this.linkForgotPassword, 1);
         }
 
         #endregion
     }
 }
+
