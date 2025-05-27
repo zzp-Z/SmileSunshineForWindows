@@ -37,9 +37,10 @@ namespace DesktopApp
                     Settings.Default.Save();
                 }
 
-                Form1 mainForm = new Form1();
+                // Open the common dashboard after login
+                DashboardCommonForm dashboard = new DashboardCommonForm();
                 this.Hide();
-                mainForm.ShowDialog();
+                dashboard.ShowDialog();
                 this.Close();
             }
             else
@@ -59,7 +60,7 @@ namespace DesktopApp
         
         private void linkForgotPassword_Click(object sender, EventArgs e)
         {
-            System.Windows.Forms.MessageBox.Show("Please contact the administrator or use the password recovery function.", "Recover your password", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Information);
+            MessageBox.Show(Resources.LoginForm_linkForgotPassword_Click_Please_contact_the_administrator_or_use_the_password_recovery_function_, Resources.LoginForm_linkForgotPassword_Click_Recover_your_password, MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }

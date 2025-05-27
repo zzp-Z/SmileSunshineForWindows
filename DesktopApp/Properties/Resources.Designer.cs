@@ -85,5 +85,24 @@ namespace DesktopApp.Properties {
                 return ResourceManager.GetString("LoginForm_btnLogin_Click_Username_or_password_error_", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please contact the administrator or use the password recovery function..
+        /// </summary>
+        internal static string LoginForm_linkForgotPassword_Click_Please_contact_the_administrator_or_use_the_password_recovery_function_ {
+            get {
+                return ResourceManager.GetString("LoginForm_linkForgotPassword_Click_Please_contact_the_administrator_or_use_the_pa" +
+                        "ssword_recovery_function_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Recover your password.
+        /// </summary>
+        internal static string LoginForm_linkForgotPassword_Click_Recover_your_password {
+            get {
+                return ResourceManager.GetString("LoginForm_linkForgotPassword_Click_Recover_your_password", resourceCulture);
+            }
+        }
     }
 }

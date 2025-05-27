@@ -123,4 +123,10 @@
   <data name="LoginForm_btnLogin_Click_Username_and_password_cannot_be_empty_" xml:space="preserve">
     <value>Username and password cannot be empty!</value>
   </data>
+  <data name="LoginForm_linkForgotPassword_Click_Please_contact_the_administrator_or_use_the_password_recovery_function_" xml:space="preserve">
+    <value>Please contact the administrator or use the password recovery function.</value>
+  </data>
+  <data name="LoginForm_linkForgotPassword_Click_Recover_your_password" xml:space="preserve">
+    <value>Recover your password</value>
+  </data>
 </root>

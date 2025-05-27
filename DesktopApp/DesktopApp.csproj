@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DashboardCommonForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DashboardCommonForm.Designer.cs">
+      <DependentUpon>DashboardCommonForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
