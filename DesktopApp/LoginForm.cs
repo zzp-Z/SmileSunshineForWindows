@@ -6,9 +6,12 @@ namespace DesktopApp
 {
     public partial class LoginForm : Form
     {
-        public LoginForm()
+        private readonly Database.Func.UserFunc _userFunc;
+
+        public LoginForm(Database.Func.UserFunc userFunc)
         {
             InitializeComponent();
+            _userFunc = userFunc;
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
@@ -21,8 +24,7 @@ namespace DesktopApp
                 MessageBox.Show(Resources.LoginForm_btnLogin_Click_Username_and_password_cannot_be_empty_, Resources.LoginForm_btnLogin_Click_login_error, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            
-            if (username == "admin" && password == "password")
+            if (_userFunc.ValidateUser(username, password))
             {
                 if (chkRememberMe.Checked)
                 {
