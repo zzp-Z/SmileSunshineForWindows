@@ -1,5 +1,5 @@
-CREATE DATABASE smile_sunshine_4_1;
-USE smile_sunshine_4_1;
+CREATE DATABASE smile_sunshine;
+USE smile_sunshine;
 
 -- ======================================================User
 Create Table department
