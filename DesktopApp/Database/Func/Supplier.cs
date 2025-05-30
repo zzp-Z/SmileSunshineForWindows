@@ -66,8 +66,8 @@ namespace DesktopApp.Database.Func
                         {
                             Id = Convert.ToInt32(dataReader["id"]),
                             Name = dataReader["name"].ToString(),
-                            ReliabilityRating = dataReader["reliabilityRating"] == DBNull.Value ? null : (int?)Convert.ToInt32(dataReader["reliabilityRating"]),
-                            ContactName = dataReader["contactName"].ToString(),
+                            ReliabilityRating = dataReader["reliability_rating"] == DBNull.Value ? null : (int?)Convert.ToInt32(dataReader["reliability_rating"]),
+                            ContactName = dataReader["contact_name"].ToString(),
                             Phone = dataReader["phone"].ToString(),
                             Address = dataReader["address"].ToString(),
                             Email = dataReader["email"].ToString()
@@ -106,8 +106,8 @@ namespace DesktopApp.Database.Func
                         {
                             Id = Convert.ToInt32(dataReader["id"]),
                             Name = dataReader["name"].ToString(),
-                            ReliabilityRating = dataReader["reliabilityRating"] == DBNull.Value ? null : (int?)Convert.ToInt32(dataReader["reliabilityRating"]),
-                            ContactName = dataReader["contactName"].ToString(),
+                            ReliabilityRating = dataReader["reliability_rating"] == DBNull.Value ? null : (int?)Convert.ToInt32(dataReader["reliability_rating"]),
+                            ContactName = dataReader["contact_name"].ToString(),
                             Phone = dataReader["phone"].ToString(),
                             Address = dataReader["address"].ToString(),
                             Email = dataReader["email"].ToString()

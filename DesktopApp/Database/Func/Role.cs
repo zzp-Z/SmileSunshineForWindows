@@ -18,7 +18,7 @@ namespace DesktopApp.Database.Func
          */
         public bool CreateRole(Role role)
         {
-            string query = "INSERT INTO role (role_name, description, created_at, updated_at) VALUES (@RoleName, @Description, @CreatedAt, @UpdatedAt)";
+            string query = "INSERT INTO role (role_name, description, department_id, created_at, updated_at) VALUES (@RoleName, @Description, @DepartmentId, @CreatedAt, @UpdatedAt)";
             if (_dbEngine.OpenConnection())
             {
                 try
@@ -26,6 +26,7 @@ namespace DesktopApp.Database.Func
                     MySqlCommand cmd = new MySqlCommand(query, _dbEngine.GetConnection());
                     cmd.Parameters.AddWithValue("@RoleName", role.RoleName);
                     cmd.Parameters.AddWithValue("@Description", role.Description);
+                    cmd.Parameters.AddWithValue("@DepartmentId", role.DepartmentId);
                     cmd.Parameters.AddWithValue("@CreatedAt", DateTime.Now);
                     cmd.Parameters.AddWithValue("@UpdatedAt", DateTime.Now);
                     cmd.ExecuteNonQuery();
@@ -47,7 +48,7 @@ namespace DesktopApp.Database.Func
         // Read a role by ID
         public Role GetRoleById(int id)
         {
-            string query = "SELECT id, role_name, description, created_at, updated_at FROM role WHERE id = @Id";
+            string query = "SELECT id, role_name, description,department_id, created_at, updated_at FROM role WHERE id = @Id";
             Role role = null;
 
             if (_dbEngine.OpenConnection())
@@ -63,11 +64,11 @@ namespace DesktopApp.Database.Func
                         role = new Role
                         {
                             Id = Convert.ToInt32(dataReader["id"]),
-                            RoleName = dataReader["roleName"].ToString(),
-                            DepartmentId = Convert.ToInt32(dataReader["departmentId"]),
+                            RoleName = dataReader["role_name"].ToString(),
+                            DepartmentId = Convert.ToInt32(dataReader["department_id"]),
                             Description = dataReader["description"].ToString(),
-                            CreatedAt = Convert.ToDateTime(dataReader["createdAt"]),
-                            UpdatedAt = Convert.ToDateTime(dataReader["updatedAt"])
+                            CreatedAt = Convert.ToDateTime(dataReader["created_at"]),
+                            UpdatedAt = Convert.ToDateTime(dataReader["updated_at"])
                         };
                     }
                     dataReader.Close();
@@ -87,7 +88,7 @@ namespace DesktopApp.Database.Func
         // Read all roles
         public List<Role> GetAllRoles()
         {
-            string query = "SELECT id, role_name, description, created_at, updated_at FROM role";
+            string query = "SELECT id, role_name, description, department_id, created_at, updated_at FROM role";
             List<Role> roles = new List<Role>();
 
             if (_dbEngine.OpenConnection())
@@ -102,11 +103,11 @@ namespace DesktopApp.Database.Func
                         roles.Add(new Role
                         {
                             Id = Convert.ToInt32(dataReader["id"]),
-                            RoleName = dataReader["roleName"].ToString(),
-                            DepartmentId = Convert.ToInt32(dataReader["departmentId"]),
+                            RoleName = dataReader["role_name"].ToString(),
+                            DepartmentId = Convert.ToInt32(dataReader["department_id"]),
                             Description = dataReader["description"].ToString(),
-                            CreatedAt = Convert.ToDateTime(dataReader["createdAt"]),
-                            UpdatedAt = Convert.ToDateTime(dataReader["updatedAt"])
+                            CreatedAt = Convert.ToDateTime(dataReader["created_at"]),
+                            UpdatedAt = Convert.ToDateTime(dataReader["updated_at"])
                         });
                     }
                     dataReader.Close();
@@ -126,7 +127,7 @@ namespace DesktopApp.Database.Func
         // Update an existing role
         public bool UpdateRole(Role role)
         {
-            string query = "UPDATE role SET role_name = @RoleName, description = @Description, updated_at = @UpdatedAt WHERE id = @Id";
+            string query = "UPDATE role SET role_name = @RoleName, description = @Description,department_id = @DepartmentId, updated_at = @UpdatedAt WHERE id = @Id";
             if (_dbEngine.OpenConnection())
             {
                 try
@@ -134,6 +135,7 @@ namespace DesktopApp.Database.Func
                     MySqlCommand cmd = new MySqlCommand(query, _dbEngine.GetConnection());
                     cmd.Parameters.AddWithValue("@RoleName", role.RoleName);
                     cmd.Parameters.AddWithValue("@Description", role.Description);
+                    cmd.Parameters.AddWithValue("@DepartmentId", role.DepartmentId);
                     cmd.Parameters.AddWithValue("@UpdatedAt", DateTime.Now);
                     cmd.Parameters.AddWithValue("@Id", role.Id);
                     cmd.ExecuteNonQuery();

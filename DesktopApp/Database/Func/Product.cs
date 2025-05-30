@@ -69,12 +69,12 @@ namespace DesktopApp.Database.Func
                             Id = Convert.ToInt32(dataReader["id"]),
                             Name = dataReader["name"].ToString(),
                             Description = dataReader["description"].ToString(),
-                            PriceCents = dataReader["priceCents"] == DBNull.Value ? null : (int?)Convert.ToInt32(dataReader["priceCents"]),
-                            ImageUrl = dataReader["imageUrl"].ToString(),
-                            SafetyCertification = dataReader["safetyCertification"] == DBNull.Value ? null : (bool?)Convert.ToBoolean(dataReader["safetyCertification"]),
-                            CreateDate = dataReader["createDate"] == DBNull.Value ? null : (DateTime?)Convert.ToDateTime(dataReader["createDate"]),
-                            IsPublic = Convert.ToBoolean(dataReader["isPublic"]),
-                            DesignId = Convert.ToInt32(dataReader["designId"])
+                            PriceCents = dataReader["price_cents"] == DBNull.Value ? null : (int?)Convert.ToInt32(dataReader["price_cents"]),
+                            ImageUrl = dataReader["image_url"].ToString(),
+                            SafetyCertification = dataReader["safety_certification"] == DBNull.Value ? null : (bool?)Convert.ToBoolean(dataReader["safety_certification"]),
+                            CreateDate = dataReader["create_date"] == DBNull.Value ? null : (DateTime?)Convert.ToDateTime(dataReader["create_date"]),
+                            IsPublic = Convert.ToBoolean(dataReader["is_public"]),
+                            DesignId = Convert.ToInt32(dataReader["design_id"])
                         };
                     }
                     dataReader.Close();
@@ -111,12 +111,12 @@ namespace DesktopApp.Database.Func
                             Id = Convert.ToInt32(dataReader["id"]),
                             Name = dataReader["name"].ToString(),
                             Description = dataReader["description"].ToString(),
-                            PriceCents = dataReader["priceCents"] == DBNull.Value ? null : (int?)Convert.ToInt32(dataReader["priceCents"]),
-                            ImageUrl = dataReader["imageUrl"].ToString(),
-                            SafetyCertification = dataReader["safetyCertification"] == DBNull.Value ? null : (bool?)Convert.ToBoolean(dataReader["safetyCertification"]),
-                            CreateDate = dataReader["createDate"] == DBNull.Value ? null : (DateTime?)Convert.ToDateTime(dataReader["createDate"]),
-                            IsPublic = Convert.ToBoolean(dataReader["isPublic"]),
-                            DesignId = Convert.ToInt32(dataReader["designId"])
+                            PriceCents = dataReader["price_cents"] == DBNull.Value ? null : (int?)Convert.ToInt32(dataReader["price_cents"]),
+                            ImageUrl = dataReader["image_url"].ToString(),
+                            SafetyCertification = dataReader["safety_certification"] == DBNull.Value ? null : (bool?)Convert.ToBoolean(dataReader["safety_certification"]),
+                            CreateDate = dataReader["create_date"] == DBNull.Value ? null : (DateTime?)Convert.ToDateTime(dataReader["create_date"]),
+                            IsPublic = Convert.ToBoolean(dataReader["is_public"]),
+                            DesignId = Convert.ToInt32(dataReader["design_id"])
                         });
                     }
                     dataReader.Close();

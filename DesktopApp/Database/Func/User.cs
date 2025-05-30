@@ -69,8 +69,8 @@ namespace DesktopApp.Database.Func
                             Password = dataReader["password"].ToString(), // Be cautious with returning hashed passwords
                             Email = dataReader["email"].ToString(),
                             Phone = dataReader["phone"].ToString(),
-                            CreatedAt = Convert.ToDateTime(dataReader["createdAt"]),
-                            UpdatedAt = Convert.ToDateTime(dataReader["updatedAt"])
+                            CreatedAt = Convert.ToDateTime(dataReader["created_at"]),
+                            UpdatedAt = Convert.ToDateTime(dataReader["updated_at"])
                         };
                     }
                     dataReader.Close();
@@ -109,8 +109,8 @@ namespace DesktopApp.Database.Func
                             Password = dataReader["password"].ToString(), // Be cautious
                             Email = dataReader["email"].ToString(),
                             Phone = dataReader["phone"].ToString(),
-                            CreatedAt = Convert.ToDateTime(dataReader["createdAt"]),
-                            UpdatedAt = Convert.ToDateTime(dataReader["updatedAt"])
+                            CreatedAt = Convert.ToDateTime(dataReader["created_at"]),
+                            UpdatedAt = Convert.ToDateTime(dataReader["updated_at"])
                         });
                     }
                     dataReader.Close();

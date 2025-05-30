@@ -66,13 +66,13 @@ namespace DesktopApp.Database.Func
                         material = new Material
                         {
                             Id = Convert.ToInt32(dataReader["id"]),
-                            MaterialNumber = dataReader["materialNumber"].ToString(),
+                            MaterialNumber = dataReader["material_number"].ToString(),
                             Description = dataReader["description"].ToString(),
-                            UnitOfMeasure = dataReader["unitOfMeasure"].ToString(),
-                            QuantityInStock = dataReader["quantityInStock"] == DBNull.Value ? null : (int?)Convert.ToInt32(dataReader["quantityInStock"]),
-                            ReorderLevel = dataReader["reorderLevel"] == DBNull.Value ? null : (int?)Convert.ToInt32(dataReader["reorderLevel"]),
-                            ReorderQuantity = dataReader["reorderQuantity"] == DBNull.Value ? null : (int?)Convert.ToInt32(dataReader["reorderQuantity"]),
-                            LastReceivedDate = dataReader["lastReceivedDate"] == DBNull.Value ? null : (DateTime?)Convert.ToDateTime(dataReader["lastReceivedDate"])
+                            UnitOfMeasure = dataReader["unit_of_measure"].ToString(),
+                            QuantityInStock = dataReader["quantity_in_stock"] == DBNull.Value ? null : (int?)Convert.ToInt32(dataReader["quantity_in_stock"]),
+                            ReorderLevel = dataReader["reorder_level"] == DBNull.Value ? null : (int?)Convert.ToInt32(dataReader["reorder_level"]),
+                            ReorderQuantity = dataReader["reorder_quantity"] == DBNull.Value ? null : (int?)Convert.ToInt32(dataReader["reorder_quantity"]),
+                            LastReceivedDate = dataReader["last_received_date"] == DBNull.Value ? null : (DateTime?)Convert.ToDateTime(dataReader["last_received_date"])
                         };
                     }
                     dataReader.Close();
@@ -107,13 +107,13 @@ namespace DesktopApp.Database.Func
                         materials.Add(new Material
                         {
                             Id = Convert.ToInt32(dataReader["id"]),
-                            MaterialNumber = dataReader["materialNumber"].ToString(),
+                            MaterialNumber = dataReader["material_number"].ToString(),
                             Description = dataReader["description"].ToString(),
-                            UnitOfMeasure = dataReader["unitOfMeasure"].ToString(),
-                            QuantityInStock = dataReader["quantityInStock"] == DBNull.Value ? null : (int?)Convert.ToInt32(dataReader["quantityInStock"]),
-                            ReorderLevel = dataReader["reorderLevel"] == DBNull.Value ? null : (int?)Convert.ToInt32(dataReader["reorderLevel"]),
-                            ReorderQuantity = dataReader["reorderQuantity"] == DBNull.Value ? null : (int?)Convert.ToInt32(dataReader["reorderQuantity"]),
-                            LastReceivedDate = dataReader["lastReceivedDate"] == DBNull.Value ? null : (DateTime?)Convert.ToDateTime(dataReader["lastReceivedDate"])
+                            UnitOfMeasure = dataReader["unit_of_measure"].ToString(),
+                            QuantityInStock = dataReader["quantity_in_stock"] == DBNull.Value ? null : (int?)Convert.ToInt32(dataReader["quantity_in_stock"]),
+                            ReorderLevel = dataReader["reorder_level"] == DBNull.Value ? null : (int?)Convert.ToInt32(dataReader["reorder_level"]),
+                            ReorderQuantity = dataReader["reorder_quantity"] == DBNull.Value ? null : (int?)Convert.ToInt32(dataReader["reorder_quantity"]),
+                            LastReceivedDate = dataReader["last_received_date"] == DBNull.Value ? null : (DateTime?)Convert.ToDateTime(dataReader["last_received_date"])
                         });
                     }
                     dataReader.Close();

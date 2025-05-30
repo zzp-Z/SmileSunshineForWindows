@@ -65,8 +65,8 @@ namespace DesktopApp.Database.Func
                             Id = Convert.ToInt32(dataReader["id"]),
                             Name = dataReader["name"].ToString(),
                             Description = dataReader["description"].ToString(),
-                            CreatedAt = Convert.ToDateTime(dataReader["createdAt"]),
-                            UpdatedAt = Convert.ToDateTime(dataReader["updatedAt"])
+                            CreatedAt = Convert.ToDateTime(dataReader["created_at"]),
+                            UpdatedAt = Convert.ToDateTime(dataReader["updated_at"])
                         };
                     }
                     dataReader.Close();
@@ -103,8 +103,8 @@ namespace DesktopApp.Database.Func
                             Id = Convert.ToInt32(dataReader["id"]),
                             Name = dataReader["name"].ToString(),
                             Description = dataReader["description"].ToString(),
-                            CreatedAt = Convert.ToDateTime(dataReader["createdAt"]),
-                            UpdatedAt = Convert.ToDateTime(dataReader["updatedAt"])
+                            CreatedAt = Convert.ToDateTime(dataReader["created_at"]),
+                            UpdatedAt = Convert.ToDateTime(dataReader["updated_at"])
                         });
                     }
                     dataReader.Close();

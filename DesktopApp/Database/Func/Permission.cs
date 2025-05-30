@@ -64,11 +64,11 @@ namespace DesktopApp.Database.Func
                         permission = new Permission
                         {
                             Id = Convert.ToInt32(dataReader["id"]),
-                            PermissionName = dataReader["permissionName"].ToString(),
-                            ApiPath = dataReader["apiPath"].ToString(),
+                            PermissionName = dataReader["permission_name"].ToString(),
+                            ApiPath = dataReader["api_path"].ToString(),
                             Description = dataReader["description"].ToString(),
-                            CreatedAt = Convert.ToDateTime(dataReader["createdAt"]),
-                            UpdatedAt = Convert.ToDateTime(dataReader["updatedAt"])
+                            CreatedAt = Convert.ToDateTime(dataReader["created_at"]),
+                            UpdatedAt = Convert.ToDateTime(dataReader["updated_at"])
                         };
                     }
                     dataReader.Close();
@@ -103,11 +103,11 @@ namespace DesktopApp.Database.Func
                         permissions.Add(new Permission
                         {
                             Id = Convert.ToInt32(dataReader["id"]),
-                            PermissionName = dataReader["permissionName"].ToString(),
-                            ApiPath = dataReader["apiPath"].ToString(),
+                            PermissionName = dataReader["permission_name"].ToString(),
+                            ApiPath = dataReader["api_path"].ToString(),
                             Description = dataReader["description"].ToString(),
-                            CreatedAt = Convert.ToDateTime(dataReader["createdAt"]),
-                            UpdatedAt = Convert.ToDateTime(dataReader["updatedAt"])
+                            CreatedAt = Convert.ToDateTime(dataReader["created_at"]),
+                            UpdatedAt = Convert.ToDateTime(dataReader["updated_at"])
                         });
                     }
                     dataReader.Close();
