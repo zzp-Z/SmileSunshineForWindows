@@ -100,6 +100,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Database\Engine.cs" />
+    <Compile Include="Database\Func\Department.cs" />
+    <Compile Include="Database\Func\Material.cs" />
+    <Compile Include="Database\Func\Permission.cs" />
+    <Compile Include="Database\Func\Product.cs" />
+    <Compile Include="Database\Func\Role.cs" />
+    <Compile Include="Database\Func\Supplier.cs" />
     <Compile Include="Database\Func\User.cs" />
     <Compile Include="Database\Table.cs" />
     <Compile Include="DashboardCommonForm.cs">
@@ -142,9 +148,8 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Database\Sql\init.sql" />
     <Content Include="Database\Sql\SmileSunshine.sql" />
-    <Content Include="Image\amin.webp" />
-    <Content Include="Image\background.webp" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

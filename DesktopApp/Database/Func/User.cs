@@ -18,7 +18,7 @@ namespace DesktopApp.Database.Func
          */
         public bool CreateUser(User user)
         {
-            string query = "INSERT INTO user (username, password, email, phone, createdAt, updatedAt) VALUES (@Username, @Password, @Email, @Phone, @CreatedAt, @UpdatedAt)";
+            string query = "INSERT INTO user (username, password, email, phone, created_at, updated_at) VALUES (@Username, @Password, @Email, @Phone, @CreatedAt, @UpdatedAt)";
             if (_dbEngine.OpenConnection())
             {
                 try
@@ -49,7 +49,7 @@ namespace DesktopApp.Database.Func
         // Read a user by ID
         public User GetUserById(int id)
         {
-            string query = "SELECT id, username, password, email, phone, createdAt, updatedAt FROM user WHERE id = @Id";
+            string query = "SELECT id, username, password, email, phone, created_at, updated_at FROM user WHERE id = @Id";
             User user = null;
 
             if (_dbEngine.OpenConnection())
@@ -90,7 +90,7 @@ namespace DesktopApp.Database.Func
         // Read all users
         public List<User> GetAllUsers()
         {
-            string query = "SELECT id, username, password, email, phone, createdAt, updatedAt FROM user";
+            string query = "SELECT id, username, password, email, phone, created_at, updated_at FROM user";
             List<User> users = new List<User>();
 
             if (_dbEngine.OpenConnection())
@@ -130,7 +130,7 @@ namespace DesktopApp.Database.Func
         // Update an existing user
         public bool UpdateUser(User user)
         {
-            string query = "UPDATE user SET username = @Username, password = @Password, email = @Email, phone = @Phone, updatedAt = @UpdatedAt WHERE id = @Id";
+            string query = "UPDATE user SET username = @Username, password = @Password, email = @Email, phone = @Phone, updated_at = @UpdatedAt WHERE id = @Id";
             if (_dbEngine.OpenConnection())
             {
                 try

@@ -18,17 +18,19 @@ Create Table user
     password  VARCHAR(255) NOT NULL COMMENT '用户密码，加密存储',
     email     VARCHAR(100) COMMENT '用户邮箱（可选）',
     phone     VARCHAR(20) COMMENT '用户电话（可选）',
-    createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间，默认为当前时间',
-    updatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间，自动更新'
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间，默认为当前时间',
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间，自动更新'
 ) COMMENT ='用户信息表';
 
 Create Table role
 (
     id          INT PRIMARY KEY AUTO_INCREMENT COMMENT '角色ID，主键，自动递增',
     role_name   VARCHAR(50) NOT NULL COMMENT '角色名称，如管理员、普通用户等',
+    department_id INT COMMENT '部门ID，关联部门表',
     description TEXT COMMENT '角色描述（可选字段）',
-    createdAt   TIMESTAMP DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间，默认为当前时间',
-    updatedAt   TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间，自动更新'
+    created_at   TIMESTAMP DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间，默认为当前时间',
+    updated_at   TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间，自动更新',
+    FOREIGN KEY (department_id) REFERENCES department (id)
 ) COMMENT ='角色信息表';
 
 Create Table permission

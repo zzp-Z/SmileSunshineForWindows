@@ -90,6 +90,11 @@ namespace DesktopApp.Database
         public string RoleName { get; set; }
 
         /// <summary>
+        /// 所属部门ID，关联部门表  
+        /// </summary>
+        public int DepartmentId { get; set; }
+
+        /// <summary>
         /// 角色描述（可选字段）
         /// </summary>
         public string Description { get; set; }
