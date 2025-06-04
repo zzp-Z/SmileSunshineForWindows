@@ -14,6 +14,7 @@ namespace DesktopApp
             // Dependency Injection Setup
             Database.Engine dbEngine = new Database.Engine();
             Database.Func.UserFunc userFunc = new Database.Func.UserFunc(dbEngine);
+            Database.Func.DepartmentFunc departmentFunc = new Database.Func.DepartmentFunc(dbEngine);
 
             Application.Run(new LoginForm(userFunc));
         }

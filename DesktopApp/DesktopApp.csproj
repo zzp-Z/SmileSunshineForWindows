@@ -114,6 +114,8 @@
     <Compile Include="DashboardCommonForm.Designer.cs">
       <DependentUpon>DashboardCommonForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="DepartmentManageForm.cs" />
+    <Compile Include="DepartmentManageForm.Designer.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
