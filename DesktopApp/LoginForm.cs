@@ -40,9 +40,9 @@ namespace DesktopApp
                 }
 
                 // Open the common dashboard after login
-                DashboardCommonForm dashboard = new DashboardCommonForm();
+                MainForm mainForm = new MainForm();
                 this.Hide();
-                dashboard.ShowDialog();
+                mainForm.ShowDialog();
                 this.Close();
             }
             else

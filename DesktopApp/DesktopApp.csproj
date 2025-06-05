@@ -99,6 +99,30 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Control\Sidebar\SidebarControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control\Sidebar\SidebarControl.Designer.cs">
+      <DependentUpon>SidebarControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control\Sidebar\_components\LogoControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control\Sidebar\_components\LogoControl.Designer.cs">
+      <DependentUpon>LogoControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control\Sidebar\_components\MenuControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control\Sidebar\_components\MenuControl.Designer.cs">
+      <DependentUpon>MenuControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control\Sidebar\_components\UserInfoControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control\Sidebar\_components\UserInfoControl.Designer.cs">
+      <DependentUpon>UserInfoControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Database\Engine.cs" />
     <Compile Include="Database\Func\Department.cs" />
     <Compile Include="Database\Func\Material.cs" />
@@ -122,8 +146,20 @@
     </Compile>
     <Compile Include="LoginForm.cs" />
     <Compile Include="LoginForm.Designer.cs" />
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Control\Sidebar\SidebarControl.resx">
+      <DependentUpon>SidebarControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
