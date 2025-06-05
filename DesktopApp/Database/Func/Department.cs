@@ -166,7 +166,7 @@ namespace DesktopApp.Database.Func
                 catch (MySqlException ex)
                 {
                     Console.WriteLine($"Error deleting department: {ex.Message}");
-                    return false;
+                    throw;
                 }
                 finally
                 {

@@ -3,6 +3,7 @@ using System.Windows.Forms;
 using DesktopApp.Control.Sidebar._components;
 using DesktopApp.Control.Page.Dashboard;
 using DesktopApp.Control.Page.Product;
+using DesktopApp.Control.Page.SystemManage.DepartmentManage;
 
 namespace DesktopApp
 {
@@ -93,6 +94,9 @@ namespace DesktopApp
                     break;
                 case "product_page":
                     pageControl = new ProductPageControl();
+                    break;
+                case "department_manage_page":
+                    pageControl = new DepartmentManagePageControl();
                     break;
             }
             

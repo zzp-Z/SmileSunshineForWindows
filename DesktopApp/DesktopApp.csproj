@@ -111,6 +111,14 @@
     <Compile Include="Control\Page\Product\ProductPageControl.Designer.cs">
       <DependentUpon>ProductPageControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Control\Page\SystemManage\DepartmentManage\DepartmentAddEditForm.cs" />
+    <Compile Include="Control\Page\SystemManage\DepartmentManage\DepartmentAddEditForm.Designer.cs" />
+    <Compile Include="Control\Page\SystemManage\DepartmentManage\DepartmentManagePageControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control\Page\SystemManage\DepartmentManage\DepartmentManagePageControl.Designer.cs">
+      <DependentUpon>DepartmentManagePageControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Control\Sidebar\SidebarControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -154,9 +162,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Control\Page\Dashboard\DashboardPageControl.resx">
-      <DependentUpon>DashboardPageControl.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Control\Sidebar\SidebarControl.resx">
       <DependentUpon>SidebarControl.cs</DependentUpon>
     </EmbeddedResource>

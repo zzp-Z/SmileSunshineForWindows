@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Windows.Forms;
 
 namespace DesktopApp
@@ -11,11 +11,9 @@ namespace DesktopApp
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            // Dependency Injection Setup
-            Database.Engine dbEngine = new Database.Engine();
-            Database.Func.UserFunc userFunc = new Database.Func.UserFunc(dbEngine);
+            // Dependency Injection Setup - Using Singleton Database Engine
 
-            Application.Run(new MainForm());
+            Application.Run(new LoginForm());
         }
     }
 }

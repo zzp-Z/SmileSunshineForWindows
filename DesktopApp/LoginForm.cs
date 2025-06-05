@@ -8,10 +8,11 @@ namespace DesktopApp
     {
         private readonly Database.Func.UserFunc _userFunc;
 
-        public LoginForm(Database.Func.UserFunc userFunc)
+        public LoginForm()
         {
             InitializeComponent();
-            _userFunc = userFunc;
+            Database.Engine dbEngine = Database.Engine.Instance;
+            _userFunc = new Database.Func.UserFunc(dbEngine);
         }
 
         private void btnLogin_Click(object sender, EventArgs e)

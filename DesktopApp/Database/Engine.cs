@@ -1,10 +1,13 @@
-﻿using MySql.Data.MySqlClient;
+using MySql.Data.MySqlClient;
 using System;
+using System.Data;
 
 namespace DesktopApp.Database
 {
-    public class Engine
+    public class Engine : IDisposable
     {
+        private static Engine _instance;
+        private static readonly object _lock = new object();
         private MySqlConnection _connection;
         private string _server;
         private string _port;
@@ -12,10 +15,29 @@ namespace DesktopApp.Database
         private string _uid;
         private string _password;
 
-        // Constructor
-        public Engine()
+        // Private constructor for singleton
+        private Engine()
         {
             Initialize();
+        }
+
+        // Singleton instance property
+        public static Engine Instance
+        {
+            get
+            {
+                if (_instance == null)
+                {
+                    lock (_lock)
+                    {
+                        if (_instance == null)
+                        {
+                            _instance = new Engine();
+                        }
+                    }
+                }
+                return _instance;
+            }
         }
 
         //Initialize values
@@ -68,6 +90,51 @@ namespace DesktopApp.Database
         public MySqlConnection GetConnection()
         {
             return _connection;
+        }
+
+        // Static method to get database connection directly
+        public static MySqlConnection GetDatabaseConnection()
+        {
+            return Instance.GetConnection();
+        }
+
+        // Static method to open connection
+        public static bool OpenDatabaseConnection()
+        {
+            return Instance.OpenConnection();
+        }
+
+        // Static method to close connection
+        public static bool CloseDatabaseConnection()
+        {
+            return Instance.CloseConnection();
+        }
+
+        // Dispose method for proper resource cleanup
+        public void Dispose()
+        {
+            if (_connection != null)
+            {
+                if (_connection.State == System.Data.ConnectionState.Open)
+                {
+                    _connection.Close();
+                }
+                _connection.Dispose();
+                _connection = null;
+            }
+        }
+
+        // Static method to dispose the singleton instance
+        public static void DisposeInstance()
+        {
+            lock (_lock)
+            {
+                if (_instance != null)
+                {
+                    _instance.Dispose();
+                    _instance = null;
+                }
+            }
         }
     }
 }
