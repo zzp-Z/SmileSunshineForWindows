@@ -63,7 +63,7 @@ namespace DesktopApp
             this.Controls.Add(this.mainContentPanel);
             this.Controls.Add(this.sidebarControl);
             this.Name = "MainForm";
-            this.Text = "Smile Sunshine - 主窗体";
+            this.Text = "Smile Sunshine";
             this.StartPosition = FormStartPosition.CenterScreen;
             this.ResumeLayout(false);
         }
