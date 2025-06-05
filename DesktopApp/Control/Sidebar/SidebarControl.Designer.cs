@@ -1,5 +1,7 @@
-﻿using System.ComponentModel;
+using System.ComponentModel;
+using System.Drawing;
 using System.Windows.Forms;
+using DesktopApp.Control.Sidebar._components;
 
 namespace DesktopApp.Control.Sidebar
 {
@@ -10,20 +12,6 @@ namespace DesktopApp.Control.Sidebar
         /// </summary>
         private IContainer components = null;
 
-        /// <summary> 
-        /// Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing && (components != null))
-            {
-                components.Dispose();
-            }
-
-            base.Dispose(disposing);
-        }
-
         #region Component Designer generated code
 
         /// <summary> 
@@ -32,10 +20,53 @@ namespace DesktopApp.Control.Sidebar
         /// </summary>
         private void InitializeComponent()
         {
-            components = new Container();
+            this.logoControl = new LogoControl();
+            this.menuPanel = new Panel();
+            this.userInfoControl = new UserInfoControl();
+            this.SuspendLayout();
+            // 
+            // logoControl
+            // 
+            this.logoControl.Dock = DockStyle.Top;
+            this.logoControl.Location = new Point(0, 0);
+            this.logoControl.Name = "logoControl";
+            this.logoControl.Size = new Size(250, 100);
+            this.logoControl.TabIndex = 0;
+            // 
+            // menuPanel
+            // 
+            this.menuPanel.BackColor = Color.FromArgb(35, 35, 35);
+            this.menuPanel.Dock = DockStyle.Fill;
+            this.menuPanel.Location = new Point(0, 100);
+            this.menuPanel.Name = "menuPanel";
+            this.menuPanel.Size = new Size(250, 400);
+            this.menuPanel.TabIndex = 1;
+            // 
+            // userInfoControl
+            // 
+            this.userInfoControl.Dock = DockStyle.Bottom;
+            this.userInfoControl.Location = new Point(0, 500);
+            this.userInfoControl.Name = "userInfoControl";
+            this.userInfoControl.Size = new Size(250, 100);
+            this.userInfoControl.TabIndex = 2;
+            // 
+            // SidebarControl
+            // 
+            this.AutoScaleDimensions = new SizeF(6F, 13F);
             this.AutoScaleMode = AutoScaleMode.Font;
+            this.BackColor = Color.FromArgb(45, 45, 45);
+            this.Controls.Add(this.menuPanel);
+            this.Controls.Add(this.logoControl);
+            this.Controls.Add(this.userInfoControl);
+            this.Name = "SidebarControl";
+            this.Size = new Size(250, 600);
+            this.ResumeLayout(false);
         }
 
         #endregion
+
+        private LogoControl logoControl;
+        private Panel menuPanel;
+        private UserInfoControl userInfoControl;
     }
 }

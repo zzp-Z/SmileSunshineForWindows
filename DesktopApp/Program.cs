@@ -15,7 +15,7 @@ namespace DesktopApp
             Database.Engine dbEngine = new Database.Engine();
             Database.Func.UserFunc userFunc = new Database.Func.UserFunc(dbEngine);
 
-            Application.Run(new LoginForm(userFunc));
+            Application.Run(new MainForm());
         }
     }
 }

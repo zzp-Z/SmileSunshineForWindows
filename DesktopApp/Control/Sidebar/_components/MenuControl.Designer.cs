@@ -1,4 +1,4 @@
-﻿using System.ComponentModel;
+using System.ComponentModel;
 using System.Windows.Forms;
 
 namespace DesktopApp.Control.Sidebar._components
@@ -32,8 +32,16 @@ namespace DesktopApp.Control.Sidebar._components
         /// </summary>
         private void InitializeComponent()
         {
-            components = new Container();
+            this.SuspendLayout();
+            // 
+            // MenuControl
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            this.Name = "MenuControl";
+            this.Size = new System.Drawing.Size(250, 400);
+            this.ResumeLayout(false);
         }
 
         #endregion

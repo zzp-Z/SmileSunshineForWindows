@@ -1,6 +1,7 @@
-﻿using System.ComponentModel;
+using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
+using DesktopApp.Control.Sidebar;
 
 namespace DesktopApp
 {
@@ -33,12 +34,43 @@ namespace DesktopApp
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new Container();
+            this.sidebarControl = new SidebarControl();
+            this.mainContentPanel = new Panel();
+            this.SuspendLayout();
+            // 
+            // sidebarControl
+            // 
+            this.sidebarControl.Dock = DockStyle.Left;
+            this.sidebarControl.Location = new Point(0, 0);
+            this.sidebarControl.Name = "sidebarControl";
+            this.sidebarControl.Size = new Size(250, 450);
+            this.sidebarControl.TabIndex = 0;
+            // 
+            // mainContentPanel
+            // 
+            this.mainContentPanel.Dock = DockStyle.Fill;
+            this.mainContentPanel.Location = new Point(250, 0);
+            this.mainContentPanel.Name = "mainContentPanel";
+            this.mainContentPanel.Size = new Size(550, 450);
+            this.mainContentPanel.TabIndex = 1;
+            this.mainContentPanel.BackColor = Color.White;
+            // 
+            // MainForm
+            // 
+            this.AutoScaleDimensions = new SizeF(6F, 13F);
             this.AutoScaleMode = AutoScaleMode.Font;
             this.ClientSize = new Size(800, 450);
-            this.Text = "MainForm";
+            this.Controls.Add(this.mainContentPanel);
+            this.Controls.Add(this.sidebarControl);
+            this.Name = "MainForm";
+            this.Text = "Smile Sunshine - 主窗体";
+            this.StartPosition = FormStartPosition.CenterScreen;
+            this.ResumeLayout(false);
         }
 
         #endregion
+
+        private SidebarControl sidebarControl;
+        private Panel mainContentPanel;
     }
 }

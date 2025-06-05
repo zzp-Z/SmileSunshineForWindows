@@ -157,14 +157,29 @@
     <EmbeddedResource Include="Control\Sidebar\SidebarControl.resx">
       <DependentUpon>SidebarControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Control\Sidebar\_components\LogoControl.resx">
+      <DependentUpon>LogoControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Image.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Image.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <Compile Include="Properties\Image.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Image.resx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
@@ -186,6 +201,12 @@
   <ItemGroup>
     <Content Include="Database\Sql\init.sql" />
     <Content Include="Database\Sql\SmileSunshine.sql" />
+    <EmbeddedResource Include="Image\logo-1024x1024.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Control\Page\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
