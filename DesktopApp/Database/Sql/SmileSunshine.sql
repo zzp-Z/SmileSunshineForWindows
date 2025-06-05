@@ -16,6 +16,7 @@ Create Table user
     id        INT PRIMARY KEY AUTO_INCREMENT COMMENT '用户ID，主键，自动递增',
     username  VARCHAR(50)  NOT NULL COMMENT '用户名，唯一标识',
     password  VARCHAR(255) NOT NULL COMMENT '用户密码，加密存储',
+    gender    ENUM('M', 'F') COMMENT '性别',
     email     VARCHAR(100) COMMENT '用户邮箱（可选）',
     phone     VARCHAR(20) COMMENT '用户电话（可选）',
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间，默认为当前时间',

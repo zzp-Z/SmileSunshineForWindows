@@ -52,6 +52,11 @@ namespace DesktopApp.Database
         /// 用户密码，加密存储
         /// </summary>
         public string Password { get; set; }
+        
+        /// <summary>
+        /// 用户性别
+        /// </summary>
+        public string Gender { get; set; } 
 
         /// <summary>
         /// 用户邮箱（可选）

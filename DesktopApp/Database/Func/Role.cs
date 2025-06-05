@@ -179,5 +179,78 @@ namespace DesktopApp.Database.Func
             }
             return false;
         }
+
+        // Get roles by department ID
+        public List<Role> GetRoleByDepartmentId(int departmentId)
+        {
+            string query = "SELECT id, role_name, description, department_id, created_at, updated_at FROM role WHERE department_id = @DepartmentId";
+            List<Role> roles = new List<Role>();
+
+            if (_dbEngine.OpenConnection())
+            {
+                try
+                {
+                    MySqlCommand cmd = new MySqlCommand(query, _dbEngine.GetConnection());
+                    cmd.Parameters.AddWithValue("@DepartmentId", departmentId);
+                    MySqlDataReader dataReader = cmd.ExecuteReader();
+
+                    while (dataReader.Read())
+                    {
+                        roles.Add(new Role
+                        {
+                            Id = Convert.ToInt32(dataReader["id"]),
+                            RoleName = dataReader["role_name"].ToString(),
+                            DepartmentId = Convert.ToInt32(dataReader["department_id"]),
+                            Description = dataReader["description"].ToString(),
+                            CreatedAt = Convert.ToDateTime(dataReader["created_at"]),
+                            UpdatedAt = Convert.ToDateTime(dataReader["updated_at"])
+                        });
+                    }
+                    dataReader.Close();
+                }
+                catch (MySqlException ex)
+                {
+                    Console.WriteLine($"Error getting roles by department ID: {ex.Message}");
+                }
+                finally
+                {
+                    _dbEngine.CloseConnection();
+                }
+            }
+            return roles;
+        }
+
+        /// <summary>
+        /// 将角色分配给用户
+        /// </summary>
+        /// <param name="userId">用户ID</param>
+        /// <param name="roleId">角色ID</param>
+        /// <returns>分配是否成功</returns>
+        public bool AssignRoleToUser(int userId, int roleId)
+        {
+            string query = "INSERT INTO user_role (user_id, role_id) VALUES (@UserId, @RoleId)";
+            if (_dbEngine.OpenConnection())
+            {
+                try
+                {
+                    MySqlCommand cmd = new MySqlCommand(query, _dbEngine.GetConnection());
+                    cmd.Parameters.AddWithValue("@UserId", userId);
+                    cmd.Parameters.AddWithValue("@RoleId", roleId);
+                    cmd.ExecuteNonQuery();
+                    return true;
+                }
+                catch (MySqlException ex)
+                {
+                    Console.WriteLine($"Error assigning role to user: {ex.Message}");
+                    return false;
+                }
+                finally
+                {
+                    _dbEngine.CloseConnection();
+                }
+            }
+            return false;
+        }
+
     }
 }

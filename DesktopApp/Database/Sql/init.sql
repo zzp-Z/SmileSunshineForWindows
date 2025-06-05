@@ -15,8 +15,8 @@ VALUES ('管理员', 1, '系统管理员，系统管理权限，没有业务生�
        ('销售经理', 3, '负责销售团队的管理和销售策略制定');
 
 -- 创建管理员账户
-INSERT INTO user (username, password, email, phone)
-VALUES ('admin', '123123', 'admin@smileshine.com', '13800000000');
+INSERT INTO user (username, password,gender, email, phone)
+VALUES ('admin', '123123', 'F','admin@smileshine.com', '13800000000');
 
 -- 绑定管理员账户和管理员角色
 INSERT INTO user_role (user_id, role_id)

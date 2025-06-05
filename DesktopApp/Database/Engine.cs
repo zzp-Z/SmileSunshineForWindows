@@ -22,10 +22,10 @@ namespace DesktopApp.Database
         private void Initialize()
         {
             _server = "localhost";
-            _port = "3307";
+            _port = "3306";
             _database = "smile_sunshine";
             _uid = "root";
-            _password = "123123";
+            _password = "";
             var connectionString = "SERVER=" + _server + ";" +
                                    "PORT=" + _port + ";" +
                                    "DATABASE=" + _database + ";" +
