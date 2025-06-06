@@ -211,5 +211,77 @@ namespace DesktopApp.Database.Func
             }
             return false;
         }
+
+        // Get users by department ID
+        public List<User> GetUsersByDepartmentId(int departmentId)
+        {
+            string query = @"SELECT DISTINCT u.id, u.username, u.password, u.email, u.phone, u.created_at, u.updated_at 
+                            FROM user u 
+                            INNER JOIN user_role ur ON u.id = ur.user_id 
+                            INNER JOIN role r ON ur.role_id = r.id 
+                            WHERE r.department_id = @DepartmentId";
+            List<User> users = new List<User>();
+
+            if (_dbEngine.OpenConnection())
+            {
+                try
+                {
+                    MySqlCommand cmd = new MySqlCommand(query, _dbEngine.GetConnection());
+                    cmd.Parameters.AddWithValue("@DepartmentId", departmentId);
+                    MySqlDataReader dataReader = cmd.ExecuteReader();
+
+                    while (dataReader.Read())
+                    {
+                        users.Add(new User
+                        {
+                            Id = Convert.ToInt32(dataReader["id"]),
+                            Username = dataReader["username"].ToString(),
+                            Password = dataReader["password"].ToString(),
+                            Email = dataReader["email"].ToString(),
+                            Phone = dataReader["phone"].ToString(),
+                            CreatedAt = Convert.ToDateTime(dataReader["created_at"]),
+                            UpdatedAt = Convert.ToDateTime(dataReader["updated_at"])
+                        });
+                    }
+                    dataReader.Close();
+                }
+                catch (MySqlException ex)
+                {
+                    Console.WriteLine($"Error getting users by department ID: {ex.Message}");
+                }
+                finally
+                {
+                    _dbEngine.CloseConnection();
+                }
+            }
+            return users;
+        }
+
+        // Add role to user
+        public bool AddRoleToUser(int userId, int roleId)
+        {
+            string query = "INSERT INTO user_role (user_id, role_id) VALUES (@UserId, @RoleId)";
+            if (_dbEngine.OpenConnection())
+            {
+                try
+                {
+                    MySqlCommand cmd = new MySqlCommand(query, _dbEngine.GetConnection());
+                    cmd.Parameters.AddWithValue("@UserId", userId);
+                    cmd.Parameters.AddWithValue("@RoleId", roleId);
+                    cmd.ExecuteNonQuery();
+                    return true;
+                }
+                catch (MySqlException ex)
+                {
+                    Console.WriteLine($"Error adding role to user: {ex.Message}");
+                    return false;
+                }
+                finally
+                {
+                    _dbEngine.CloseConnection();
+                }
+            }
+            return false;
+        }
     }
 }

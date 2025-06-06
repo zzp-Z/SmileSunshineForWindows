@@ -119,6 +119,19 @@
     <Compile Include="Control\Page\SystemManage\DepartmentManage\DepartmentManagePageControl.Designer.cs">
       <DependentUpon>DepartmentManagePageControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Control\Page\SystemManage\RoleManage\RoleAddEditForm.Designer.cs" />
+    <Compile Include="Control\Page\SystemManage\RoleManage\RoleManagePageControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control\Page\SystemManage\RoleManage\RoleManagePageControl.Designer.cs">
+      <DependentUpon>RoleManagePageControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control\Page\SystemManage\UserManage\UserManagePageControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control\Page\SystemManage\UserManage\UserManagePageControl.Designer.cs">
+      <DependentUpon>UserManagePageControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Control\Sidebar\SidebarControl.cs">
       <SubType>UserControl</SubType>
     </Compile>

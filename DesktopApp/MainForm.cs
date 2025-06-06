@@ -4,6 +4,7 @@ using DesktopApp.Control.Sidebar._components;
 using DesktopApp.Control.Page.Dashboard;
 using DesktopApp.Control.Page.Product;
 using DesktopApp.Control.Page.SystemManage.DepartmentManage;
+using DesktopApp.Control.Page.SystemManage.RoleManage;
 
 namespace DesktopApp
 {
@@ -47,10 +48,7 @@ namespace DesktopApp
                         {
                             Text = "Department Manage",
                             PageKey = "department_manage_page",
-                            OnClick = () =>
-                            {
-                                ShowPage("department_manage_page");
-                            }
+                            OnClick = ()=> ShowPage("department_manage_page")
                         },
                         new MenuItemClass()
                         {
@@ -97,6 +95,9 @@ namespace DesktopApp
                     break;
                 case "department_manage_page":
                     pageControl = new DepartmentManagePageControl();
+                    break;
+                case "role_manage_page":
+                    pageControl = new RoleManagePageControl();
                     break;
             }
             

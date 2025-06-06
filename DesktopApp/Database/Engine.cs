@@ -43,7 +43,7 @@ namespace DesktopApp.Database
         //Initialize values
         private void Initialize()
         {
-            _server = "localhost";
+            _server = "10.104.121.198";
             _port = "3307";
             _database = "smile_sunshine";
             _uid = "root";

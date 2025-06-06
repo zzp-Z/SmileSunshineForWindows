@@ -124,6 +124,46 @@ namespace DesktopApp.Database.Func
             return roles;
         }
 
+        // Read roles by department ID
+        public List<Role> GetRolesByDepartmentId(int departmentId)
+        {
+            string query = "SELECT id, role_name, description, department_id, created_at, updated_at FROM role WHERE department_id = @DepartmentId";
+            List<Role> roles = new List<Role>();
+
+            if (_dbEngine.OpenConnection())
+            {
+                try
+                {
+                    MySqlCommand cmd = new MySqlCommand(query, _dbEngine.GetConnection());
+                    cmd.Parameters.AddWithValue("@DepartmentId", departmentId);
+                    MySqlDataReader dataReader = cmd.ExecuteReader();
+
+                    while (dataReader.Read())
+                    {
+                        roles.Add(new Role
+                        {
+                            Id = Convert.ToInt32(dataReader["id"]),
+                            RoleName = dataReader["role_name"].ToString(),
+                            DepartmentId = Convert.ToInt32(dataReader["department_id"]),
+                            Description = dataReader["description"].ToString(),
+                            CreatedAt = Convert.ToDateTime(dataReader["created_at"]),
+                            UpdatedAt = Convert.ToDateTime(dataReader["updated_at"])
+                        });
+                    }
+                    dataReader.Close();
+                }
+                catch (MySqlException ex)
+                {
+                    Console.WriteLine($"Error getting roles by department ID: {ex.Message}");
+                }
+                finally
+                {
+                    _dbEngine.CloseConnection();
+                }
+            }
+            return roles;
+        }
+
         // Update an existing role
         public bool UpdateRole(Role role)
         {

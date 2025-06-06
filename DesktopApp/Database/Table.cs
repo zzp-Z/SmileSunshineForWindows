@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 namespace DesktopApp.Database
 {
@@ -31,6 +31,15 @@ namespace DesktopApp.Database
         /// 更新时间，自动更新
         /// </summary>
         public DateTime UpdatedAt { get; set; }
+
+        /// <summary>
+        /// 重写ToString方法，返回部门名称
+        /// </summary>
+        /// <returns>部门名称</returns>
+        public override string ToString()
+        {
+            return Name ?? string.Empty;
+        }
     }
 
     /// <summary>

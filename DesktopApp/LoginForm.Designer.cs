@@ -176,7 +176,7 @@ namespace DesktopApp
             this.linkForgotPassword.AutoSize = true;
             this.linkForgotPassword.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.linkForgotPassword.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(158)))), ((int)(((byte)(255)))));
-            this.linkForgotPassword.Location = new System.Drawing.Point(643, 440);
+            this.linkForgotPassword.Location = new System.Drawing.Point(643, 444);
             this.linkForgotPassword.Name = "linkForgotPassword";
             this.linkForgotPassword.Size = new System.Drawing.Size(217, 31);
             this.linkForgotPassword.TabIndex = 9;
