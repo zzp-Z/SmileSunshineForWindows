@@ -11,8 +11,7 @@ namespace DesktopApp
         public LoginForm()
         {
             InitializeComponent();
-            Database.Engine dbEngine = Database.Engine.Instance;
-            _userFunc = new Database.Func.UserFunc(dbEngine);
+            _userFunc = new Database.Func.UserFunc();
         }
 
         private void btnLogin_Click(object sender, EventArgs e)

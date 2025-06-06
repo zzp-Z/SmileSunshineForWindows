@@ -63,6 +63,16 @@ namespace DesktopApp.Database
         public string Password { get; set; }
 
         /// <summary>
+        /// 真实姓名
+        /// </summary>
+        public string RealName { get; set; }
+        
+        /// <summary>
+        /// 性别
+        /// </summary>
+        public string Gender { get; set; }
+
+        /// <summary>
         /// 用户邮箱（可选）
         /// </summary>
         public string Email { get; set; }

@@ -6,11 +6,10 @@ namespace DesktopApp.Database.Func
 {
     public class ProductFunc
     {
-        private readonly Engine _dbEngine;
+        private readonly Engine _dbEngine = Engine.Instance;
 
-        public ProductFunc(Engine dbEngine)
+        public ProductFunc()
         {
-            _dbEngine = dbEngine;
         }
 
         /**

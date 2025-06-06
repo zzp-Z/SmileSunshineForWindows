@@ -16,9 +16,8 @@ namespace DesktopApp.Control.Page.SystemManage.RoleManage
 
         public RoleManagePageControl()
         {
-            Engine dbEngine = Engine.Instance;
-            _departmentFunc = new Database.Func.DepartmentFunc(dbEngine);
-            _roleFunc = new Database.Func.RoleFunc(dbEngine);
+            _departmentFunc = new Database.Func.DepartmentFunc();
+            _roleFunc = new Database.Func.RoleFunc();
             InitializeComponent();
             InitializeData();
             InitializeUi();

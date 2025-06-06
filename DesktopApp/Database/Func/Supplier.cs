@@ -6,11 +6,10 @@ namespace DesktopApp.Database.Func
 {
     public class SupplierFunc
     {
-        private readonly Engine _dbEngine;
+        private readonly Engine _dbEngine = Engine.Instance;
 
-        public SupplierFunc(Engine dbEngine)
+        public SupplierFunc()
         {
-            _dbEngine = dbEngine;
         }
 
         /**

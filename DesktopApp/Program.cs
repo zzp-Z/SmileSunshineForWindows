@@ -13,7 +13,7 @@ namespace DesktopApp
 
             // Dependency Injection Setup - Using Singleton Database Engine
 
-            Application.Run(new MainForm());
+            Application.Run(new LoginForm());
         }
     }
 }

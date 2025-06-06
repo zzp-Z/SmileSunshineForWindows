@@ -18,6 +18,8 @@ Create Table user
     password  VARCHAR(255) NOT NULL COMMENT '用户密码，加密存储',
     email     VARCHAR(100) COMMENT '用户邮箱（可选）',
     phone     VARCHAR(20) COMMENT '用户电话（可选）',
+    real_name VARCHAR(50) NOT NULL COMMENT '用户真实姓名，用于显示',
+    gender     ENUM ('male', 'female') NOT NULL COMMENT '用户性别，枚举类型，可选值：male、female',
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间，默认为当前时间',
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间，自动更新'
 ) COMMENT ='用户信息表';

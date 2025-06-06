@@ -6,11 +6,10 @@ namespace DesktopApp.Database.Func
 {
     public class MaterialFunc
     {
-        private readonly Engine _dbEngine;
+        private readonly Engine _dbEngine = Engine.Instance;
 
-        public MaterialFunc(Engine dbEngine)
+        public MaterialFunc()
         {
-            _dbEngine = dbEngine;
         }
 
         /**

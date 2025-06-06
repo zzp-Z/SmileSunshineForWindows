@@ -13,8 +13,7 @@ namespace DesktopApp.Control.Page.SystemManage.DepartmentManage
 
         public DepartmentManagePageControl()
         {
-            Engine dbEngine = Engine.Instance;
-            _departmentFunc = new Database.Func.DepartmentFunc(dbEngine);
+            _departmentFunc = new Database.Func.DepartmentFunc();
             InitializeComponent();
             InitializeDataGridView();
             LoadData();

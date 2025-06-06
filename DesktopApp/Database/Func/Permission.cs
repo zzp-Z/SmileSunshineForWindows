@@ -6,11 +6,10 @@ namespace DesktopApp.Database.Func
 {
     public class PermissionFunc
     {
-        private readonly Engine _dbEngine;
+        private readonly Engine _dbEngine = Engine.Instance;
 
-        public PermissionFunc(Engine dbEngine)
+        public PermissionFunc()
         {
-            _dbEngine = dbEngine;
         }
 
         /**

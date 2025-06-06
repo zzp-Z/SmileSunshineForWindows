@@ -5,6 +5,7 @@ using DesktopApp.Control.Page.Dashboard;
 using DesktopApp.Control.Page.Product;
 using DesktopApp.Control.Page.SystemManage.DepartmentManage;
 using DesktopApp.Control.Page.SystemManage.RoleManage;
+using DesktopApp.Control.Page.SystemManage.UserManage;
 
 namespace DesktopApp
 {
@@ -98,6 +99,9 @@ namespace DesktopApp
                     break;
                 case "role_manage_page":
                     pageControl = new RoleManagePageControl();
+                    break;
+                case "user_manage_page":
+                    pageControl = new UserManagePageControl();
                     break;
             }
             

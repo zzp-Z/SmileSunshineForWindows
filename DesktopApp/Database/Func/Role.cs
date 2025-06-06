@@ -6,11 +6,11 @@ namespace DesktopApp.Database.Func
 {
     public class RoleFunc
     {
-        private readonly Engine _dbEngine;
+        private readonly Engine _dbEngine = Engine.Instance;
 
-        public RoleFunc(Engine dbEngine)
+        public RoleFunc()
         {
-            _dbEngine = dbEngine;
+            
         }
 
         /**

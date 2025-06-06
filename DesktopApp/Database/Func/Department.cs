@@ -6,11 +6,10 @@ namespace DesktopApp.Database.Func
 {
     public class DepartmentFunc
     {
-        private readonly Engine _dbEngine;
+        private readonly Engine _dbEngine = Engine.Instance;
 
-        public DepartmentFunc(Engine dbEngine)
+        public DepartmentFunc()
         {
-            _dbEngine = dbEngine;
         }
 
         /**

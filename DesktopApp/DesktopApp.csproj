@@ -126,6 +126,8 @@
     <Compile Include="Control\Page\SystemManage\RoleManage\RoleManagePageControl.Designer.cs">
       <DependentUpon>RoleManagePageControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Control\Page\SystemManage\UserManage\UserAddEditForm.cs" />
+    <Compile Include="Control\Page\SystemManage\UserManage\UserAddEditForm.Designer.cs" />
     <Compile Include="Control\Page\SystemManage\UserManage\UserManagePageControl.cs">
       <SubType>UserControl</SubType>
     </Compile>

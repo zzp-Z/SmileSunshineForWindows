@@ -15,8 +15,7 @@ namespace DesktopApp.Control.Page.SystemManage.DepartmentManage
 
         public DepartmentAddEditForm()
         {
-            Engine dbEngine = Engine.Instance;
-            _departmentFunc = new Database.Func.DepartmentFunc(dbEngine);
+            _departmentFunc = new Database.Func.DepartmentFunc();
             InitializeComponent();
             // _isEditMode = false;
             this.Text = "添加部门";
@@ -24,8 +23,7 @@ namespace DesktopApp.Control.Page.SystemManage.DepartmentManage
 
         public DepartmentAddEditForm(Department department)
         {
-            Engine dbEngine = Engine.Instance;
-            _departmentFunc = new Database.Func.DepartmentFunc(dbEngine);
+            _departmentFunc = new Database.Func.DepartmentFunc();
             InitializeComponent();
             _department = department;
             // _isEditMode = true;
