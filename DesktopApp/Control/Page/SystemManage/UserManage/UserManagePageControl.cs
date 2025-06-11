@@ -43,7 +43,7 @@ namespace DesktopApp.Control.Page.SystemManage.UserManage
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"加载部门数据失败: {ex.Message}", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"Failed to load department data.{ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -55,12 +55,12 @@ namespace DesktopApp.Control.Page.SystemManage.UserManage
             // 设置列
             usersDataGridView.Columns.Clear();
             usersDataGridView.Columns.Add("Id", "ID");
-            usersDataGridView.Columns.Add("Username", "用户名");
-            usersDataGridView.Columns.Add("RealName", "真实姓名");
-            usersDataGridView.Columns.Add("Gender", "性别");
-            usersDataGridView.Columns.Add("Email", "邮箱");
-            usersDataGridView.Columns.Add("Phone", "电话");
-            usersDataGridView.Columns.Add("CreatedAt", "创建时间");
+            usersDataGridView.Columns.Add("Username", "Username");
+            usersDataGridView.Columns.Add("RealName", "Real Name");
+            usersDataGridView.Columns.Add("Gender", "Gender");
+            usersDataGridView.Columns.Add("Email", "Email");
+            usersDataGridView.Columns.Add("Phone", "Phone");
+            usersDataGridView.Columns.Add("CreatedAt", "CreatedAt");
             
             // 隐藏ID列
             usersDataGridView.Columns["Id"].Visible = false;
@@ -99,7 +99,7 @@ namespace DesktopApp.Control.Page.SystemManage.UserManage
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"加载用户数据失败: {ex.Message}", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"Failed to load user data. {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -147,7 +147,7 @@ namespace DesktopApp.Control.Page.SystemManage.UserManage
             }
             else
             {
-                MessageBox.Show("请选择一个用户进行编辑。", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Please select a user to edit.", "Prompt", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -162,8 +162,8 @@ namespace DesktopApp.Control.Page.SystemManage.UserManage
                 }
 
                 var result = MessageBox.Show(
-                    $"确定要删除选中的 {selectedUserIds.Count} 个用户吗？此操作不可撤销。",
-                    "确认删除",
+                    $"Are you sure you want to delete the selected {selectedUserIds.Count} users? This operation cannot be undone.",
+                    "Confirm Delete",
                     MessageBoxButtons.YesNo,
                     MessageBoxIcon.Warning
                 );
@@ -189,15 +189,15 @@ namespace DesktopApp.Control.Page.SystemManage.UserManage
                         catch (Exception ex)
                         {
                             failCount++;
-                            Console.WriteLine($"删除用户 {userId} 失败: {ex.Message}");
+                            Console.WriteLine($"Delete User {userId} Failed: {ex.Message}");
                         }
                     }
 
                     if (failCount > 0)
                     {
                         MessageBox.Show(
-                            $"删除完成。成功: {successCount} 个，失败: {failCount} 个。",
-                            "删除结果",
+                            $"Deletion completed. Success: {successCount}, Failure: {failCount}.",
+                            "Delete Results",
                             MessageBoxButtons.OK,
                             MessageBoxIcon.Warning
                         );
@@ -205,8 +205,8 @@ namespace DesktopApp.Control.Page.SystemManage.UserManage
                     else
                     {
                         MessageBox.Show(
-                            $"成功删除 {successCount} 个用户。",
-                            "删除成功",
+                            $"Successfully deleted {successCount} users.",
+                            "Delete Successful",
                             MessageBoxButtons.OK,
                             MessageBoxIcon.Information
                         );
@@ -221,7 +221,7 @@ namespace DesktopApp.Control.Page.SystemManage.UserManage
             }
             else
             {
-                MessageBox.Show("请选择要删除的用户。", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Please select the users to delete.", "Prompt", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -236,8 +236,8 @@ namespace DesktopApp.Control.Page.SystemManage.UserManage
                 }
 
                 var result = MessageBox.Show(
-                    $"确定要重置选中的 {selectedUserIds.Count} 个用户的密码为默认密码(123123)吗？",
-                    "确认重置密码",
+                    $"Are you sure you want to reset the passwords of the selected {selectedUserIds.Count} users to the default password (123123)?",
+                    "Confirm Password Reset",
                     MessageBoxButtons.YesNo,
                     MessageBoxIcon.Question
                 );
@@ -263,15 +263,15 @@ namespace DesktopApp.Control.Page.SystemManage.UserManage
                         catch (Exception ex)
                         {
                             failCount++;
-                            Console.WriteLine($"重置用户 {userId} 密码失败: {ex.Message}");
+                            Console.WriteLine($"Reset User {userId} Password Failed: {ex.Message}");
                         }
                     }
 
                     if (failCount > 0)
                     {
                         MessageBox.Show(
-                            $"重置密码完成。成功: {successCount} 个，失败: {failCount} 个。",
-                            "重置结果",
+                            $"Password reset completed. Success: {successCount}, Failure: {failCount}.",
+                            "Reset Results",
                             MessageBoxButtons.OK,
                             MessageBoxIcon.Warning
                         );
@@ -279,8 +279,8 @@ namespace DesktopApp.Control.Page.SystemManage.UserManage
                     else
                     {
                         MessageBox.Show(
-                            $"成功重置 {successCount} 个用户的密码。",
-                            "重置成功",
+                            $"Successfully reset the passwords of {successCount} users.",
+                            "Reset Successful",
                             MessageBoxButtons.OK,
                             MessageBoxIcon.Information
                         );
@@ -289,7 +289,7 @@ namespace DesktopApp.Control.Page.SystemManage.UserManage
             }
             else
             {
-                MessageBox.Show("请选择要重置密码的用户。", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Please select the users to reset passwords for.", "Prompt", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
     }

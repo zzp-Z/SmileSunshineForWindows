@@ -18,7 +18,7 @@ namespace DesktopApp.Control.Page.SystemManage.DepartmentManage
             _departmentFunc = new Database.Func.DepartmentFunc();
             InitializeComponent();
             // _isEditMode = false;
-            this.Text = "添加部门";
+            this.Text = "Add Department";
         }
 
         public DepartmentAddEditForm(Department department)
@@ -27,7 +27,7 @@ namespace DesktopApp.Control.Page.SystemManage.DepartmentManage
             InitializeComponent();
             _department = department;
             // _isEditMode = true;
-            this.Text = "编辑部门";
+            this.Text = "Edit Department";
             LoadDepartmentData();
         }
 
@@ -65,8 +65,8 @@ namespace DesktopApp.Control.Page.SystemManage.DepartmentManage
                 catch (Exception ex)
                 {
                     string errorMessage = GetUserFriendlyErrorMessage(ex.Message);
-                    string operation = _department == null ? "添加" : "更新";
-                    MessageBox.Show($"{operation}部门失败：{errorMessage}", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    string operation = _department == null ? "Add" : "Update";
+                    MessageBox.Show($"{operation}Department Failed：{errorMessage}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
@@ -81,21 +81,21 @@ namespace DesktopApp.Control.Page.SystemManage.DepartmentManage
         {
             if (string.IsNullOrWhiteSpace(txtName.Text))
             {
-                MessageBox.Show("请输入部门名称！", "验证错误", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Please Enter Department Name!", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtName.Focus();
                 return false;
             }
 
             if (txtName.Text.Trim().Length > 50)
             {
-                MessageBox.Show("部门名称不能超过50个字符！", "验证错误", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Department name cannot exceed 50 characters!", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtName.Focus();
                 return false;
             }
 
             if (txtDescription.Text.Trim().Length > 200)
             {
-                MessageBox.Show("部门描述不能超过200个字符！", "验证错误", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Department description cannot exceed 200 characters!", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtDescription.Focus();
                 return false;
             }
@@ -106,34 +106,34 @@ namespace DesktopApp.Control.Page.SystemManage.DepartmentManage
         private string GetUserFriendlyErrorMessage(string originalError)
         {
             if (string.IsNullOrEmpty(originalError))
-                return "未知错误";
+                return "Unknown Error";
 
             // 检查外键约束错误
             if (originalError.Contains("foreign key constraint fails"))
             {
                 if (originalError.Contains("`role`") && originalError.Contains("department_id"))
                 {
-                    return "请先删除部门角色";
+                    return "Please Delete Department Roles First";
                 }
-                return "存在关联数据，请先删除相关记录";
+                return "There is associated data, please delete relevant records first.";
             }
 
             // 检查唯一约束错误
             if (originalError.Contains("Duplicate entry") || originalError.Contains("UNIQUE constraint"))
             {
-                return "部门名称已存在，请使用其他名称";
+                return "Department name already exists, please use another name.";
             }
 
             // 检查非空约束错误
             if (originalError.Contains("cannot be null") || originalError.Contains("NOT NULL constraint"))
             {
-                return "必填字段不能为空";
+                return "Required fields cannot be empty.";
             }
 
             // 检查数据长度错误
             if (originalError.Contains("Data too long"))
             {
-                return "输入数据过长，请缩短内容";
+                return "Input data is too long, please shorten the content.";
             }
 
             // 返回原始错误信息（简化版）

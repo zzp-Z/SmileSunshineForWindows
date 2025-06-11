@@ -222,7 +222,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Database\Sql\init.sql" />
     <Content Include="Database\Sql\SmileSunshine.sql" />
     <EmbeddedResource Include="Image\logo-1024x1024.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

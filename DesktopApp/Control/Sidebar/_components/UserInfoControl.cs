@@ -17,8 +17,8 @@ namespace DesktopApp.Control.Sidebar._components
         private void InitializeUserInfo()
         {
             // 设置默认用户信息，实际应用中应该从登录信息获取
-            usernameLabel.Text = "管理员";
-            positionLabel.Text = "系统管理员";
+            usernameLabel.Text = "Administrator";
+            positionLabel.Text = "System Administrator";
             UpdateSystemTime();
         }
         

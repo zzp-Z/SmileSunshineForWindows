@@ -4,64 +4,64 @@ USE smile_sunshine;
 -- ======================================================User
 Create Table department
 (
-    id          INT PRIMARY KEY AUTO_INCREMENT COMMENT '部门ID，主键，自动递增',
-    name        VARCHAR(255) NOT NULL COMMENT '部门名称',
-    description TEXT COMMENT '部门描述（可选字段）',
-    created_at  TIMESTAMP DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间，默认为当前时间',
-    updated_at  TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间，自动更新'
-) COMMENT ='部门信息表';
+    id          INT PRIMARY KEY AUTO_INCREMENT COMMENT 'Department ID，PK，Primary key, auto-incrementing',
+    name        VARCHAR(255) NOT NULL COMMENT 'Department Name',
+    description TEXT COMMENT 'Department Description (Optional)',
+    created_at  TIMESTAMP DEFAULT CURRENT_TIMESTAMP COMMENT 'Creation Time, defaults to current timestamp',
+    updated_at  TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT 'Update Time, auto-updates on change'
+) COMMENT ='Department Information Table';
 
 Create Table user
 (
-    id        INT PRIMARY KEY AUTO_INCREMENT COMMENT '用户ID，主键，自动递增',
-    username  VARCHAR(50)  NOT NULL COMMENT '用户名，唯一标识',
-    password  VARCHAR(255) NOT NULL COMMENT '用户密码，加密存储',
-    email     VARCHAR(100) COMMENT '用户邮箱（可选）',
-    phone     VARCHAR(20) COMMENT '用户电话（可选）',
-    real_name VARCHAR(50) NOT NULL COMMENT '用户真实姓名，用于显示',
-    gender     ENUM ('male', 'female') NOT NULL COMMENT '用户性别，枚举类型，可选值：male、female',
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间，默认为当前时间',
-    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间，自动更新'
-) COMMENT ='用户信息表';
+    id        INT PRIMARY KEY AUTO_INCREMENT COMMENT 'User ID, Primary Key, Auto-incrementing',
+    username  VARCHAR(50)  NOT NULL COMMENT 'Username, Unique Identifie',
+    password  VARCHAR(255) NOT NULL COMMENT 'User Password, Stored Encrypted',
+    email     VARCHAR(100) COMMENT 'User Email (Optional)',
+    phone     VARCHAR(20) COMMENT 'User Phone Number (Optional)',
+    real_name VARCHAR(50) NOT NULL COMMENT 'User Real Name, for Display',
+    gender     ENUM ('male', 'female') NOT NULL COMMENT 'User Gender, Enum Type, Options: male, female',
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP COMMENT 'Creation Time, defaults to current timestamp',
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT 'Update Time, auto-updates on change'
+) COMMENT ='User Information Table';
 
 Create Table role
 (
-    id          INT PRIMARY KEY AUTO_INCREMENT COMMENT '角色ID，主键，自动递增',
-    role_name   VARCHAR(50) NOT NULL COMMENT '角色名称，如管理员、普通用户等',
-    department_id INT COMMENT '部门ID，关联部门表',
-    description TEXT COMMENT '角色描述（可选字段）',
-    created_at   TIMESTAMP DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间，默认为当前时间',
-    updated_at   TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间，自动更新',
+    id          INT PRIMARY KEY AUTO_INCREMENT COMMENT 'Role ID, Primary Key, Auto-incrementing',
+    role_name   VARCHAR(50) NOT NULL COMMENT 'Role Name, e.g., Administrator, Regular User',
+    department_id INT COMMENT 'Department ID, Foreign key referencing department table',
+    description TEXT COMMENT 'Role Description (Optional)',
+    created_at   TIMESTAMP DEFAULT CURRENT_TIMESTAMP COMMENT 'Creation Time, defaults to current timestamp',
+    updated_at   TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT 'Update Time, auto-updates on change',
     FOREIGN KEY (department_id) REFERENCES department (id)
-) COMMENT ='角色信息表';
+) COMMENT ='Role Information Table';
 
 Create Table permission
 (
-    id              INT PRIMARY KEY AUTO_INCREMENT COMMENT '权限ID，主键，自动递增',
-    permission_name VARCHAR(100) NOT NULL COMMENT '权限名称，如API访问权限',
+    id              INT PRIMARY KEY AUTO_INCREMENT COMMENT 'Permission ID, Primary Key, Auto-incrementing',
+    permission_name VARCHAR(100) NOT NULL COMMENT 'Permission Name, e.g., API Access Permission',
     api_path        VARCHAR(255) NOT NULL COMMENT '对应的API路径',
-    description     TEXT COMMENT '权限描述（可选字段）',
-    created_at      TIMESTAMP DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间，默认为当前时间',
-    updated_at      TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间，自动更新'
-) COMMENT ='权限信息表';
+    description     TEXT COMMENT 'Corresponding API Path',
+    created_at      TIMESTAMP DEFAULT CURRENT_TIMESTAMP COMMENT 'Creation Time, defaults to current timestamp',
+    updated_at      TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT 'Update Time, auto-updates on change'
+) COMMENT ='Permission Information Table';
 
 CREATE TABLE user_role
 (
-    user_id INT NOT NULL COMMENT '用户ID，关联用户表',
-    role_id INT NOT NULL COMMENT '角色ID，关联角色表',
+    user_id INT NOT NULL COMMENT 'User ID, Foreign key referencing user table',
+    role_id INT NOT NULL COMMENT 'Role ID, Foreign key referencing role table',
     PRIMARY KEY (user_id, role_id),
     FOREIGN KEY (user_id) REFERENCES user (id),
     FOREIGN KEY (role_id) REFERENCES role (id)
-) COMMENT ='用户与角色的关联表';
+) COMMENT ='User-Role Relationship Table';
 
 CREATE TABLE role_permission
 (
-    role_id       INT NOT NULL COMMENT '角色ID，关联角色表',
-    permission_id INT NOT NULL COMMENT '权限ID，关联权限表',
+    role_id       INT NOT NULL COMMENT 'Role ID, Foreign key referencing role table',
+    permission_id INT NOT NULL COMMENT 'Permission ID, Foreign key referencing permission table',
     PRIMARY KEY (role_id, permission_id),
     FOREIGN KEY (role_id) REFERENCES role (id),
     FOREIGN KEY (permission_id) REFERENCES permission (id)
-) COMMENT ='角色与权限的关联表';
+) COMMENT ='Role-Permission Relationship Table';
 
 -- ======================================================Material
 
@@ -333,3 +333,50 @@ Create Table refund_return_request
     amount_refunded_cents int,
     foreign key (customer_service_id) references customer_service_request (id)
 );
+
+
+USE smile_sunshine;
+
+-- 创建基础部门
+INSERT INTO department (name, description)
+VALUES ('Management Department', 'Oversees corporate management and administrative affairs'),
+       ('Production Department', 'Manages product manufacturing and quality control'),
+       ('Sales Department', 'Handles product sales and customer relationship management');
+
+-- 创建基础角色
+INSERT INTO role (role_name, department_id, description)
+VALUES ('Administrator', 1, 'System administrator with system management privileges, no business production permissions'),
+       ('Production Worker', 2, 'Responsible for basic product production work'),
+       ('Production Team Leader', 2, 'Responsible for management and coordination of the production team'),
+       ('Salesperson', 3, 'Responsible for product sales and customer communication'),
+       ('Sales Manager', 3, 'Responsible for management of the sales team and formulation of sales strategies');
+
+-- 创建管理员账户
+INSERT INTO user (username, password, real_name, gender, email, phone)
+VALUES ('admin', '123123', 'Administrator', 'MALE','admin@smileshine.com', '13800000000');
+
+-- 绑定管理员账户和管理员角色
+INSERT INTO user_role (user_id, role_id)
+VALUES (1, 1);
+-- 假设admin用户的ID为1，管理员角色的ID为1
+
+-- 添加一些基础权限
+INSERT INTO permission (permission_name, api_path, description)
+VALUES ('User Management', '/api/users', 'Manage system user permissions'),
+       ('Role Management', '/api/roles', 'Manage system role permissions'),
+       ('Department Management', '/api/departments', 'Manage system department permissions'),
+       ('Product Management', '/api/products', 'Manage product permissions'),
+       ('Order Management', '/api/orders', 'Manage sales order permissions'),
+       ('Production Plan Management', '/api/production-plans', 'Manage production plan permissions');
+
+-- 为管理员角色分配所有权限
+INSERT INTO role_permission (role_id, permission_id)
+VALUES (1, 1), -- 管理员角色拥有用户管理权限
+       (1, 2), -- 管理员角色拥有角色管理权限
+       (1, 3);
+-- 管理员角色拥有部门管理权限
+
+-- 为其他角色分配相应权限
+INSERT INTO role_permission (role_id, permission_id)
+VALUES (3, 6), -- 生产组长拥有生产计划管理权限
+       (5, 5); -- 销售经理拥有订单管理权限
