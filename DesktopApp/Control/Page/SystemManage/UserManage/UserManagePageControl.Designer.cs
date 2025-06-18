@@ -49,7 +49,7 @@ namespace DesktopApp.Control.Page.SystemManage.UserManage
             this.departmentLabel.Name = "departmentLabel";
             this.departmentLabel.Size = new System.Drawing.Size(41, 12);
             this.departmentLabel.TabIndex = 0;
-            this.departmentLabel.Text = "部门:";
+            this.departmentLabel.Text = "Department:";
             // 
             // departmentComboBox
             // 
@@ -67,7 +67,7 @@ namespace DesktopApp.Control.Page.SystemManage.UserManage
             this.addButton.Name = "addButton";
             this.addButton.Size = new System.Drawing.Size(75, 23);
             this.addButton.TabIndex = 2;
-            this.addButton.Text = "添加";
+            this.addButton.Text = "Add";
             this.addButton.UseVisualStyleBackColor = true;
             this.addButton.Click += new System.EventHandler(this.addButton_Click);
             // 
@@ -77,7 +77,7 @@ namespace DesktopApp.Control.Page.SystemManage.UserManage
             this.editButton.Name = "editButton";
             this.editButton.Size = new System.Drawing.Size(75, 23);
             this.editButton.TabIndex = 3;
-            this.editButton.Text = "编辑";
+            this.editButton.Text = "Edit";
             this.editButton.UseVisualStyleBackColor = true;
             this.editButton.Click += new System.EventHandler(this.editButton_Click);
             // 
@@ -87,7 +87,7 @@ namespace DesktopApp.Control.Page.SystemManage.UserManage
             this.deleteButton.Name = "deleteButton";
             this.deleteButton.Size = new System.Drawing.Size(75, 23);
             this.deleteButton.TabIndex = 4;
-            this.deleteButton.Text = "删除";
+            this.deleteButton.Text = "Delete";
             this.deleteButton.UseVisualStyleBackColor = true;
             this.deleteButton.Click += new System.EventHandler(this.deleteButton_Click);
             // 
@@ -97,7 +97,7 @@ namespace DesktopApp.Control.Page.SystemManage.UserManage
             this.resetPasswordButton.Name = "resetPasswordButton";
             this.resetPasswordButton.Size = new System.Drawing.Size(75, 23);
             this.resetPasswordButton.TabIndex = 5;
-            this.resetPasswordButton.Text = "重置密码";
+            this.resetPasswordButton.Text = "Reset Password";
             this.resetPasswordButton.UseVisualStyleBackColor = true;
             this.resetPasswordButton.Click += new System.EventHandler(this.resetPasswordButton_Click);
             // 

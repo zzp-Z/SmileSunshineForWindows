@@ -48,7 +48,7 @@ namespace DesktopApp.Control.Page.SystemManage.UserManage
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"加载部门数据失败: {ex.Message}", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"Failed to load department data: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -68,19 +68,19 @@ namespace DesktopApp.Control.Page.SystemManage.UserManage
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"加载角色数据失败: {ex.Message}", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"Failed to load role data:{ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         private void SetupForm()
         {
-            this.Text = _isEditMode ? "编辑用户" : "添加用户";
-            saveButton.Text = _isEditMode ? "保存" : "添加";
+            this.Text = _isEditMode ? "Edit User" : "Add User";
+            saveButton.Text = _isEditMode ? "Save" : "Add";
 
             // 设置性别下拉框
             genderComboBox.Items.Clear();
-            genderComboBox.Items.Add("男");
-            genderComboBox.Items.Add("女");
+            genderComboBox.Items.Add("Male");
+            genderComboBox.Items.Add("Female");
             genderComboBox.SelectedIndex = 0;
 
             if (_isEditMode && _editingUser != null)
@@ -91,7 +91,7 @@ namespace DesktopApp.Control.Page.SystemManage.UserManage
                 emailTextBox.Text = _editingUser.Email;
                 phoneTextBox.Text = _editingUser.Phone;
                 // 将数据库中的英文性别值转换为中文显示
-                genderComboBox.Text = _editingUser.Gender == "male" ? "男" : "女";
+                genderComboBox.Text = _editingUser.Gender == "male" ? "Male" : "Female";
                 
                 // 编辑模式下隐藏密码相关控件
                 passwordLabel.Visible = false;
@@ -123,7 +123,7 @@ namespace DesktopApp.Control.Page.SystemManage.UserManage
             try
             {
                 // 将中文性别转换为数据库对应的英文值
-                string genderValue = genderComboBox.Text == "男" ? "male" : "female";
+                string genderValue = genderComboBox.Text == "Male" ? "male" : "female";
                 
                 var user = new User
                 {
@@ -149,13 +149,13 @@ namespace DesktopApp.Control.Page.SystemManage.UserManage
                             _userFunc.AddRoleToUser(user.Id, roleId);
                         }
                         
-                        MessageBox.Show("用户更新成功！", "成功", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("User updated successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         this.DialogResult = DialogResult.OK;
                         this.Close();
                     }
                     else
                     {
-                        MessageBox.Show("用户更新失败！", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("User update failed!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 else
@@ -175,19 +175,19 @@ namespace DesktopApp.Control.Page.SystemManage.UserManage
                             }
                         }
                         
-                        MessageBox.Show("用户创建成功！", "成功", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("User created successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         this.DialogResult = DialogResult.OK;
                         this.Close();
                     }
                     else
                     {
-                        MessageBox.Show("用户创建失败！", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("User creation failed!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"操作失败: {ex.Message}", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"Operation failed:{ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -195,7 +195,7 @@ namespace DesktopApp.Control.Page.SystemManage.UserManage
         {
             if (string.IsNullOrWhiteSpace(usernameTextBox.Text))
             {
-                MessageBox.Show("请输入用户名。", "验证错误", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Please enter your username.", "Verification error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 usernameTextBox.Focus();
                 return false;
             }
@@ -204,20 +204,20 @@ namespace DesktopApp.Control.Page.SystemManage.UserManage
 
             if (string.IsNullOrWhiteSpace(realNameTextBox.Text))
             {
-                MessageBox.Show("请输入真实姓名。", "验证错误", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Please enter your real name.", "Verification error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 realNameTextBox.Focus();
                 return false;
             }
 
             if (departmentComboBox.SelectedValue == null)
             {
-                MessageBox.Show("请选择部门。", "验证错误", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Please select your department.", "Verification error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
 
             if (roleComboBox.SelectedValue == null)
             {
-                MessageBox.Show("请选择角色。", "验证错误", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Please select your role.", "Verification error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
 

@@ -48,26 +48,26 @@ namespace DesktopApp.Control.Sidebar
             {
                 new MenuItemClass
                 {
-                    Text = "仪表板",
+                    Text = "Dashboard",
                     PageKey = "dashboard",
                     Default = true,
                     OnClick = () => { /* 仪表板页面逻辑 */ }
                 },
                 new MenuItemClass
                 {
-                    Text = "用户管理",
+                    Text = "User Management",
                     PageKey = "users",
                     Children = new List<MenuItemClass>
                     {
                         new MenuItemClass
                         {
-                            Text = "用户列表",
+                            Text = "User List",
                             PageKey = "user-list",
                             OnClick = () => { /* 用户列表页面逻辑 */ }
                         },
                         new MenuItemClass
                         {
-                            Text = "添加用户",
+                            Text = "Add User",
                             PageKey = "add-user",
                             OnClick = () => { /* 添加用户页面逻辑 */ }
                         }
@@ -75,19 +75,19 @@ namespace DesktopApp.Control.Sidebar
                 },
                 new MenuItemClass
                 {
-                    Text = "系统设置",
+                    Text = "System Settings",
                     PageKey = "settings",
                     Children = new List<MenuItemClass>
                     {
                         new MenuItemClass
                         {
-                            Text = "基本设置",
+                            Text = "Basic Settings",
                             PageKey = "basic-settings",
                             OnClick = () => { /* 基本设置页面逻辑 */ }
                         },
                         new MenuItemClass
                         {
-                            Text = "高级设置",
+                            Text = "Advanced Settings",
                             PageKey = "advanced-settings",
                             OnClick = () => { /* 高级设置页面逻辑 */ }
                         }
@@ -95,13 +95,13 @@ namespace DesktopApp.Control.Sidebar
                 },
                 new MenuItemClass
                 {
-                    Text = "报表",
+                    Text = "Reports",
                     PageKey = "reports",
                     OnClick = () => { /* 报表页面逻辑 */ }
                 },
                 new MenuItemClass
                 {
-                    Text = "帮助",
+                    Text = "Help",
                     PageKey = "help",
                     OnClick = () => { /* 帮助页面逻辑 */ }
                 }

@@ -52,22 +52,22 @@ namespace DesktopApp.Control.Page.SystemManage.RoleManage
             // 创建DataTable
             roleDataTable = new DataTable();
             roleDataTable.Columns.Add("Id", typeof(int));
-            roleDataTable.Columns.Add("角色名称", typeof(string));
-            roleDataTable.Columns.Add("部门", typeof(string));
-            roleDataTable.Columns.Add("描述", typeof(string));
-            roleDataTable.Columns.Add("创建时间", typeof(DateTime));
-            roleDataTable.Columns.Add("更新时间", typeof(DateTime));
+            roleDataTable.Columns.Add("Role Name", typeof(string));
+            roleDataTable.Columns.Add("Department", typeof(string));
+            roleDataTable.Columns.Add("Description", typeof(string));
+            roleDataTable.Columns.Add("Creation Time", typeof(DateTime));
+            roleDataTable.Columns.Add("Update Time", typeof(DateTime));
 
             // 绑定到DataGridView
             dgvRoles.DataSource = roleDataTable;
 
             // 设置列属性
             dgvRoles.Columns["Id"].Visible = false; // 隐藏ID列
-            dgvRoles.Columns["角色名称"].Width = 150;
-            dgvRoles.Columns["部门"].Width = 100;
-            dgvRoles.Columns["描述"].Width = 200;
-            dgvRoles.Columns["创建时间"].Width = 120;
-            dgvRoles.Columns["更新时间"].Width = 120;
+            dgvRoles.Columns["Role Name"].Width = 150;
+            dgvRoles.Columns["Department"].Width = 100;
+            dgvRoles.Columns["Description"].Width = 200;
+            dgvRoles.Columns["Creation Time"].Width = 120;
+            dgvRoles.Columns["Update Time"].Width = 120;
 
             // 设置多选模式
             dgvRoles.MultiSelect = true;
@@ -85,7 +85,7 @@ namespace DesktopApp.Control.Page.SystemManage.RoleManage
                 roleDataTable.Rows.Add(
                     role.Id,
                     role.RoleName,
-                    department?.Name ?? "未知部门",
+                    department?.Name ?? "Unknown Department",
                     role.Description,
                     role.CreatedAt,
                     role.UpdatedAt
@@ -123,7 +123,7 @@ namespace DesktopApp.Control.Page.SystemManage.RoleManage
                         LoadRolesByDepartment(newRole.DepartmentId);
                     }
 
-                    MessageBox.Show("角色添加成功！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Role added successfully!", "Prompt", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
         }
@@ -132,7 +132,7 @@ namespace DesktopApp.Control.Page.SystemManage.RoleManage
         {
             if (dgvRoles.SelectedRows.Count != 1)
             {
-                MessageBox.Show("请选择一个角色进行修改！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Please select a role to modify!", "Prompt", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
@@ -155,7 +155,7 @@ namespace DesktopApp.Control.Page.SystemManage.RoleManage
                             LoadRolesByDepartment((int)cmbDepartment.SelectedValue);
                         }
 
-                        MessageBox.Show("角色修改成功！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Role modified successfully!", "Prompt", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
             }
@@ -165,11 +165,11 @@ namespace DesktopApp.Control.Page.SystemManage.RoleManage
         {
             if (dgvRoles.SelectedRows.Count == 0)
             {
-                MessageBox.Show("请选择要删除的角色！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Please select the role to delete!", "Prompt", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            var result = MessageBox.Show($"确定要删除选中的 {dgvRoles.SelectedRows.Count} 个角色吗？", "确认删除", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            var result = MessageBox.Show($"Are you sure you want to delete the selected {dgvRoles.SelectedRows.Count} roles?", "Confirm Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (result == DialogResult.Yes)
             {
                 foreach (DataGridViewRow row in dgvRoles.SelectedRows)
@@ -184,7 +184,7 @@ namespace DesktopApp.Control.Page.SystemManage.RoleManage
                     LoadRolesByDepartment((int)cmbDepartment.SelectedValue);
                 }
 
-                MessageBox.Show("角色删除成功！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Role deleted successfully!", "Prompt", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
     }
@@ -227,7 +227,7 @@ namespace DesktopApp.Control.Page.SystemManage.RoleManage
             this.SuspendLayout();
 
             // Form
-            this.Text = isEdit ? "修改角色" : "添加角色";
+            this.Text = isEdit ? "Edit Character" : "Add Character";
             this.Size = new System.Drawing.Size(400, 250);
             this.StartPosition = FormStartPosition.CenterParent;
             this.FormBorderStyle = FormBorderStyle.FixedDialog;
@@ -235,7 +235,7 @@ namespace DesktopApp.Control.Page.SystemManage.RoleManage
             this.MinimizeBox = false;
 
             // lblDepartment
-            this.lblDepartment.Text = "部门:";
+            this.lblDepartment.Text = "Department:";
             this.lblDepartment.Location = new System.Drawing.Point(20, 20);
             this.lblDepartment.Size = new System.Drawing.Size(60, 23);
 
@@ -245,7 +245,7 @@ namespace DesktopApp.Control.Page.SystemManage.RoleManage
             this._cmbDepartment.DropDownStyle = ComboBoxStyle.DropDownList;
 
             // lblRoleName
-            this.lblRoleName.Text = "角色名称:";
+            this.lblRoleName.Text = "Role Name:";
             this.lblRoleName.Location = new System.Drawing.Point(20, 60);
             this.lblRoleName.Size = new System.Drawing.Size(60, 23);
 
@@ -254,7 +254,7 @@ namespace DesktopApp.Control.Page.SystemManage.RoleManage
             this.txtRoleName.Size = new System.Drawing.Size(280, 20);
 
             // lblDescription
-            this.lblDescription.Text = "描述:";
+            this.lblDescription.Text = "Description:";
             this.lblDescription.Location = new System.Drawing.Point(20, 100);
             this.lblDescription.Size = new System.Drawing.Size(60, 23);
 
@@ -264,14 +264,14 @@ namespace DesktopApp.Control.Page.SystemManage.RoleManage
             this.txtDescription.Multiline = true;
 
             // btnOK
-            this.btnOK.Text = "确定";
+            this.btnOK.Text = "Confirm";
             this.btnOK.Location = new System.Drawing.Point(215, 180);
             this.btnOK.Size = new System.Drawing.Size(75, 23);
             this.btnOK.DialogResult = DialogResult.OK;
             this.btnOK.Click += new EventHandler(this.btnOK_Click);
 
             // btnCancel
-            this.btnCancel.Text = "取消";
+            this.btnCancel.Text = "Cancel";
             this.btnCancel.Location = new System.Drawing.Point(295, 180);
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
             this.btnCancel.DialogResult = DialogResult.Cancel;
@@ -307,13 +307,13 @@ namespace DesktopApp.Control.Page.SystemManage.RoleManage
         {
             if (string.IsNullOrWhiteSpace(txtRoleName.Text))
             {
-                MessageBox.Show("请输入角色名称！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Please enter the role name!", "Prompt", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
             if (_cmbDepartment.SelectedValue == null)
             {
-                MessageBox.Show("请选择部门！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Please select a department!", "Prompt", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
