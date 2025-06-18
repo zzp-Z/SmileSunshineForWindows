@@ -22,7 +22,6 @@ namespace DesktopApp.Control.Sidebar
         {
             this.logoControl = new LogoControl();
             this.menuPanel = new Panel();
-            this.userInfoControl = new UserInfoControl();
             this.SuspendLayout();
             // 
             // logoControl
@@ -30,7 +29,7 @@ namespace DesktopApp.Control.Sidebar
             this.logoControl.Dock = DockStyle.Top;
             this.logoControl.Location = new Point(0, 0);
             this.logoControl.Name = "logoControl";
-            this.logoControl.Size = new Size(250, 100);
+            this.logoControl.Size = new Size(250, 80);
             this.logoControl.TabIndex = 0;
             // 
             // menuPanel
@@ -42,14 +41,6 @@ namespace DesktopApp.Control.Sidebar
             this.menuPanel.Size = new Size(250, 400);
             this.menuPanel.TabIndex = 1;
             // 
-            // userInfoControl
-            // 
-            this.userInfoControl.Dock = DockStyle.Bottom;
-            this.userInfoControl.Location = new Point(0, 500);
-            this.userInfoControl.Name = "userInfoControl";
-            this.userInfoControl.Size = new Size(250, 100);
-            this.userInfoControl.TabIndex = 2;
-            // 
             // SidebarControl
             // 
             this.AutoScaleDimensions = new SizeF(6F, 13F);
@@ -57,7 +48,6 @@ namespace DesktopApp.Control.Sidebar
             this.BackColor = Color.FromArgb(45, 45, 45);
             this.Controls.Add(this.menuPanel);
             this.Controls.Add(this.logoControl);
-            this.Controls.Add(this.userInfoControl);
             this.Name = "SidebarControl";
             this.Size = new Size(250, 600);
             this.ResumeLayout(false);
@@ -67,6 +57,5 @@ namespace DesktopApp.Control.Sidebar
 
         private LogoControl logoControl;
         private Panel menuPanel;
-        private UserInfoControl userInfoControl;
     }
 }

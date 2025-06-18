@@ -116,12 +116,6 @@ namespace DesktopApp.Control.Sidebar
             menuControl?.SetMenuItems(menuItems);
         }
         
-        // 公共方法用于设置用户信息
-        public void SetUserInfo(string username, string position)
-        {
-            userInfoControl.SetUserInfo(username, position);
-        }
-        
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
