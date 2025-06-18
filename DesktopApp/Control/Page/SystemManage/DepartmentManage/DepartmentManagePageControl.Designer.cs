@@ -62,7 +62,7 @@ namespace DesktopApp.Control.Page.SystemManage.DepartmentManage
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new Size(75, 30);
             this.btnAdd.TabIndex = 0;
-            this.btnAdd.Text = "添加";
+            this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new EventHandler(this.btnAdd_Click);
             // 
@@ -72,7 +72,7 @@ namespace DesktopApp.Control.Page.SystemManage.DepartmentManage
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new Size(75, 30);
             this.btnEdit.TabIndex = 1;
-            this.btnEdit.Text = "编辑";
+            this.btnEdit.Text = "Edit";
             this.btnEdit.UseVisualStyleBackColor = true;
             this.btnEdit.Click += new EventHandler(this.btnEdit_Click);
             // 
@@ -82,7 +82,7 @@ namespace DesktopApp.Control.Page.SystemManage.DepartmentManage
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new Size(75, 30);
             this.btnDelete.TabIndex = 2;
-            this.btnDelete.Text = "删除";
+            this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new EventHandler(this.btnDelete_Click);
             // 
@@ -92,7 +92,7 @@ namespace DesktopApp.Control.Page.SystemManage.DepartmentManage
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new Size(75, 30);
             this.btnRefresh.TabIndex = 3;
-            this.btnRefresh.Text = "刷新";
+            this.btnRefresh.Text = "Refresh";
             this.btnRefresh.UseVisualStyleBackColor = true;
             this.btnRefresh.Click += new EventHandler(this.btnRefresh_Click);
             // 
