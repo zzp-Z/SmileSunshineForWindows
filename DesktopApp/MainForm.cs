@@ -216,7 +216,7 @@ namespace DesktopApp
                     pageControl = new DashboardPageControl(); // 临时使用Dashboard页面
                     break;
                 case "generate_delivery_notes_page":
-                    pageControl = new DesktopApp.Control.Page.DeliveryNotes.GenerateDeliveryNotesPageControl();
+                    pageControl = new DashboardPageControl();
                     break;
                 case "handling_goods_received_page":
                     pageControl = new DashboardPageControl(); // 临时使用Dashboard页面

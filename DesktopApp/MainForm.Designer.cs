@@ -46,20 +46,18 @@ namespace DesktopApp
             // 
             this.sidebarControl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
             this.sidebarControl.Dock = System.Windows.Forms.DockStyle.Left;
-            this.sidebarControl.Location = new System.Drawing.Point(0, 0);
             this.sidebarControl.Margin = new System.Windows.Forms.Padding(12, 11, 12, 11);
             this.sidebarControl.Name = "sidebarControl";
-            this.sidebarControl.Size = new System.Drawing.Size(500, 831);
-            this.sidebarControl.TabIndex = 0;
+            this.sidebarControl.Width = 500;
             // 
             // userInfoControl
             // 
             this.userInfoControl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.userInfoControl.Dock = System.Windows.Forms.DockStyle.Top;
+            this.userInfoControl.Location = new System.Drawing.Point(0, 0);
             this.userInfoControl.Margin = new System.Windows.Forms.Padding(12, 11, 12, 11);
             this.userInfoControl.Name = "userInfoControl";
-            this.userInfoControl.Size = new System.Drawing.Size(1100, 150);
-            this.userInfoControl.TabIndex = 2;
+            this.userInfoControl.Height = 150;
             
             // 
             // mainContentPanel
@@ -67,26 +65,22 @@ namespace DesktopApp
             this.mainContentPanel.BackColor = Color.Red;
             this.mainContentPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.mainContentPanel.Name = "mainContentPanel";
-            this.mainContentPanel.TabIndex = 0;
             // 
             // rightPanel
             // 
             this.rightPanel.BackColor = System.Drawing.Color.Aqua;
-            this.rightPanel.Controls.Add(this.userInfoControl);
             this.rightPanel.Controls.Add(this.mainContentPanel);
+            this.rightPanel.Controls.Add(this.userInfoControl);
             this.rightPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.rightPanel.Location = new System.Drawing.Point(500, 0);
             this.rightPanel.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.rightPanel.Name = "rightPanel";
-            this.rightPanel.Size = new System.Drawing.Size(1100, 831);
-            this.rightPanel.TabIndex = 1;
 
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1600, 831);
+            this.ClientSize = new System.Drawing.Size(1600, 800);
             this.Controls.Add(this.rightPanel);
             this.Controls.Add(this.sidebarControl);
             this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
