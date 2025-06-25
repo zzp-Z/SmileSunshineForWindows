@@ -33,6 +33,7 @@ namespace DesktopApp.Control.Page.Order
         private void InitializeComponent()
         {
             this.btnEdit = new Button();
+            this.btnExportPdf = new Button();
             this.dgvOrders = new DataGridView();
             this.flpOrderItems = new FlowLayoutPanel();
             this.lblOrders = new Label();
@@ -49,6 +50,16 @@ namespace DesktopApp.Control.Page.Order
             this.btnEdit.Text = "编辑订单";
             this.btnEdit.UseVisualStyleBackColor = true;
             this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
+            // 
+            // btnExportPdf
+            // 
+            this.btnExportPdf.Location = new System.Drawing.Point(100, 12);
+            this.btnExportPdf.Name = "btnExportPdf";
+            this.btnExportPdf.Size = new System.Drawing.Size(85, 23);
+            this.btnExportPdf.TabIndex = 5;
+            this.btnExportPdf.Text = "导出PDF";
+            this.btnExportPdf.UseVisualStyleBackColor = true;
+            this.btnExportPdf.Click += new System.EventHandler(this.btnExportPdf_Click);
             // 
             // dgvOrders
             // 
@@ -109,6 +120,7 @@ namespace DesktopApp.Control.Page.Order
             this.Controls.Add(this.lblOrders);
             this.Controls.Add(this.flpOrderItems);
             this.Controls.Add(this.dgvOrders);
+            this.Controls.Add(this.btnExportPdf);
             this.Controls.Add(this.btnEdit);
             this.Name = "OrderManage";
             this.Size = new System.Drawing.Size(800, 500);
@@ -120,6 +132,7 @@ namespace DesktopApp.Control.Page.Order
         #endregion
 
         private Button btnEdit;
+        private Button btnExportPdf;
         private DataGridView dgvOrders;
         private FlowLayoutPanel flpOrderItems;
         private Label lblOrders;
