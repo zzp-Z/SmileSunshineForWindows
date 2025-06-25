@@ -57,7 +57,7 @@ namespace DesktopApp.Control.Page.Product
             this.btnCreateOrder.Name = "btnCreateOrder";
             this.btnCreateOrder.Size = new Size(100, 30);
             this.btnCreateOrder.TabIndex = 0;
-            this.btnCreateOrder.Text = "创建订单";
+            this.btnCreateOrder.Text = "Create Order";
             this.btnCreateOrder.UseVisualStyleBackColor = true;
             this.btnCreateOrder.Click += new EventHandler(this.btnCreateOrder_Click);
             // 
@@ -67,7 +67,7 @@ namespace DesktopApp.Control.Page.Product
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new Size(80, 30);
             this.btnRefresh.TabIndex = 1;
-            this.btnRefresh.Text = "刷新";
+            this.btnRefresh.Text = "Refresh";
             this.btnRefresh.UseVisualStyleBackColor = true;
             this.btnRefresh.Click += new EventHandler(this.btnRefresh_Click);
             // 

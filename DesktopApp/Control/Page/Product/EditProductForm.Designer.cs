@@ -63,7 +63,7 @@ namespace DesktopApp.Control.Page.Product
             this.lblName.Name = "lblName";
             this.lblName.Size = new Size(65, 12);
             this.lblName.TabIndex = 0;
-            this.lblName.Text = "产品名称:";
+            this.lblName.Text = "Product Name:";
             // 
             // txtName
             // 
@@ -79,7 +79,7 @@ namespace DesktopApp.Control.Page.Product
             this.lblDescription.Name = "lblDescription";
             this.lblDescription.Size = new Size(65, 12);
             this.lblDescription.TabIndex = 2;
-            this.lblDescription.Text = "产品描述:";
+            this.lblDescription.Text = "Product Description:";
             // 
             // txtDescription
             // 
@@ -96,7 +96,7 @@ namespace DesktopApp.Control.Page.Product
             this.lblPrice.Name = "lblPrice";
             this.lblPrice.Size = new Size(77, 12);
             this.lblPrice.TabIndex = 4;
-            this.lblPrice.Text = "价格(分):";
+            this.lblPrice.Text = "Price (Cents):";
             // 
             // txtPrice
             // 
@@ -128,7 +128,7 @@ namespace DesktopApp.Control.Page.Product
             this.btnSelectImage.Name = "btnSelectImage";
             this.btnSelectImage.Size = new Size(75, 23);
             this.btnSelectImage.TabIndex = 8;
-            this.btnSelectImage.Text = "选择图片";
+            this.btnSelectImage.Text = "Select Image";
             this.btnSelectImage.UseVisualStyleBackColor = true;
             this.btnSelectImage.Click += new EventHandler(this.btnSelectImage_Click);
             // 
@@ -149,7 +149,7 @@ namespace DesktopApp.Control.Page.Product
             this.chkSafetyCertification.Name = "chkSafetyCertification";
             this.chkSafetyCertification.Size = new Size(72, 16);
             this.chkSafetyCertification.TabIndex = 12;
-            this.chkSafetyCertification.Text = "安全认证";
+            this.chkSafetyCertification.Text = "Security Authentication";
             this.chkSafetyCertification.UseVisualStyleBackColor = true;
             // 
             // chkIsPublic
@@ -159,7 +159,7 @@ namespace DesktopApp.Control.Page.Product
             this.chkIsPublic.Name = "chkIsPublic";
             this.chkIsPublic.Size = new Size(72, 16);
             this.chkIsPublic.TabIndex = 13;
-            this.chkIsPublic.Text = "公开产品";
+            this.chkIsPublic.Text = "Public Products";
             this.chkIsPublic.UseVisualStyleBackColor = true;
             // 
             // lblDesignId
@@ -169,7 +169,7 @@ namespace DesktopApp.Control.Page.Product
             this.lblDesignId.Name = "lblDesignId";
             this.lblDesignId.Size = new Size(53, 12);
             this.lblDesignId.TabIndex = 14;
-            this.lblDesignId.Text = "设计ID:";
+            this.lblDesignId.Text = "Design ID:";
             // 
             // txtDesignId
             // 
@@ -185,7 +185,7 @@ namespace DesktopApp.Control.Page.Product
             this.lblQuantity.Name = "lblQuantity";
             this.lblQuantity.Size = new Size(65, 12);
             this.lblQuantity.TabIndex = 10;
-            this.lblQuantity.Text = "库存数量:";
+            this.lblQuantity.Text = "Inventory Quantity:";
             // 
             // txtQuantity
             // 
@@ -200,7 +200,7 @@ namespace DesktopApp.Control.Page.Product
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new Size(75, 30);
             this.btnSave.TabIndex = 16;
-            this.btnSave.Text = "保存";
+            this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new EventHandler(this.btnSave_Click);
             // 
@@ -210,14 +210,14 @@ namespace DesktopApp.Control.Page.Product
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new Size(75, 30);
             this.btnCancel.TabIndex = 17;
-            this.btnCancel.Text = "取消";
+            this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new EventHandler(this.btnCancel_Click);
             // 
             // openFileDialog
             // 
-            this.openFileDialog.Filter = "图片文件|*.jpg;*.jpeg;*.png;*.bmp;*.gif";
-            this.openFileDialog.Title = "选择产品图片";
+            this.openFileDialog.Filter = "Image File|*.jpg;*.jpeg;*.png;*.bmp;*.gif";
+            this.openFileDialog.Title = "Select Product Image";
             // 
             // EditProductForm
             // 
@@ -247,7 +247,7 @@ namespace DesktopApp.Control.Page.Product
             this.MinimizeBox = false;
             this.Name = "EditProductForm";
             this.StartPosition = FormStartPosition.CenterParent;
-            this.Text = "编辑产品";
+            this.Text = "Edit Product";
             ((System.ComponentModel.ISupportInitialize)(this.picPreview)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -80,7 +80,7 @@ namespace DesktopApp.Control.Page.Product
             this.lblProductName.Name = "lblProductName";
             this.lblProductName.Size = new Size(200, 20);
             this.lblProductName.TabIndex = 0;
-            this.lblProductName.Text = "产品名称";
+            this.lblProductName.Text = "Product Name";
             // 
             // lblDescription
             // 
@@ -89,7 +89,7 @@ namespace DesktopApp.Control.Page.Product
             this.lblDescription.Name = "lblDescription";
             this.lblDescription.Size = new Size(300, 15);
             this.lblDescription.TabIndex = 1;
-            this.lblDescription.Text = "产品描述";
+            this.lblDescription.Text = "Product Description";
             // 
             // lblPrice
             // 
@@ -99,7 +99,7 @@ namespace DesktopApp.Control.Page.Product
             this.lblPrice.Name = "lblPrice";
             this.lblPrice.Size = new Size(100, 15);
             this.lblPrice.TabIndex = 2;
-            this.lblPrice.Text = "¥0.00";
+            this.lblPrice.Text = "$0.00";
             // 
             // lblStock
             // 
@@ -107,7 +107,7 @@ namespace DesktopApp.Control.Page.Product
             this.lblStock.Name = "lblStock";
             this.lblStock.Size = new Size(80, 15);
             this.lblStock.TabIndex = 3;
-            this.lblStock.Text = "库存: 0";
+            this.lblStock.Text = "Inventory: 0";
             // 
             // lblSafety
             // 
@@ -115,7 +115,7 @@ namespace DesktopApp.Control.Page.Product
             this.lblSafety.Name = "lblSafety";
             this.lblSafety.Size = new Size(80, 15);
             this.lblSafety.TabIndex = 4;
-            this.lblSafety.Text = "安全认证";
+            this.lblSafety.Text = "Security Authentication";
             // 
             // lblQuantityLabel
             // 
@@ -123,7 +123,7 @@ namespace DesktopApp.Control.Page.Product
             this.lblQuantityLabel.Name = "lblQuantityLabel";
             this.lblQuantityLabel.Size = new Size(50, 20);
             this.lblQuantityLabel.TabIndex = 5;
-            this.lblQuantityLabel.Text = "数量:";
+            this.lblQuantityLabel.Text = "Quantity:";
             this.lblQuantityLabel.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // numQuantity

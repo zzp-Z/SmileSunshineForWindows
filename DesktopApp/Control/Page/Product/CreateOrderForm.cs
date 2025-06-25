@@ -48,12 +48,12 @@ namespace DesktopApp.Control.Page.Product
                 
                 if (customers.Count == 0)
                 {
-                    MessageBox.Show("没有找到客户信息，请先添加客户。", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("No customer information found, please add the customer first.", "Hint", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"加载客户信息失败: {ex.Message}", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"Failed to load customer information: {ex.Message}", "Wrong", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         
@@ -65,8 +65,8 @@ namespace DesktopApp.Control.Page.Product
             {
                 var listItem = new ListViewItem(item.Product.Name);
                 listItem.SubItems.Add(item.Quantity.ToString());
-                listItem.SubItems.Add($"¥{(item.Product.PriceCents ?? 0) / 100.0m:F2}");
-                listItem.SubItems.Add($"¥{(item.Product.PriceCents ?? 0) * item.Quantity / 100.0m:F2}");
+                listItem.SubItems.Add($"${(item.Product.PriceCents ?? 0) / 100.0m:F2}");
+                listItem.SubItems.Add($"${(item.Product.PriceCents ?? 0) * item.Quantity / 100.0m:F2}");
                 listItem.Tag = item;
                 
                 listViewOrderItems.Items.Add(listItem);
@@ -80,9 +80,9 @@ namespace DesktopApp.Control.Page.Product
             decimal taxAmount = productAmount * 0.1m; // 假设税率为10%
             decimal totalAmount = productAmount + shippingCost + taxAmount;
             
-            lblProductAmount.Text = $"¥{productAmount:F2}";
-            lblTaxAmount.Text = $"¥{taxAmount:F2}";
-            lblTotalAmount.Text = $"¥{totalAmount:F2}";
+            lblProductAmount.Text = $"${productAmount:F2}";
+            lblTaxAmount.Text = $"${taxAmount:F2}";
+            lblTotalAmount.Text = $"${totalAmount:F2}";
         }
         
         private void numShippingCost_ValueChanged(object sender, EventArgs e)
@@ -103,7 +103,7 @@ namespace DesktopApp.Control.Page.Product
                 // 检查订单是否创建成功
                 if (orderId <= 0)
                 {
-                    MessageBox.Show("创建订单失败，请检查订单信息。", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Order creation failed. Please check the order information.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
                 
@@ -112,7 +112,7 @@ namespace DesktopApp.Control.Page.Product
                 {
                     if (!_productFunc.CheckProductStock(item.Product.Id, item.Quantity))
                     {
-                        MessageBox.Show($"产品 '{item.Product.Name}' 库存不足。当前需要 {item.Quantity} 件，请检查库存。", "库存不足", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        MessageBox.Show($"The inventory of product '{{item.Product.Name}}' is insufficient. Currently, {item.Quantity} pieces are needed. Please check the inventory.", "Inventory is insufficient.", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         return;
                     }
                 }
@@ -141,7 +141,7 @@ namespace DesktopApp.Control.Page.Product
                     // 减少产品库存
                     if (!_productFunc.ReduceProductStock(item.Product.Id, item.Quantity))
                     {
-                        MessageBox.Show($"减少产品 '{item.Product.Name}' 库存失败。", "库存更新失败", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        MessageBox.Show($"Failed to reduce the inventory of product '{item.Product.Name}'.", "Inventory update failed.", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         allItemsCreated = false;
                         break;
                     }
@@ -166,11 +166,11 @@ namespace DesktopApp.Control.Page.Product
                             }
                         }
                     }
-                    MessageBox.Show("创建订单项失败，订单可能不完整，已回滚库存变更。", "警告", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Failed to create order item. The order may be incomplete, and the inventory change has been rolled back.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
                 else
                 {
-                    MessageBox.Show("订单创建成功，产品库存已更新！", "成功", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Order created successfully. Product inventory has been updated!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 
                 this.DialogResult = DialogResult.OK;
@@ -178,7 +178,7 @@ namespace DesktopApp.Control.Page.Product
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"创建订单失败: {ex.Message}", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"Failed to create order: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         
@@ -186,25 +186,25 @@ namespace DesktopApp.Control.Page.Product
         {
             if (cmbCustomer.SelectedValue == null)
             {
-                MessageBox.Show("请选择客户。", "验证失败", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Please select a customer.", "Verification failed.", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
             
             if (string.IsNullOrWhiteSpace(txtOrderNumber.Text))
             {
-                MessageBox.Show("请输入订单号。", "验证失败", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Please enter the order number.", "Verification failed.", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
             
             if (string.IsNullOrWhiteSpace(txtShippingAddress.Text))
             {
-                MessageBox.Show("请输入配送地址。", "验证失败", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Please enter the delivery address.", "Verification failed.", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
             
             if (_orderItems.Count == 0)
             {
-                MessageBox.Show("订单中没有商品。", "验证失败", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("There are no items in the order.", "Verification failed.", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
             
@@ -243,11 +243,11 @@ namespace DesktopApp.Control.Page.Product
         {
             switch (chinesePaymentMethod)
             {
-                case "现金":
+                case "Cash":
                     return "cash";
-                case "信用卡":
+                case "Credit Card":
                     return "credit card";
-                case "银行转账":
+                case "Bank Transfer":
                     return "bank transfer";
                 default:
                     return "cash"; // 默认值
@@ -258,11 +258,11 @@ namespace DesktopApp.Control.Page.Product
         {
             switch (chineseStatus)
             {
-                case "待处理":
+                case "Pending":
                     return "pending";
-                case "已完成":
+                case "Completed":
                     return "completed";
-                case "已取消":
+                case "Cancelled":
                     return "cancelled";
                 default:
                     return "pending"; // 默认值
@@ -278,7 +278,7 @@ namespace DesktopApp.Control.Page.Product
         private void btnAddCustomer_Click(object sender, EventArgs e)
         {
             // 这里可以打开添加客户的窗体
-            MessageBox.Show("添加客户功能待实现。", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("Adding customer function is pending implementation.", "Prompt", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }

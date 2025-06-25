@@ -48,7 +48,7 @@ namespace DesktopApp.Control.Page.SystemManage.DepartmentManage
             this.lblName.Name = "lblName";
             this.lblName.Size = new Size(65, 13);
             this.lblName.TabIndex = 0;
-            this.lblName.Text = "部门名称：";
+            this.lblName.Text = "Department Name:";
             // 
             // txtName
             // 
@@ -65,7 +65,7 @@ namespace DesktopApp.Control.Page.SystemManage.DepartmentManage
             this.lblDescription.Name = "lblDescription";
             this.lblDescription.Size = new Size(65, 13);
             this.lblDescription.TabIndex = 2;
-            this.lblDescription.Text = "部门描述：";
+            this.lblDescription.Text = "Department Description:";
             // 
             // txtDescription
             // 
@@ -83,7 +83,7 @@ namespace DesktopApp.Control.Page.SystemManage.DepartmentManage
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new Size(75, 30);
             this.btnOK.TabIndex = 4;
-            this.btnOK.Text = "确定";
+            this.btnOK.Text = "Confirm";
             this.btnOK.UseVisualStyleBackColor = true;
             this.btnOK.Click += new EventHandler(this.btnOK_Click);
             // 
@@ -93,7 +93,7 @@ namespace DesktopApp.Control.Page.SystemManage.DepartmentManage
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new Size(75, 30);
             this.btnCancel.TabIndex = 5;
-            this.btnCancel.Text = "取消";
+            this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new EventHandler(this.btnCancel_Click);
             // 
@@ -115,7 +115,7 @@ namespace DesktopApp.Control.Page.SystemManage.DepartmentManage
             this.MinimizeBox = false;
             this.Name = "DepartmentAddEditForm";
             this.StartPosition = FormStartPosition.CenterParent;
-            this.Text = "部门管理";
+            this.Text = "Department Management";
             this.ResumeLayout(false);
             this.PerformLayout();
         }

@@ -29,9 +29,9 @@ namespace DesktopApp.Control.Page.Customer
             
             // 添加列
             listViewCustomers.Columns.Add("ID", 60);
-            listViewCustomers.Columns.Add("客户姓名", 150);
-            listViewCustomers.Columns.Add("客户地址", 200);
-            listViewCustomers.Columns.Add("联系电话", 120);
+            listViewCustomers.Columns.Add("Customer Name", 150);
+            listViewCustomers.Columns.Add("Customer Address", 200);
+            listViewCustomers.Columns.Add("Contact Number", 120);
         }
         
         private void LoadCustomers()
@@ -43,7 +43,7 @@ namespace DesktopApp.Control.Page.Customer
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"加载客户列表时发生错误: {ex.Message}", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"An error occurred while loading the customer list: {ex.Message}", "Wrong", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         
@@ -75,7 +75,7 @@ namespace DesktopApp.Control.Page.Customer
         {
             if (listViewCustomers.SelectedItems.Count == 0)
             {
-                MessageBox.Show("请选择要编辑的客户。", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Please select a customer to edit.", "Hint", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
             
@@ -91,13 +91,13 @@ namespace DesktopApp.Control.Page.Customer
         {
             if (listViewCustomers.SelectedItems.Count == 0)
             {
-                MessageBox.Show("请选择要删除的客户。", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Please select a customer to delete.", "Hint", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
             
             var selectedCustomer = (Database.Customer)listViewCustomers.SelectedItems[0].Tag;
             
-            var result = MessageBox.Show($"确定要删除客户 '{selectedCustomer.Name}' 吗？", "确认删除", 
+            var result = MessageBox.Show($"Are you sure you want to delete customer '{selectedCustomer.Name}' ?", "Confirm Delete", 
                 MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             
             if (result == DialogResult.Yes)
@@ -106,17 +106,17 @@ namespace DesktopApp.Control.Page.Customer
                 {
                     if (_customerFunc.DeleteCustomer(selectedCustomer.Id))
                     {
-                        MessageBox.Show("客户删除成功！", "成功", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Customer deleted successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         LoadCustomers();
                     }
                     else
                     {
-                        MessageBox.Show("客户删除失败，请重试。", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Customer deletion failed, please try again.", "Wrong", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show($"删除客户时发生错误: {ex.Message}", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show($"An error occurred while deleting the customer: {ex.Message}", "Wrong", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
@@ -139,7 +139,7 @@ namespace DesktopApp.Control.Page.Customer
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"搜索客户时发生错误: {ex.Message}", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"An error occurred while searching for customers: {ex.Message}", "Wrong", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         

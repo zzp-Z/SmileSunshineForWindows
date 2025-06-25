@@ -46,7 +46,7 @@ namespace DesktopApp.Control.Page.Product
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"加载产品数据失败: {ex.Message}", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"Failed to load product data:{ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         
@@ -56,7 +56,7 @@ namespace DesktopApp.Control.Page.Product
             
             if (selectedItems.Count == 0)
             {
-                MessageBox.Show("请选择要订购的产品并设置数量", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Please select the product to order and set the quantity.", "Prompt", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
             
@@ -70,7 +70,7 @@ namespace DesktopApp.Control.Page.Product
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"打开创建订单窗口失败: {ex.Message}", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"Failed to open the order creation window:{ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         

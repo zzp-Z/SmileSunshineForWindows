@@ -32,7 +32,7 @@ namespace DesktopApp.Control.Page.Product
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show($"无法加载图片: {ex.Message}", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show($"Cannot load image:{ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
@@ -42,7 +42,7 @@ namespace DesktopApp.Control.Page.Product
             // 验证输入
             if (string.IsNullOrWhiteSpace(txtName.Text))
             {
-                MessageBox.Show("请输入产品名称", "验证错误", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Please enter the product name.", "**Validation error**", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtName.Focus();
                 return;
             }
@@ -52,7 +52,7 @@ namespace DesktopApp.Control.Page.Product
             {
                 if (!int.TryParse(txtDesignId.Text, out designId))
                 {
-                    MessageBox.Show("设计ID必须是数字", "验证错误", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Design ID must be a number.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     txtDesignId.Focus();
                     return;
                 }
@@ -63,7 +63,7 @@ namespace DesktopApp.Control.Page.Product
             {
                 if (!int.TryParse(txtPrice.Text, out int price))
                 {
-                    MessageBox.Show("请输入有效的价格(分)", "验证错误", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Please enter a valid price (in cents).", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     txtPrice.Focus();
                     return;
                 }
@@ -75,7 +75,7 @@ namespace DesktopApp.Control.Page.Product
             {
                 if (!int.TryParse(txtQuantity.Text, out quantityInStock) || quantityInStock < 0)
                 {
-                    MessageBox.Show("请输入有效的库存数量（非负整数）", "验证错误", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Please enter a valid inventory quantity (non-negative integer).", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     txtQuantity.Focus();
                     return;
                 }
@@ -107,18 +107,18 @@ namespace DesktopApp.Control.Page.Product
                 // 保存到数据库
                 if (_productFunc.CreateProduct(product))
                 {
-                    MessageBox.Show("产品添加成功!", "成功", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Product added successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.DialogResult = DialogResult.OK;
                     this.Close();
                 }
                 else
                 {
-                    MessageBox.Show("产品添加失败，请检查数据库连接", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Product addition failed. Please check the database connection.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"保存产品时发生错误: {ex.Message}", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"An error occurred while saving the product:{ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         

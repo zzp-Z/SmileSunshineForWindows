@@ -59,7 +59,7 @@ namespace DesktopApp.Control.Page.Product
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show($"加载图片失败: {ex.Message}", "错误", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show($"Failed to load image.{ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
         }
@@ -83,7 +83,7 @@ namespace DesktopApp.Control.Page.Product
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show($"加载图片失败: {ex.Message}", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show($"Failed to load image.{ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
@@ -95,14 +95,14 @@ namespace DesktopApp.Control.Page.Product
                 // 验证输入
                 if (string.IsNullOrWhiteSpace(txtName.Text))
                 {
-                    MessageBox.Show("请输入产品名称", "验证错误", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Please enter the product name.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     txtName.Focus();
                     return;
                 }
 
                 if (!int.TryParse(txtPrice.Text, out int price) || price < 0)
                 {
-                    MessageBox.Show("请输入有效的价格（非负整数）", "验证错误", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Please enter a valid price (non-negative integer).", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     txtPrice.Focus();
                     return;
                 }
@@ -112,7 +112,7 @@ namespace DesktopApp.Control.Page.Product
                 {
                     if (!int.TryParse(txtDesignId.Text, out designId))
                     {
-                        MessageBox.Show("设计ID必须是数字", "验证错误", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        MessageBox.Show("Design ID must be a number.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         txtDesignId.Focus();
                         return;
                     }
@@ -120,7 +120,7 @@ namespace DesktopApp.Control.Page.Product
 
                 if (!int.TryParse(txtQuantity.Text, out int quantityInStock) || quantityInStock < 0)
                 {
-                    MessageBox.Show("请输入有效的库存数量（非负整数）", "验证错误", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Please enter a valid inventory quantity (non-negative integer).", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     txtQuantity.Focus();
                     return;
                 }
@@ -148,18 +148,18 @@ namespace DesktopApp.Control.Page.Product
 
                 if (success)
                 {
-                    MessageBox.Show("产品更新成功！", "成功", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Product updated successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.DialogResult = DialogResult.OK;
                     this.Close();
                 }
                 else
                 {
-                    MessageBox.Show("产品更新失败，请重试。", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Product update failed. Please try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"保存产品时发生错误: {ex.Message}", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"Error occurred while saving the product:{ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -171,7 +171,7 @@ namespace DesktopApp.Control.Page.Product
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"保存图片失败: {ex.Message}", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"Failed to save image:{ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return _product.ImageUrl; // 返回原图片路径
             }
         }

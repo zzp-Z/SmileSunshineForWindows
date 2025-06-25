@@ -45,77 +45,85 @@ namespace DesktopApp.Control.Page.Customer
             // lblName
             // 
             this.lblName.AutoSize = true;
-            this.lblName.Location = new System.Drawing.Point(30, 30);
+            this.lblName.Location = new System.Drawing.Point(45, 42);
+            this.lblName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(65, 17);
+            this.lblName.Size = new System.Drawing.Size(178, 24);
             this.lblName.TabIndex = 0;
-            this.lblName.Text = "客户姓名:";
+            this.lblName.Text = "Customer Name:";
             // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(120, 27);
+            this.txtName.Location = new System.Drawing.Point(220, 38);
+            this.txtName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(250, 25);
+            this.txtName.Size = new System.Drawing.Size(333, 35);
             this.txtName.TabIndex = 1;
             // 
             // lblAddress
             // 
             this.lblAddress.AutoSize = true;
-            this.lblAddress.Location = new System.Drawing.Point(30, 70);
+            this.lblAddress.Location = new System.Drawing.Point(45, 99);
+            this.lblAddress.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblAddress.Name = "lblAddress";
-            this.lblAddress.Size = new System.Drawing.Size(65, 17);
+            this.lblAddress.Size = new System.Drawing.Size(214, 24);
             this.lblAddress.TabIndex = 2;
-            this.lblAddress.Text = "客户地址:";
+            this.lblAddress.Text = "Customer Address:";
             // 
             // txtAddress
             // 
-            this.txtAddress.Location = new System.Drawing.Point(120, 67);
+            this.txtAddress.Location = new System.Drawing.Point(251, 95);
+            this.txtAddress.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtAddress.Multiline = true;
             this.txtAddress.Name = "txtAddress";
-            this.txtAddress.Size = new System.Drawing.Size(250, 60);
+            this.txtAddress.Size = new System.Drawing.Size(302, 83);
             this.txtAddress.TabIndex = 3;
             // 
             // lblPhone
             // 
             this.lblPhone.AutoSize = true;
-            this.lblPhone.Location = new System.Drawing.Point(30, 150);
+            this.lblPhone.Location = new System.Drawing.Point(45, 212);
+            this.lblPhone.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPhone.Name = "lblPhone";
-            this.lblPhone.Size = new System.Drawing.Size(65, 17);
+            this.lblPhone.Size = new System.Drawing.Size(190, 24);
             this.lblPhone.TabIndex = 4;
-            this.lblPhone.Text = "联系电话:";
+            this.lblPhone.Text = "Contact Number:";
             // 
             // txtPhone
             // 
-            this.txtPhone.Location = new System.Drawing.Point(120, 147);
+            this.txtPhone.Location = new System.Drawing.Point(251, 208);
+            this.txtPhone.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtPhone.Name = "txtPhone";
-            this.txtPhone.Size = new System.Drawing.Size(250, 25);
+            this.txtPhone.Size = new System.Drawing.Size(302, 35);
             this.txtPhone.TabIndex = 5;
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(120, 200);
+            this.btnSave.Location = new System.Drawing.Point(180, 282);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(100, 35);
+            this.btnSave.Size = new System.Drawing.Size(150, 49);
             this.btnSave.TabIndex = 6;
-            this.btnSave.Text = "保存";
+            this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(270, 200);
+            this.btnCancel.Location = new System.Drawing.Point(405, 282);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(100, 35);
+            this.btnCancel.Size = new System.Drawing.Size(150, 49);
             this.btnCancel.TabIndex = 7;
-            this.btnCancel.Text = "取消";
+            this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // AddCustomer
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(420, 270);
+            this.ClientSize = new System.Drawing.Size(630, 381);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.txtPhone);
@@ -124,8 +132,9 @@ namespace DesktopApp.Control.Page.Customer
             this.Controls.Add(this.lblAddress);
             this.Controls.Add(this.txtName);
             this.Controls.Add(this.lblName);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "AddCustomer";
-            this.Text = "添加客户";
+            this.Text = "Add Customer";
             this.ResumeLayout(false);
             this.PerformLayout();
         }

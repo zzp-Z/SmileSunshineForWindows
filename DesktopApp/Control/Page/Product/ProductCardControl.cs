@@ -91,7 +91,7 @@ namespace DesktopApp.Control.Page.Product
             {
                 Location = new Point(140, 15),
                 Size = new Size(150, 20),
-                Font = new Font("微软雅黑", 10, FontStyle.Bold),
+                Font = new Font("Microsoft YaHei", 10, FontStyle.Bold),
                 ForeColor = Color.Black
             };
             _contentPanel.Controls.Add(_nameLabel);
@@ -101,7 +101,7 @@ namespace DesktopApp.Control.Page.Product
             {
                 Location = new Point(140, 40),
                 Size = new Size(200, 40),
-                Font = new Font("微软雅黑", 9),
+                Font = new Font("Microsoft YaHei", 9),
                 ForeColor = Color.Gray,
                 AutoEllipsis = true
             };
@@ -112,7 +112,7 @@ namespace DesktopApp.Control.Page.Product
             {
                 Location = new Point(360, 15),
                 Size = new Size(100, 20),
-                Font = new Font("微软雅黑", 9, FontStyle.Bold),
+                Font = new Font("Microsoft YaHei", 9, FontStyle.Bold),
                 ForeColor = Color.Red,
                 TextAlign = ContentAlignment.MiddleLeft
             };
@@ -123,7 +123,7 @@ namespace DesktopApp.Control.Page.Product
             {
                 Location = new Point(360, 40),
                 Size = new Size(80, 20),
-                Font = new Font("微软雅黑", 8),
+                Font = new Font("Microsoft YaHei", 8),
                 ForeColor = Color.Green,
                 TextAlign = ContentAlignment.MiddleLeft
             };
@@ -134,7 +134,7 @@ namespace DesktopApp.Control.Page.Product
             {
                 Location = new Point(450, 40),
                 Size = new Size(60, 20),
-                Font = new Font("微软雅黑", 8),
+                Font = new Font("Microsoft YaHei", 8),
                 ForeColor = Color.Blue,
                 TextAlign = ContentAlignment.MiddleLeft
             };
@@ -145,7 +145,7 @@ namespace DesktopApp.Control.Page.Product
             {
                 Location = new Point(520, 15),
                 Size = new Size(120, 20),
-                Font = new Font("微软雅黑", 8),
+                Font = new Font("Microsoft YaHei", 8),
                 ForeColor = Color.Gray,
                 TextAlign = ContentAlignment.MiddleLeft
             };
@@ -156,7 +156,7 @@ namespace DesktopApp.Control.Page.Product
             {
                 Location = new Point(360, 65),
                 Size = new Size(150, 20),
-                Font = new Font("微软雅黑", 9, FontStyle.Bold),
+                Font = new Font("Microsoft YaHei", 9, FontStyle.Bold),
                 ForeColor = Color.DarkBlue,
                 TextAlign = ContentAlignment.MiddleLeft
             };
@@ -168,19 +168,19 @@ namespace DesktopApp.Control.Page.Product
             if (_product == null) return;
             
             // 更新产品名称
-            _nameLabel.Text = _product.Name ?? "未命名产品";
+            _nameLabel.Text = _product.Name ?? "暂无描述";
             
             // 更新产品描述
-            _descriptionLabel.Text = _product.Description ?? "暂无描述";
+            _descriptionLabel.Text = _product.Description ?? "No Description";
             
             // 更新价格
             if (_product.PriceCents.HasValue)
             {
-                _priceLabel.Text = $"¥{_product.PriceCents.Value / 100.0:F2}";
+                _priceLabel.Text = $"${_product.PriceCents.Value / 100.0:F2}";
             }
             else
             {
-                _priceLabel.Text = "价格未设置";
+                _priceLabel.Text = "Price Not Set";
             }
             
             // 更新安全认证
@@ -188,7 +188,7 @@ namespace DesktopApp.Control.Page.Product
             _certificationLabel.ForeColor = (_product.SafetyCertification ?? false) ? Color.Green : Color.Orange;
             
             // 更新公开状态
-            _statusLabel.Text = _product.IsPublic ? "公开" : "私有";
+            _statusLabel.Text = _product.IsPublic ? "Public" : "Private";
             _statusLabel.ForeColor = _product.IsPublic ? Color.Blue : Color.Gray;
             
             // 更新创建时间
@@ -198,11 +198,11 @@ namespace DesktopApp.Control.Page.Product
             }
             else
             {
-                _createDateLabel.Text = "未知时间";
+                _createDateLabel.Text = "Unknown Time";
             }
 
             // 更新库存数量
-            _quantityLabel.Text = $"库存: {_product.QuantityInStock}";
+            _quantityLabel.Text = $"Inventory: {_product.QuantityInStock}";
             _quantityLabel.ForeColor = _product.QuantityInStock > 0 ? Color.DarkBlue : Color.Red;
             
             // 更新产品图片

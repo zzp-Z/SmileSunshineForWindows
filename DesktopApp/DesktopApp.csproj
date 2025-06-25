@@ -260,6 +260,12 @@
     <Compile Include="Utils\ImageConfig.cs" />
     <Compile Include="Utils\ImageManager.cs" />
     <Compile Include="Utils\ImageMigrationHelper.cs" />
+    <EmbeddedResource Include="Control\Page\Customer\AddCustomer.resx">
+      <DependentUpon>AddCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\Page\Customer\CustomerManagerPageControl.resx">
+      <DependentUpon>CustomerManagerPageControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Control\Sidebar\SidebarControl.resx">
       <DependentUpon>SidebarControl.cs</DependentUpon>
     </EmbeddedResource>

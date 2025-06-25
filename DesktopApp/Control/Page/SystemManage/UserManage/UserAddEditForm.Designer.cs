@@ -58,7 +58,7 @@ namespace DesktopApp.Control.Page.SystemManage.UserManage
             this.departmentLabel.Name = "departmentLabel";
             this.departmentLabel.Size = new System.Drawing.Size(41, 12);
             this.departmentLabel.TabIndex = 0;
-            this.departmentLabel.Text = "部门:";
+            this.departmentLabel.Text = "Department:";
             // 
             // departmentComboBox
             // 
@@ -77,7 +77,7 @@ namespace DesktopApp.Control.Page.SystemManage.UserManage
             this.roleLabel.Name = "roleLabel";
             this.roleLabel.Size = new System.Drawing.Size(41, 12);
             this.roleLabel.TabIndex = 2;
-            this.roleLabel.Text = "角色:";
+            this.roleLabel.Text = "Role:";
             // 
             // roleComboBox
             // 
@@ -95,7 +95,7 @@ namespace DesktopApp.Control.Page.SystemManage.UserManage
             this.usernameLabel.Name = "usernameLabel";
             this.usernameLabel.Size = new System.Drawing.Size(53, 12);
             this.usernameLabel.TabIndex = 4;
-            this.usernameLabel.Text = "用户名:";
+            this.usernameLabel.Text = "Username:";
             // 
             // usernameTextBox
             // 
@@ -111,7 +111,7 @@ namespace DesktopApp.Control.Page.SystemManage.UserManage
             this.passwordLabel.Name = "passwordLabel";
             this.passwordLabel.Size = new System.Drawing.Size(41, 12);
             this.passwordLabel.TabIndex = 6;
-            this.passwordLabel.Text = "密码:";
+            this.passwordLabel.Text = "Password:";
             // 
             // passwordTextBox
             // 
@@ -128,7 +128,7 @@ namespace DesktopApp.Control.Page.SystemManage.UserManage
             this.realNameLabel.Name = "realNameLabel";
             this.realNameLabel.Size = new System.Drawing.Size(65, 12);
             this.realNameLabel.TabIndex = 8;
-            this.realNameLabel.Text = "真实姓名:";
+            this.realNameLabel.Text = "Real Name:";
             // 
             // realNameTextBox
             // 
@@ -144,7 +144,7 @@ namespace DesktopApp.Control.Page.SystemManage.UserManage
             this.genderLabel.Name = "genderLabel";
             this.genderLabel.Size = new System.Drawing.Size(41, 12);
             this.genderLabel.TabIndex = 10;
-            this.genderLabel.Text = "性别:";
+            this.genderLabel.Text = "Gender:";
             // 
             // genderComboBox
             // 
@@ -162,7 +162,7 @@ namespace DesktopApp.Control.Page.SystemManage.UserManage
             this.emailLabel.Name = "emailLabel";
             this.emailLabel.Size = new System.Drawing.Size(41, 12);
             this.emailLabel.TabIndex = 12;
-            this.emailLabel.Text = "邮箱:";
+            this.emailLabel.Text = "Email:";
             // 
             // emailTextBox
             // 
@@ -178,7 +178,7 @@ namespace DesktopApp.Control.Page.SystemManage.UserManage
             this.phoneLabel.Name = "phoneLabel";
             this.phoneLabel.Size = new System.Drawing.Size(41, 12);
             this.phoneLabel.TabIndex = 14;
-            this.phoneLabel.Text = "电话:";
+            this.phoneLabel.Text = "Phone:";
             // 
             // phoneTextBox
             // 
@@ -193,7 +193,7 @@ namespace DesktopApp.Control.Page.SystemManage.UserManage
             this.saveButton.Name = "saveButton";
             this.saveButton.Size = new System.Drawing.Size(75, 23);
             this.saveButton.TabIndex = 16;
-            this.saveButton.Text = "保存";
+            this.saveButton.Text = "Save";
             this.saveButton.UseVisualStyleBackColor = true;
             this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
             // 
@@ -203,7 +203,7 @@ namespace DesktopApp.Control.Page.SystemManage.UserManage
             this.cancelButton.Name = "cancelButton";
             this.cancelButton.Size = new System.Drawing.Size(75, 23);
             this.cancelButton.TabIndex = 17;
-            this.cancelButton.Text = "取消";
+            this.cancelButton.Text = "Cancel";
             this.cancelButton.UseVisualStyleBackColor = true;
             this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
             // 
@@ -235,7 +235,7 @@ namespace DesktopApp.Control.Page.SystemManage.UserManage
             this.MinimizeBox = false;
             this.Name = "UserAddEditForm";
             this.StartPosition = FormStartPosition.CenterParent;
-            this.Text = "用户管理";
+            this.Text = "User Management";
             this.ResumeLayout(false);
             this.PerformLayout();
         }

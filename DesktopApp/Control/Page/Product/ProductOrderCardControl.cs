@@ -27,20 +27,20 @@ namespace DesktopApp.Control.Page.Product
         {
             if (_product == null) return;
             
-            lblProductName.Text = _product.Name ?? "未命名产品";
-            lblDescription.Text = _product.Description ?? "暂无描述";
+            lblProductName.Text = _product.Name ?? "Unnamed product";
+            lblDescription.Text = _product.Description ?? "No description yet";
             
             // 正确显示价格：PriceCents除以100转换为元
             if (_product.PriceCents.HasValue)
             {
-                lblPrice.Text = $"¥{_product.PriceCents.Value / 100.0:F2}";
+                lblPrice.Text = $"${_product.PriceCents.Value / 100.0:F2}";
             }
             else
             {
-                lblPrice.Text = "价格未设置";
+                lblPrice.Text = "Price not set";
             }
             
-            lblStock.Text = $"库存: {_product.QuantityInStock}";
+            lblStock.Text = $"Inventory:{_product.QuantityInStock}";
             
             // 设置数量选择器的最大值
             numQuantity.Maximum = _product.QuantityInStock;
@@ -66,12 +66,12 @@ namespace DesktopApp.Control.Page.Product
             // 显示安全认证状态
             if (_product.SafetyCertification == true)
             {
-                lblSafety.Text = "✓ 安全认证";
+                lblSafety.Text = "✓ Safety certification";
                 lblSafety.ForeColor = Color.Green;
             }
             else
             {
-                lblSafety.Text = "✗ 无认证";
+                lblSafety.Text = "✗ No certification";
                 lblSafety.ForeColor = Color.Gray;
             }
             
@@ -105,7 +105,7 @@ namespace DesktopApp.Control.Page.Product
             catch (Exception ex)
             {
                 SetDefaultImage();
-                Console.WriteLine($"加载产品图片失败: {ex.Message}");
+                Console.WriteLine($"Failed to load product images: {ex.Message}");
             }
         }
         

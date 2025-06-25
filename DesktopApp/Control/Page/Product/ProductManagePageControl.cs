@@ -53,7 +53,7 @@ namespace DesktopApp.Control.Page.Product
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"加载产品数据失败: {ex.Message}", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"Failed to Load Product Data:{ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         
@@ -74,7 +74,7 @@ namespace DesktopApp.Control.Page.Product
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"打开添加产品窗口失败: {ex.Message}", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"Failed to Open Add Product Window:{ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         
@@ -84,13 +84,13 @@ namespace DesktopApp.Control.Page.Product
             
             if (selectedProducts.Count == 0)
             {
-                MessageBox.Show("请选择要编辑的产品", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Please select the product to edit", "Prompt", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
             
             if (selectedProducts.Count > 1)
             {
-                MessageBox.Show("编辑功能只能选择一个产品", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Only one product can be selected for the editing function.", "Prompt", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
             
@@ -104,7 +104,7 @@ namespace DesktopApp.Control.Page.Product
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"打开编辑产品窗口失败: {ex.Message}", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"Failed to Open Edit Product Window: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         
@@ -114,15 +114,15 @@ namespace DesktopApp.Control.Page.Product
             
             if (selectedProducts.Count == 0)
             {
-                MessageBox.Show("请选择要删除的产品", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Please select the product to delete", "Prompt", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
             
             string message = selectedProducts.Count == 1 
-                ? $"确定要删除产品 '{selectedProducts[0].Name}' 吗？"
-                : $"确定要删除选中的 {selectedProducts.Count} 个产品吗？";
+                ? $"Are you sure you want to delete the product '{selectedProducts[0].Name}'?"
+                : $"Are you sure you want to delete the selected {selectedProducts.Count} products?";
                 
-            if (MessageBox.Show(message, "确认删除", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            if (MessageBox.Show(message, "Confirm Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 try
                 {
@@ -141,20 +141,20 @@ namespace DesktopApp.Control.Page.Product
                         }
                     }
                     
-                    string resultMessage = $"删除完成：成功 {successCount} 个";
+                    string resultMessage = $"Delete completed: {successCount} successful";
                     if (failCount > 0)
                     {
-                        resultMessage += $"，失败 {failCount} 个";
+                        resultMessage += $", {failCount} failed";
                     }
                     
-                    MessageBox.Show(resultMessage, "删除结果", MessageBoxButtons.OK, 
+                    MessageBox.Show(resultMessage, "Delete result", MessageBoxButtons.OK, 
                         failCount > 0 ? MessageBoxIcon.Warning : MessageBoxIcon.Information);
                     
                     LoadProducts(); // 重新加载数据
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show($"删除产品失败: {ex.Message}", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show($"Delete product failed:{ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
@@ -169,9 +169,9 @@ namespace DesktopApp.Control.Page.Product
             try
             {
                 var confirmResult = MessageBox.Show(
-                    "这将把所有产品图片迁移到当前配置的存储位置。\n" +
-                    "迁移过程可能需要一些时间，确定要继续吗？",
-                    "确认图片迁移",
+                    "This will migrate all product images to the currently configured storage location.\n" +
+                    "The migration process may take some time. Are you sure you want to proceed?",
+                    "Confirm image migration",
                     MessageBoxButtons.YesNo,
                     MessageBoxIcon.Question);
                 
@@ -195,7 +195,7 @@ namespace DesktopApp.Control.Page.Product
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"图片迁移失败: {ex.Message}", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"Image migration failed:{ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             finally
             {
@@ -213,8 +213,8 @@ namespace DesktopApp.Control.Page.Product
                     {
                         // 设置已更新，可以选择刷新产品列表
                         var refreshResult = MessageBox.Show(
-                            "图片存储设置已更新。是否要刷新产品列表以应用新设置？",
-                            "设置已更新",
+                            "The image storage settings have been updated. Do you want to refresh the product list to apply the new settings?",
+                            "Settings updated",
                             MessageBoxButtons.YesNo,
                             MessageBoxIcon.Question);
                         
@@ -227,7 +227,7 @@ namespace DesktopApp.Control.Page.Product
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"打开图片设置失败: {ex.Message}", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"Failed to open image settings:{ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         

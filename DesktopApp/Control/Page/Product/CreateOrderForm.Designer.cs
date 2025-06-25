@@ -94,7 +94,7 @@ namespace DesktopApp.Control.Page.Product
             this.groupBoxCustomer.Size = new Size(760, 60);
             this.groupBoxCustomer.TabIndex = 0;
             this.groupBoxCustomer.TabStop = false;
-            this.groupBoxCustomer.Text = "客户信息";
+            this.groupBoxCustomer.Text = "Customer Information";
             // 
             // lblCustomer
             // 
@@ -103,7 +103,7 @@ namespace DesktopApp.Control.Page.Product
             this.lblCustomer.Name = "lblCustomer";
             this.lblCustomer.Size = new Size(41, 12);
             this.lblCustomer.TabIndex = 0;
-            this.lblCustomer.Text = "客户:";
+            this.lblCustomer.Text = "Customer:";
             // 
             // cmbCustomer
             // 
@@ -120,7 +120,7 @@ namespace DesktopApp.Control.Page.Product
             this.btnAddCustomer.Name = "btnAddCustomer";
             this.btnAddCustomer.Size = new Size(80, 25);
             this.btnAddCustomer.TabIndex = 2;
-            this.btnAddCustomer.Text = "添加客户";
+            this.btnAddCustomer.Text = "Add Customer";
             this.btnAddCustomer.UseVisualStyleBackColor = true;
             this.btnAddCustomer.Click += new EventHandler(this.btnAddCustomer_Click);
             // 
@@ -151,7 +151,7 @@ namespace DesktopApp.Control.Page.Product
             this.groupBoxOrderInfo.Size = new Size(760, 180);
             this.groupBoxOrderInfo.TabIndex = 1;
             this.groupBoxOrderInfo.TabStop = false;
-            this.groupBoxOrderInfo.Text = "订单信息";
+            this.groupBoxOrderInfo.Text = "Order Information";
             // 
             // lblOrderNumber
             // 
@@ -160,7 +160,7 @@ namespace DesktopApp.Control.Page.Product
             this.lblOrderNumber.Name = "lblOrderNumber";
             this.lblOrderNumber.Size = new Size(53, 12);
             this.lblOrderNumber.TabIndex = 0;
-            this.lblOrderNumber.Text = "订单号:";
+            this.lblOrderNumber.Text = "Order Number:";
             // 
             // txtOrderNumber
             // 
@@ -176,13 +176,13 @@ namespace DesktopApp.Control.Page.Product
             this.lblPaymentMethod.Name = "lblPaymentMethod";
             this.lblPaymentMethod.Size = new Size(65, 12);
             this.lblPaymentMethod.TabIndex = 2;
-            this.lblPaymentMethod.Text = "支付方式:";
+            this.lblPaymentMethod.Text = "Payment Methods:";
             // 
             // cmbPaymentMethod
             // 
             this.cmbPaymentMethod.DropDownStyle = ComboBoxStyle.DropDownList;
             this.cmbPaymentMethod.FormattingEnabled = true;
-            this.cmbPaymentMethod.Items.AddRange(new object[] { "现金", "信用卡", "银行转账" });
+            this.cmbPaymentMethod.Items.AddRange(new object[] { "Cash", "Credit Card", "Bank Transfer" });
             this.cmbPaymentMethod.Location = new Point(321, 22);
             this.cmbPaymentMethod.Name = "cmbPaymentMethod";
             this.cmbPaymentMethod.Size = new Size(120, 20);
@@ -195,7 +195,7 @@ namespace DesktopApp.Control.Page.Product
             this.lblOrderDate.Name = "lblOrderDate";
             this.lblOrderDate.Size = new Size(65, 12);
             this.lblOrderDate.TabIndex = 4;
-            this.lblOrderDate.Text = "订单日期:";
+            this.lblOrderDate.Text = "Order Date:";
             // 
             // dtpOrderDate
             // 
@@ -212,7 +212,7 @@ namespace DesktopApp.Control.Page.Product
             this.lblDeliveryDate.Name = "lblDeliveryDate";
             this.lblDeliveryDate.Size = new Size(65, 12);
             this.lblDeliveryDate.TabIndex = 6;
-            this.lblDeliveryDate.Text = "交付日期:";
+            this.lblDeliveryDate.Text = "Delivery Date:";
             // 
             // dtpDeliveryDate
             // 
@@ -229,13 +229,13 @@ namespace DesktopApp.Control.Page.Product
             this.lblStatus.Name = "lblStatus";
             this.lblStatus.Size = new Size(41, 12);
             this.lblStatus.TabIndex = 8;
-            this.lblStatus.Text = "状态:";
+            this.lblStatus.Text = "Status:";
             // 
             // cmbStatus
             // 
             this.cmbStatus.DropDownStyle = ComboBoxStyle.DropDownList;
             this.cmbStatus.FormattingEnabled = true;
-            this.cmbStatus.Items.AddRange(new object[] { "待处理", "已完成", "已取消" });
+            this.cmbStatus.Items.AddRange(new object[] { "Pending", "Completed", "Cancelled" });
             this.cmbStatus.Location = new Point(517, 22);
             this.cmbStatus.Name = "cmbStatus";
             this.cmbStatus.Size = new Size(100, 20);
@@ -248,7 +248,7 @@ namespace DesktopApp.Control.Page.Product
             this.lblShippingAddress.Name = "lblShippingAddress";
             this.lblShippingAddress.Size = new Size(65, 12);
             this.lblShippingAddress.TabIndex = 10;
-            this.lblShippingAddress.Text = "配送地址:";
+            this.lblShippingAddress.Text = "Delivery Address:";
             // 
             // txtShippingAddress
             // 
@@ -265,7 +265,7 @@ namespace DesktopApp.Control.Page.Product
             this.lblPaymentTerms.Name = "lblPaymentTerms";
             this.lblPaymentTerms.Size = new Size(65, 12);
             this.lblPaymentTerms.TabIndex = 12;
-            this.lblPaymentTerms.Text = "付款条件:";
+            this.lblPaymentTerms.Text = "Payment Terms:";
             // 
             // txtPaymentTerms
             // 
@@ -282,7 +282,7 @@ namespace DesktopApp.Control.Page.Product
             this.lblDownPaymentPercent.Name = "lblDownPaymentPercent";
             this.lblDownPaymentPercent.Size = new Size(89, 12);
             this.lblDownPaymentPercent.TabIndex = 14;
-            this.lblDownPaymentPercent.Text = "预付款比例(%):";
+            this.lblDownPaymentPercent.Text = "Advance Payment Ratio (%):";
             // 
             // numDownPaymentPercent
             // 
@@ -299,7 +299,7 @@ namespace DesktopApp.Control.Page.Product
             this.chkDownPaymentPaid.Name = "chkDownPaymentPaid";
             this.chkDownPaymentPaid.Size = new Size(96, 16);
             this.chkDownPaymentPaid.TabIndex = 16;
-            this.chkDownPaymentPaid.Text = "预付款已支付";
+            this.chkDownPaymentPaid.Text = "Advance Payment Paid";
             this.chkDownPaymentPaid.UseVisualStyleBackColor = true;
             // 
             // chkIsCustomized
@@ -309,7 +309,7 @@ namespace DesktopApp.Control.Page.Product
             this.chkIsCustomized.Name = "chkIsCustomized";
             this.chkIsCustomized.Size = new Size(72, 16);
             this.chkIsCustomized.TabIndex = 17;
-            this.chkIsCustomized.Text = "定制订单";
+            this.chkIsCustomized.Text = "Custom Order";
             this.chkIsCustomized.UseVisualStyleBackColor = true;
             // 
             // lblSpecialRequirements
@@ -319,7 +319,7 @@ namespace DesktopApp.Control.Page.Product
             this.lblSpecialRequirements.Name = "lblSpecialRequirements";
             this.lblSpecialRequirements.Size = new Size(65, 12);
             this.lblSpecialRequirements.TabIndex = 18;
-            this.lblSpecialRequirements.Text = "特殊要求:";
+            this.lblSpecialRequirements.Text = "Special Requirements:";
             // 
             // txtSpecialRequirements
             // 
@@ -336,7 +336,7 @@ namespace DesktopApp.Control.Page.Product
             this.groupBoxOrderItems.Size = new Size(500, 200);
             this.groupBoxOrderItems.TabIndex = 2;
             this.groupBoxOrderItems.TabStop = false;
-            this.groupBoxOrderItems.Text = "订单商品";
+            this.groupBoxOrderItems.Text = "Order Items";
             // 
             // listViewOrderItems
             // 
@@ -353,22 +353,22 @@ namespace DesktopApp.Control.Page.Product
             // 
             // columnHeaderProduct
             // 
-            this.columnHeaderProduct.Text = "产品名称";
+            this.columnHeaderProduct.Text = "Product Name";
             this.columnHeaderProduct.Width = 200;
             // 
             // columnHeaderQuantity
             // 
-            this.columnHeaderQuantity.Text = "数量";
+            this.columnHeaderQuantity.Text = "Quantity";
             this.columnHeaderQuantity.Width = 80;
             // 
             // columnHeaderUnitPrice
             // 
-            this.columnHeaderUnitPrice.Text = "单价";
+            this.columnHeaderUnitPrice.Text = "Unit Price";
             this.columnHeaderUnitPrice.Width = 100;
             // 
             // columnHeaderTotalPrice
             // 
-            this.columnHeaderTotalPrice.Text = "小计";
+            this.columnHeaderTotalPrice.Text = "Subtotal";
             this.columnHeaderTotalPrice.Width = 100;
             // 
             // groupBoxTotals
@@ -386,7 +386,7 @@ namespace DesktopApp.Control.Page.Product
             this.groupBoxTotals.Size = new Size(254, 200);
             this.groupBoxTotals.TabIndex = 3;
             this.groupBoxTotals.TabStop = false;
-            this.groupBoxTotals.Text = "费用明细";
+            this.groupBoxTotals.Text = "Expense Details";
             // 
             // lblProductAmountLabel
             // 
@@ -395,7 +395,7 @@ namespace DesktopApp.Control.Page.Product
             this.lblProductAmountLabel.Name = "lblProductAmountLabel";
             this.lblProductAmountLabel.Size = new Size(65, 12);
             this.lblProductAmountLabel.TabIndex = 0;
-            this.lblProductAmountLabel.Text = "商品金额:";
+            this.lblProductAmountLabel.Text = "Commodity Amount:";
             // 
             // lblProductAmount
             // 
@@ -406,7 +406,7 @@ namespace DesktopApp.Control.Page.Product
             this.lblProductAmount.Name = "lblProductAmount";
             this.lblProductAmount.Size = new Size(42, 17);
             this.lblProductAmount.TabIndex = 1;
-            this.lblProductAmount.Text = "¥0.00";
+            this.lblProductAmount.Text = "$0.00";
             // 
             // lblShippingCost
             // 
@@ -415,7 +415,7 @@ namespace DesktopApp.Control.Page.Product
             this.lblShippingCost.Name = "lblShippingCost";
             this.lblShippingCost.Size = new Size(53, 12);
             this.lblShippingCost.TabIndex = 2;
-            this.lblShippingCost.Text = "运费:";
+            this.lblShippingCost.Text = "Freight:";
             // 
             // numShippingCost
             // 
@@ -434,7 +434,7 @@ namespace DesktopApp.Control.Page.Product
             this.lblTaxAmountLabel.Name = "lblTaxAmountLabel";
             this.lblTaxAmountLabel.Size = new Size(41, 12);
             this.lblTaxAmountLabel.TabIndex = 4;
-            this.lblTaxAmountLabel.Text = "税费:";
+            this.lblTaxAmountLabel.Text = "Taxes:";
             // 
             // lblTaxAmount
             // 
@@ -443,7 +443,7 @@ namespace DesktopApp.Control.Page.Product
             this.lblTaxAmount.Name = "lblTaxAmount";
             this.lblTaxAmount.Size = new Size(35, 12);
             this.lblTaxAmount.TabIndex = 5;
-            this.lblTaxAmount.Text = "¥0.00";
+            this.lblTaxAmount.Text = "$0.00";
             // 
             // lblTotalAmountLabel
             // 
@@ -453,7 +453,7 @@ namespace DesktopApp.Control.Page.Product
             this.lblTotalAmountLabel.Name = "lblTotalAmountLabel";
             this.lblTotalAmountLabel.Size = new Size(68, 19);
             this.lblTotalAmountLabel.TabIndex = 6;
-            this.lblTotalAmountLabel.Text = "总金额:";
+            this.lblTotalAmountLabel.Text = "Total Amount:";
             // 
             // lblTotalAmount
             // 
@@ -464,7 +464,7 @@ namespace DesktopApp.Control.Page.Product
             this.lblTotalAmount.Name = "lblTotalAmount";
             this.lblTotalAmount.Size = new Size(51, 22);
             this.lblTotalAmount.TabIndex = 7;
-            this.lblTotalAmount.Text = "¥0.00";
+            this.lblTotalAmount.Text = "$0.00";
             // 
             // btnSave
             // 
@@ -474,7 +474,7 @@ namespace DesktopApp.Control.Page.Product
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new Size(80, 30);
             this.btnSave.TabIndex = 4;
-            this.btnSave.Text = "保存";
+            this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new EventHandler(this.btnSave_Click);
             // 
@@ -484,7 +484,7 @@ namespace DesktopApp.Control.Page.Product
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new Size(80, 30);
             this.btnCancel.TabIndex = 5;
-            this.btnCancel.Text = "取消";
+            this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new EventHandler(this.btnCancel_Click);
             // 
@@ -504,7 +504,7 @@ namespace DesktopApp.Control.Page.Product
             this.MinimizeBox = false;
             this.Name = "CreateOrderForm";
             this.StartPosition = FormStartPosition.CenterParent;
-            this.Text = "创建订单";
+            this.Text = "Create Order";
             this.groupBoxCustomer.ResumeLayout(false);
             this.groupBoxCustomer.PerformLayout();
             this.groupBoxOrderInfo.ResumeLayout(false);
