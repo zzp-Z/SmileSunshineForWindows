@@ -1,45 +1,45 @@
 USE smile_sunshine;
 
--- 创建基础部门
+-- Create basic departments
 INSERT INTO department (name, description)
-VALUES ('管理部门', '负责公司整体管理和行政工作'),
-       ('生产部门', '负责产品生产和质量控制'),
-       ('销售部门', '负责产品销售和客户关系管理');
+VALUES ('Management Department', 'Responsible for overall company management and administrative work'),
+       ('Production Department', 'Responsible for product production and quality control'),
+       ('Sales Department', 'Responsible for product sales and customer relationship management');
 
--- 创建基础角色
+-- Create basic roles
 INSERT INTO role (role_name, department_id, description)
-VALUES ('管理员', 1, '系统管理员，系统管理权限，没有业务生产权限'),
-       ('生产工人', 2, '负责产品生产的基础工作'),
-       ('生产组长', 2, '负责生产团队的管理和协调'),
-       ('销售员', 3, '负责产品销售和客户沟通'),
-       ('销售经理', 3, '负责销售团队的管理和销售策略制定');
+VALUES ('Administrator', 1, 'System administrator with system management permissions, no business production permissions'),
+       ('Production Worker', 2, 'Responsible for basic product production work'),
+       ('Production Supervisor', 2, 'Responsible for production team management and coordination'),
+       ('Sales Representative', 3, 'Responsible for product sales and customer communication'),
+       ('Sales Manager', 3, 'Responsible for sales team management and sales strategy development');
 
--- 创建管理员账户
+-- Create administrator account
 INSERT INTO user (username, password, real_name, gender, email, phone)
-VALUES ('admin', '123123', '管理员', 'MALE','admin@smileshine.com', '13800000000');
+VALUES ('admin', '123123', 'Administrator', 'MALE','admin@smileshine.com', '13800000000');
 
--- 绑定管理员账户和管理员角色
+-- Bind administrator account and administrator role
 INSERT INTO user_role (user_id, role_id)
 VALUES (1, 1);
--- 假设admin用户的ID为1，管理员角色的ID为1
+-- Assuming admin user ID is 1, administrator role ID is 1
 
--- 添加一些基础权限
+-- Add basic permissions
 INSERT INTO permission (permission_name, api_path, description)
-VALUES ('用户管理', '/api/users', '管理系统用户的权限'),
-       ('角色管理', '/api/roles', '管理系统角色的权限'),
-       ('部门管理', '/api/departments', '管理系统部门的权限'),
-       ('产品管理', '/api/products', '管理产品的权限'),
-       ('订单管理', '/api/orders', '管理销售订单的权限'),
-       ('生产计划管理', '/api/production-plans', '管理生产计划的权限');
+VALUES ('User Management', '/api/users', 'Permission to manage system users'),
+       ('Role Management', '/api/roles', 'Permission to manage system roles'),
+       ('Department Management', '/api/departments', 'Permission to manage system departments'),
+       ('Product Management', '/api/products', 'Permission to manage products'),
+       ('Order Management', '/api/orders', 'Permission to manage sales orders'),
+       ('Production Plan Management', '/api/production-plans', 'Permission to manage production plans');
 
--- 为管理员角色分配所有权限
+-- Assign all permissions to administrator role
 INSERT INTO role_permission (role_id, permission_id)
-VALUES (1, 1), -- 管理员角色拥有用户管理权限
-       (1, 2), -- 管理员角色拥有角色管理权限
+VALUES (1, 1), -- Administrator role has user management permission
+       (1, 2), -- Administrator role has role management permission
        (1, 3);
--- 管理员角色拥有部门管理权限
+-- Administrator role has department management permission
 
--- 为其他角色分配相应权限
+-- Assign corresponding permissions to other roles
 INSERT INTO role_permission (role_id, permission_id)
-VALUES (3, 6), -- 生产组长拥有生产计划管理权限
-       (5, 5); -- 销售经理拥有订单管理权限
+VALUES (3, 6), -- Production supervisor has production plan management permission
+       (5, 5); -- Sales manager has order management permission

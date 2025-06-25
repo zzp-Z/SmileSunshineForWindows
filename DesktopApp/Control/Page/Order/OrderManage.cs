@@ -37,7 +37,7 @@ namespace DesktopApp.Control.Page.Order
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"加载订单数据失败: {ex.Message}", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"Load orders failed: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         
@@ -45,16 +45,16 @@ namespace DesktopApp.Control.Page.Order
         {
             var orderData = orders.Select(o => new
             {
-                订单ID = o.Id,
-                订单号 = o.OrderNumber,
-                客户ID = o.CustomerId,
-                支付方式 = o.PaymentMethod,
-                订单日期 = o.OrderDate?.ToString("yyyy-MM-dd"),
-                交付日期 = o.DeliveryDate?.ToString("yyyy-MM-dd"),
-                状态 = o.Status,
-                总金额 = o.TotalAmountCents.HasValue ? (o.TotalAmountCents.Value / 100.0).ToString("C") : "未设置",
-                是否定制 = o.IsCustomized ? "是" : "否",
-                配送地址 = o.ShippingAddress
+                OrderID = o.Id,
+                OrderNumber = o.OrderNumber,
+                CustomerId = o.CustomerId,
+                PaymentMethod = o.PaymentMethod,
+                OrderDate = o.OrderDate?.ToString("yyyy-MM-dd"),
+                DeliveryDate = o.DeliveryDate?.ToString("yyyy-MM-dd"),
+                Status = o.Status,
+                TotalAmountCents = o.TotalAmountCents.HasValue ? (o.TotalAmountCents.Value / 100.0).ToString("C") : "N/A",
+                IsCustomized = o.IsCustomized ? "Y" : "N",
+                ShippingAddress = o.ShippingAddress
             }).ToList();
             
             dgvOrders.DataSource = orderData;
@@ -62,16 +62,16 @@ namespace DesktopApp.Control.Page.Order
             // 调整列宽
             if (dgvOrders.Columns.Count > 0)
             {
-                dgvOrders.Columns["订单ID"].Width = 80;
-                dgvOrders.Columns["订单号"].Width = 120;
-                dgvOrders.Columns["客户ID"].Width = 80;
-                dgvOrders.Columns["支付方式"].Width = 100;
-                dgvOrders.Columns["订单日期"].Width = 100;
-                dgvOrders.Columns["交付日期"].Width = 100;
-                dgvOrders.Columns["状态"].Width = 80;
-                dgvOrders.Columns["总金额"].Width = 100;
-                dgvOrders.Columns["是否定制"].Width = 80;
-                dgvOrders.Columns["配送地址"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                dgvOrders.Columns["OrderID"].Width = 80;
+                dgvOrders.Columns["OrderNumber"].Width = 120;
+                dgvOrders.Columns["CustomerId"].Width = 80;
+                dgvOrders.Columns["PaymentMethod"].Width = 100;
+                dgvOrders.Columns["OrderDate"].Width = 100;
+                dgvOrders.Columns["DeliveryDate"].Width = 100;
+                dgvOrders.Columns["Status"].Width = 80;
+                dgvOrders.Columns["TotalAmountCents"].Width = 100;
+                dgvOrders.Columns["IsCustomized"].Width = 80;
+                dgvOrders.Columns["ShippingAddress"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             }
         }
         
@@ -80,7 +80,7 @@ namespace DesktopApp.Control.Page.Order
             if (dgvOrders.SelectedRows.Count > 0)
             {
                 var selectedRow = dgvOrders.SelectedRows[0];
-                var orderId = (int)selectedRow.Cells["订单ID"].Value;
+                var orderId = (int)selectedRow.Cells["OrderID"].Value;
                 LoadOrderItems(orderId);
             }
             else
@@ -98,7 +98,7 @@ namespace DesktopApp.Control.Page.Order
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"加载订单项目失败: {ex.Message}", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"Load order items failed: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         
@@ -135,12 +135,12 @@ namespace DesktopApp.Control.Page.Order
         {
             if (dgvOrders.SelectedRows.Count == 0)
             {
-                MessageBox.Show("请先选择要编辑的订单", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Please select an order to edit!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
             
             var selectedRow = dgvOrders.SelectedRows[0];
-            var orderId = (int)selectedRow.Cells["订单ID"].Value;
+            var orderId = (int)selectedRow.Cells["OrderID"].Value;
             var selectedOrder = orders.FirstOrDefault(o => o.Id == orderId);
             
             if (selectedOrder != null)
@@ -148,7 +148,7 @@ namespace DesktopApp.Control.Page.Order
                 // 创建编辑窗口
                 var editForm = new Form()
                 {
-                    Text = $"编辑订单 - {selectedOrder.OrderNumber}",
+                    Text = $"Edit Order - {selectedOrder.OrderNumber}",
                     Size = new System.Drawing.Size(800, 600),
                     StartPosition = FormStartPosition.CenterParent
                 };

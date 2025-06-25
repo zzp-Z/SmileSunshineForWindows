@@ -47,7 +47,7 @@ namespace DesktopApp.Control.Page.Order
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(75, 23);
             this.btnEdit.TabIndex = 0;
-            this.btnEdit.Text = "编辑订单";
+            this.btnEdit.Text = "Edit";
             this.btnEdit.UseVisualStyleBackColor = true;
             this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
@@ -57,7 +57,7 @@ namespace DesktopApp.Control.Page.Order
             this.btnExportPdf.Name = "btnExportPdf";
             this.btnExportPdf.Size = new System.Drawing.Size(85, 23);
             this.btnExportPdf.TabIndex = 5;
-            this.btnExportPdf.Text = "导出PDF";
+            this.btnExportPdf.Text = "Export PDF";
             this.btnExportPdf.UseVisualStyleBackColor = true;
             this.btnExportPdf.Click += new System.EventHandler(this.btnExportPdf_Click);
             // 
@@ -100,7 +100,7 @@ namespace DesktopApp.Control.Page.Order
             this.lblOrders.Name = "lblOrders";
             this.lblOrders.Size = new System.Drawing.Size(67, 15);
             this.lblOrders.TabIndex = 3;
-            this.lblOrders.Text = "订单列表";
+            this.lblOrders.Text = "Order List";
             // 
             // lblOrderItems
             // 
@@ -110,7 +110,7 @@ namespace DesktopApp.Control.Page.Order
             this.lblOrderItems.Name = "lblOrderItems";
             this.lblOrderItems.Size = new System.Drawing.Size(67, 15);
             this.lblOrderItems.TabIndex = 4;
-            this.lblOrderItems.Text = "订单项目";
+            this.lblOrderItems.Text = "Order Item";
             // 
             // OrderManage
             // 

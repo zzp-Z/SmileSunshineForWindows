@@ -12,13 +12,6 @@ namespace DesktopApp.Control.Page.Order._components
     {
         private OrderItem _orderItem;
         private Database.Product _product;
-        private PictureBox _productImage;
-        private Label _productNameLabel;
-        private Label _productDescriptionLabel;
-        private Label _quantityLabel;
-        private Label _unitPriceLabel;
-        private Label _totalPriceLabel;
-        private Panel _contentPanel;
         private ProductFunc _productFunc;
         
         public OrderItem OrderItem
@@ -36,7 +29,6 @@ namespace DesktopApp.Control.Page.Order._components
         {
             InitializeComponent();
             _productFunc = new ProductFunc();
-            InitializeControls();
         }
         
         public OrderItemInfo(OrderItem orderItem) : this()
@@ -44,86 +36,7 @@ namespace DesktopApp.Control.Page.Order._components
             OrderItem = orderItem;
         }
         
-        private void InitializeControls()
-        {
-            this.Size = new Size(780, 100);
-            this.BorderStyle = BorderStyle.FixedSingle;
-            this.BackColor = Color.White;
-            this.Margin = new Padding(5);
-            
-            // 主容器面板
-            _contentPanel = new Panel
-            {
-                Dock = DockStyle.Fill,
-                Padding = new Padding(10)
-            };
-            this.Controls.Add(_contentPanel);
-            
-            // 产品图片
-            _productImage = new PictureBox
-            {
-                Location = new Point(10, 10),
-                Size = new Size(70, 70),
-                SizeMode = PictureBoxSizeMode.Zoom,
-                BorderStyle = BorderStyle.FixedSingle,
-                BackColor = Color.LightGray
-            };
-            _contentPanel.Controls.Add(_productImage);
-            
-            // 产品名称
-            _productNameLabel = new Label
-            {
-                Location = new Point(100, 15),
-                Size = new Size(180, 20),
-                Font = new Font("微软雅黑", 10, FontStyle.Bold),
-                ForeColor = Color.Black
-            };
-            _contentPanel.Controls.Add(_productNameLabel);
-            
-            // 产品描述
-            _productDescriptionLabel = new Label
-            {
-                Location = new Point(100, 40),
-                Size = new Size(180, 30),
-                Font = new Font("微软雅黑", 8),
-                ForeColor = Color.Gray,
-                AutoEllipsis = true
-            };
-            _contentPanel.Controls.Add(_productDescriptionLabel);
-            
-            // 数量
-            _quantityLabel = new Label
-            {
-                Location = new Point(300, 15),
-                Size = new Size(80, 20),
-                Font = new Font("微软雅黑", 9, FontStyle.Bold),
-                ForeColor = Color.DarkBlue,
-                TextAlign = ContentAlignment.MiddleLeft
-            };
-            _contentPanel.Controls.Add(_quantityLabel);
-            
-            // 单价
-            _unitPriceLabel = new Label
-            {
-                Location = new Point(400, 15),
-                Size = new Size(100, 20),
-                Font = new Font("微软雅黑", 9),
-                ForeColor = Color.Green,
-                TextAlign = ContentAlignment.MiddleLeft
-            };
-            _contentPanel.Controls.Add(_unitPriceLabel);
-            
-            // 总价
-            _totalPriceLabel = new Label
-            {
-                Location = new Point(520, 15),
-                Size = new Size(120, 20),
-                Font = new Font("微软雅黑", 10, FontStyle.Bold),
-                ForeColor = Color.Red,
-                TextAlign = ContentAlignment.MiddleLeft
-            };
-            _contentPanel.Controls.Add(_totalPriceLabel);
-        }
+
         
         private void LoadProductInfo()
         {
@@ -146,32 +59,32 @@ namespace DesktopApp.Control.Page.Order._components
             if (_orderItem == null) return;
             
             // 更新产品名称
-            _productNameLabel.Text = _product?.Name ?? "未知产品";
+            _productNameLabel.Text = _product?.Name ?? "unknown product";
             
             // 更新产品描述
-            _productDescriptionLabel.Text = _product?.Description ?? "暂无描述";
+            _productDescriptionLabel.Text = _product?.Description ?? "No description";
             
             // 更新数量
-            _quantityLabel.Text = $"数量: {_orderItem.Quantity ?? 0}";
+            _quantityLabel.Text = $"Quantity: {_orderItem.Quantity ?? 0}";
             
             // 更新单价
             if (_orderItem.UnitPriceCents.HasValue)
             {
-                _unitPriceLabel.Text = $"单价: ¥{_orderItem.UnitPriceCents.Value / 100.0:F2}";
+                _unitPriceLabel.Text = $"Unit Price: ${_orderItem.UnitPriceCents.Value / 100.0:F2}";
             }
             else
             {
-                _unitPriceLabel.Text = "单价: 未设置";
+                _unitPriceLabel.Text = "Unit Price: Unknown";
             }
             
             // 更新总价
             if (_orderItem.TotalPriceCents.HasValue)
             {
-                _totalPriceLabel.Text = $"总价: ¥{_orderItem.TotalPriceCents.Value / 100.0:F2}";
+                _totalPriceLabel.Text = $"Total: ${_orderItem.TotalPriceCents.Value / 100.0:F2}";
             }
             else
             {
-                _totalPriceLabel.Text = "总价: 未设置";
+                _totalPriceLabel.Text = "Total: Unknown";
             }
             
             // 更新产品图片
