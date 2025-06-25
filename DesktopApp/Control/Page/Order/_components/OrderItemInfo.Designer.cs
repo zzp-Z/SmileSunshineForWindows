@@ -1,4 +1,4 @@
-﻿using System.ComponentModel;
+using System.ComponentModel;
 using System.Windows.Forms;
 
 namespace DesktopApp.Control.Page.Order._components
@@ -32,8 +32,15 @@ namespace DesktopApp.Control.Page.Order._components
         /// </summary>
         private void InitializeComponent()
         {
-            components = new Container();
-            this.AutoScaleMode = AutoScaleMode.Font;
+            this.SuspendLayout();
+            // 
+            // OrderItemInfo
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Name = "OrderItemInfo";
+            this.Size = new System.Drawing.Size(780, 100);
+            this.ResumeLayout(false);
         }
 
         #endregion

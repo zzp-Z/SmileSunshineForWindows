@@ -2,7 +2,6 @@ using System;
 using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
-using DesktopApp.Database;
 using DesktopApp.Utils;
 
 namespace DesktopApp.Control.Page.Product

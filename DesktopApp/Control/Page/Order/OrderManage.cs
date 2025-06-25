@@ -1,25 +1,24 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Windows.Forms;
 using DesktopApp.Database;
 using DesktopApp.Database.Func;
+using DesktopApp.Control.Page.Order._components;
 
 namespace DesktopApp.Control.Page.Order
 {
     public partial class OrderManage : UserControl
     {
         private OrderFunc orderFunc;
-        private ProductFunc productFunc;
         private List<SalesOrder> orders;
-        private List<OrderItemView> currentOrderItemViews;
+        private List<OrderItem> currentOrderItems;
         
         public OrderManage()
         {
             InitializeComponent();
             orderFunc = new OrderFunc();
-            productFunc = new ProductFunc();
             LoadOrders();
         }
         
@@ -80,7 +79,7 @@ namespace DesktopApp.Control.Page.Order
             }
             else
             {
-                dgvOrderItems.DataSource = null;
+                ClearOrderItems();
             }
         }
         
@@ -88,27 +87,8 @@ namespace DesktopApp.Control.Page.Order
         {
             try
             {
-                var orderItems = orderFunc.GetOrderItemsByOrderId(orderId);
-                currentOrderItemViews = new List<OrderItemView>();
-                
-                foreach (var item in orderItems)
-                {
-                    var product = productFunc.GetProductById(item.ProductId);
-                    var orderItemView = new OrderItemView
-                    {
-                        Id = item.Id,
-                        OrderId = item.OrderId,
-                        ProductId = item.ProductId,
-                        ProductName = product?.Name ?? "未知产品",
-                        ProductDescription = product?.Description ?? "",
-                        Quantity = item.Quantity ?? 0,
-                        UnitPrice = item.UnitPriceCents.HasValue ? item.UnitPriceCents.Value / 100.0m : 0,
-                        TotalPrice = item.TotalPriceCents.HasValue ? item.TotalPriceCents.Value / 100.0m : 0
-                    };
-                    currentOrderItemViews.Add(orderItemView);
-                }
-                
-                BindOrderItemsToGrid();
+                currentOrderItems = orderFunc.GetOrderItemsByOrderId(orderId);
+                DisplayOrderItemCards();
             }
             catch (Exception ex)
             {
@@ -116,29 +96,32 @@ namespace DesktopApp.Control.Page.Order
             }
         }
         
-        private void BindOrderItemsToGrid()
+        private void DisplayOrderItemCards()
         {
-            dgvOrderItems.DataSource = currentOrderItemViews;
+            // 获取FlowLayoutPanel引用
+            var flowPanel = this.Controls.Find("flpOrderItems", true).FirstOrDefault() as FlowLayoutPanel;
+            if (flowPanel == null) return;
             
-            // 设置列宽和列标题
-            if (dgvOrderItems.Columns.Count > 0)
+            // 清空现有控件
+            flowPanel.Controls.Clear();
+            
+            // 为每个订单项创建卡片
+            if (currentOrderItems != null)
             {
-                dgvOrderItems.Columns["Id"].HeaderText = "ID";
-                dgvOrderItems.Columns["Id"].Width = 60;
-                dgvOrderItems.Columns["OrderId"].HeaderText = "订单ID";
-                dgvOrderItems.Columns["OrderId"].Width = 80;
-                dgvOrderItems.Columns["ProductId"].HeaderText = "产品ID";
-                dgvOrderItems.Columns["ProductId"].Width = 80;
-                dgvOrderItems.Columns["ProductName"].HeaderText = "产品名称";
-                dgvOrderItems.Columns["ProductName"].Width = 150;
-                dgvOrderItems.Columns["ProductDescription"].HeaderText = "产品描述";
-                dgvOrderItems.Columns["ProductDescription"].Width = 200;
-                dgvOrderItems.Columns["Quantity"].HeaderText = "数量";
-                dgvOrderItems.Columns["Quantity"].Width = 80;
-                dgvOrderItems.Columns["UnitPrice"].HeaderText = "单价(元)";
-                dgvOrderItems.Columns["UnitPrice"].Width = 100;
-                dgvOrderItems.Columns["TotalPrice"].HeaderText = "总价(元)";
-                dgvOrderItems.Columns["TotalPrice"].Width = 100;
+                foreach (var orderItem in currentOrderItems)
+                {
+                    var orderItemCard = new OrderItemInfo(orderItem);
+                    flowPanel.Controls.Add(orderItemCard);
+                }
+            }
+        }
+        
+        private void ClearOrderItems()
+        {
+            var flowPanel = this.Controls.Find("flpOrderItems", true).FirstOrDefault() as FlowLayoutPanel;
+            if (flowPanel != null)
+            {
+                flowPanel.Controls.Clear();
             }
         }
         
@@ -194,18 +177,5 @@ namespace DesktopApp.Control.Page.Order
     public interface IOrderEditor
     {
         void LoadOrder(SalesOrder order);
-    }
-    
-    // 订单项视图模型，用于在界面上显示产品信息
-    public class OrderItemView
-    {
-        public int Id { get; set; }
-        public int OrderId { get; set; }
-        public int ProductId { get; set; }
-        public string ProductName { get; set; }
-        public string ProductDescription { get; set; }
-        public int Quantity { get; set; }
-        public decimal UnitPrice { get; set; }
-        public decimal TotalPrice { get; set; }
     }
 }

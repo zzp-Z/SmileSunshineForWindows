@@ -1,4 +1,4 @@
-﻿using System.ComponentModel;
+using System.ComponentModel;
 using System.Windows.Forms;
 
 namespace DesktopApp.Control.Page.Order
@@ -34,11 +34,10 @@ namespace DesktopApp.Control.Page.Order
         {
             this.btnEdit = new Button();
             this.dgvOrders = new DataGridView();
-            this.dgvOrderItems = new DataGridView();
+            this.flpOrderItems = new FlowLayoutPanel();
             this.lblOrders = new Label();
             this.lblOrderItems = new Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrders)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvOrderItems)).BeginInit();
             this.SuspendLayout();
             // 
             // btnEdit
@@ -67,20 +66,20 @@ namespace DesktopApp.Control.Page.Order
             this.dgvOrders.TabIndex = 1;
             this.dgvOrders.SelectionChanged += new System.EventHandler(this.dgvOrders_SelectionChanged);
             // 
-            // dgvOrderItems
+            // flpOrderItems
             // 
-            this.dgvOrderItems.AllowUserToAddRows = false;
-            this.dgvOrderItems.AllowUserToDeleteRows = false;
-            this.dgvOrderItems.Anchor = ((AnchorStyles)((((AnchorStyles.Top | AnchorStyles.Bottom) 
+            this.flpOrderItems.Anchor = ((AnchorStyles)((((AnchorStyles.Top | AnchorStyles.Bottom) 
             | AnchorStyles.Left) 
             | AnchorStyles.Right)));
-            this.dgvOrderItems.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvOrderItems.Location = new System.Drawing.Point(12, 310);
-            this.dgvOrderItems.Name = "dgvOrderItems";
-            this.dgvOrderItems.ReadOnly = true;
-            this.dgvOrderItems.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            this.dgvOrderItems.Size = new System.Drawing.Size(776, 180);
-            this.dgvOrderItems.TabIndex = 2;
+            this.flpOrderItems.AutoScroll = true;
+            this.flpOrderItems.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.flpOrderItems.FlowDirection = FlowDirection.TopDown;
+            this.flpOrderItems.Location = new System.Drawing.Point(12, 310);
+            this.flpOrderItems.Name = "flpOrderItems";
+            this.flpOrderItems.Padding = new Padding(5);
+            this.flpOrderItems.Size = new System.Drawing.Size(776, 180);
+            this.flpOrderItems.TabIndex = 2;
+            this.flpOrderItems.WrapContents = false;
             // 
             // lblOrders
             // 
@@ -108,13 +107,12 @@ namespace DesktopApp.Control.Page.Order
             this.AutoScaleMode = AutoScaleMode.Font;
             this.Controls.Add(this.lblOrderItems);
             this.Controls.Add(this.lblOrders);
-            this.Controls.Add(this.dgvOrderItems);
+            this.Controls.Add(this.flpOrderItems);
             this.Controls.Add(this.dgvOrders);
             this.Controls.Add(this.btnEdit);
             this.Name = "OrderManage";
             this.Size = new System.Drawing.Size(800, 500);
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrders)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvOrderItems)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
         }
@@ -123,7 +121,7 @@ namespace DesktopApp.Control.Page.Order
 
         private Button btnEdit;
         private DataGridView dgvOrders;
-        private DataGridView dgvOrderItems;
+        private FlowLayoutPanel flpOrderItems;
         private Label lblOrders;
         private Label lblOrderItems;
     }
