@@ -162,7 +162,8 @@ Create Table product
     create_date          date,
     is_public            boolean default true,
     design_id            INT,
-    foreign key (design_id) references design_concept (id)
+    quantity_in_stock    INT DEFAULT 0 COMMENT '库存数量'
+#     foreign key (design_id) references design_concept (id)
 );
 -- ======================================================Production Plan
 Create Table material_of_product

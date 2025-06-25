@@ -62,13 +62,11 @@ namespace DesktopApp
             // 
             // mainContentPanel
             // 
-            this.mainContentPanel.BackColor = Color.Red;
             this.mainContentPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.mainContentPanel.Name = "mainContentPanel";
             // 
             // rightPanel
             // 
-            this.rightPanel.BackColor = System.Drawing.Color.Aqua;
             this.rightPanel.Controls.Add(this.mainContentPanel);
             this.rightPanel.Controls.Add(this.userInfoControl);
             this.rightPanel.Dock = System.Windows.Forms.DockStyle.Fill;

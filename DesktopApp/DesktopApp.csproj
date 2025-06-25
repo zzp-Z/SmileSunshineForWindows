@@ -99,12 +99,88 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Control\Page\Customer\AddCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Control\Page\Customer\AddCustomer.Designer.cs">
+      <DependentUpon>AddCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control\Page\Customer\CustomerManagerPageControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control\Page\Customer\CustomerManagerPageControl.Designer.cs">
+      <DependentUpon>CustomerManagerPageControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control\Page\Customer\EditCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Control\Page\Customer\EditCustomer.Designer.cs">
+      <DependentUpon>EditCustomer.cs</DependentUpon>
+    </Compile>
     <Compile Include="Control\Page\Dashboard\DashboardPageControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Control\Page\Dashboard\DashboardPageControl.Designer.cs">
       <DependentUpon>DashboardPageControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Control\Page\Order\AddOrder.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control\Page\Order\AddOrder.Designer.cs">
+      <DependentUpon>AddOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control\Page\Order\EditOrder.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control\Page\Order\EditOrder.Designer.cs">
+      <DependentUpon>EditOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control\Page\Order\OrderManage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control\Page\Order\OrderManage.Designer.cs">
+      <DependentUpon>OrderManage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control\Page\Order\_components\OrderInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control\Page\Order\_components\OrderInfo.Designer.cs">
+      <DependentUpon>OrderInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control\Page\Order\_components\OrderItemInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control\Page\Order\_components\OrderItemInfo.Designer.cs">
+      <DependentUpon>OrderItemInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control\Page\Product\AddProductForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Control\Page\Product\AddProductForm.Designer.cs">
+      <DependentUpon>AddProductForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control\Page\Product\CreateOrderForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Control\Page\Product\CreateOrderForm.Designer.cs">
+      <DependentUpon>CreateOrderForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control\Page\Product\EditProductForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Control\Page\Product\EditProductForm.Designer.cs">
+      <DependentUpon>EditProductForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control\Page\Product\ProductCardControl.cs" />
+    <Compile Include="Control\Page\Product\ProductCardControl.Designer.cs" />
+    <Compile Include="Control\Page\Product\ProductManagePageControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control\Page\Product\ProductManagePageControl.Designer.cs">
+      <DependentUpon>ProductManagePageControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control\Page\Product\ProductOrderCardControl.cs" />
+    <Compile Include="Control\Page\Product\ProductOrderCardControl.Designer.cs" />
     <Compile Include="Control\Page\Product\ProductPageControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -159,14 +235,18 @@
       <DependentUpon>UserInfoControl.cs</DependentUpon>
     </Compile>
     <Compile Include="Database\Engine.cs" />
+    <Compile Include="Database\Func\Customer.cs" />
     <Compile Include="Database\Func\Department.cs" />
     <Compile Include="Database\Func\Material.cs" />
+    <Compile Include="Database\Func\Order.cs" />
     <Compile Include="Database\Func\Permission.cs" />
     <Compile Include="Database\Func\Product.cs" />
     <Compile Include="Database\Func\Role.cs" />
     <Compile Include="Database\Func\Supplier.cs" />
     <Compile Include="Database\Func\User.cs" />
     <Compile Include="Database\Table.cs" />
+    <Compile Include="Forms\ImageSettingsForm.cs" />
+    <Compile Include="Forms\ImageSettingsForm.Designer.cs" />
     <Compile Include="LoginForm.cs" />
     <Compile Include="LoginForm.Designer.cs" />
     <Compile Include="MainForm.cs">
@@ -177,6 +257,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utils\ImageConfig.cs" />
+    <Compile Include="Utils\ImageManager.cs" />
+    <Compile Include="Utils\ImageMigrationHelper.cs" />
     <EmbeddedResource Include="Control\Sidebar\SidebarControl.resx">
       <DependentUpon>SidebarControl.cs</DependentUpon>
     </EmbeddedResource>
@@ -224,6 +307,8 @@
   <ItemGroup>
     <Content Include="Database\Sql\init.sql" />
     <Content Include="Database\Sql\SmileSunshine.sql" />
+    <Content Include="Image\product\20250624111714_屏幕截图 2024-12-30 175133.png" />
+    <Content Include="Image\product\20250624111949_屏幕截图 2025-06-16 211409.png" />
     <EmbeddedResource Include="Image\logo-1024x1024.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>

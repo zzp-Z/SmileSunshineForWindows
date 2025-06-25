@@ -289,6 +289,7 @@ namespace DesktopApp.Database
         public DateTime? CreateDate { get; set; }
         public bool IsPublic { get; set; } = true;
         public int DesignId { get; set; }
+        public int QuantityInStock { get; set; }
     }
 
     public class MaterialOfProduct

@@ -1,7 +1,9 @@
 using System.Collections.Generic;
 using System.Windows.Forms;
+using DesktopApp.Control.Page.Customer;
 using DesktopApp.Control.Sidebar._components;
 using DesktopApp.Control.Page.Dashboard;
+using DesktopApp.Control.Page.Order;
 using DesktopApp.Control.Page.Product;
 using DesktopApp.Control.Page.SystemManage.DepartmentManage;
 using DesktopApp.Control.Page.SystemManage.RoleManage;
@@ -34,29 +36,25 @@ namespace DesktopApp
                     {
                         ShowPage("order_management_page");
                     },
-                    Children = new List<MenuItemClass>()
-                    {
-                        new MenuItemClass()
-                        {
-                            Text = "Create or Edit Order",
-                            PageKey = "create_edit_order_page",
-                            OnClick = () => ShowPage("create_edit_order_page")
-                        },
-                        new MenuItemClass()
-                        {
-                            Text = "Review Order",
-                            PageKey = "review_order_page",
-                            OnClick = () => ShowPage("review_order_page")
-                        }
-                    }
                 },
                 new MenuItemClass()
                 {
                     Text = "Product",
                     PageKey = "product_page",
-                    OnClick = () =>
+                    Children = new List<MenuItemClass>()
                     {
-                        ShowPage("product_page");
+                        new MenuItemClass()
+                        {
+                            Text = "Product Manage",
+                            PageKey = "product_manage_page",
+                            OnClick = () => ShowPage("product_manage_page")
+                        },
+                        new MenuItemClass()
+                        {
+                            Text = "Product",
+                            PageKey = "product_page",
+                            OnClick = () => ShowPage("product_page")
+                        }
                     }
                 },
                 new MenuItemClass()
@@ -82,6 +80,12 @@ namespace DesktopApp
                             OnClick = () => ShowPage("handling_goods_received_page")
                         }
                     }
+                },
+                new MenuItemClass()
+                {
+                    Text = "Customer Manage",  
+                    PageKey = "customer_manage_page",
+                    OnClick = () => ShowPage("customer_manage_page")
                 },
                 new MenuItemClass()
                 {
@@ -202,9 +206,15 @@ namespace DesktopApp
                 case "product_page":
                     pageControl = new ProductPageControl();
                     break;
+                case "customer_manage_page":
+                    pageControl = new CustomerManagerPageControl(); // 临时使用Dashboard页面
+                    break;
+                case "product_manage_page":
+                    pageControl = new ProductManagePageControl();
+                    break;
                 case "order_management_page":
                     // 可以创建一个默认的订单管理页面，或者显示提示信息
-                    pageControl = new DashboardPageControl(); // 临时使用Dashboard页面
+                    pageControl = new OrderManage(); // 临时使用Dashboard页面
                     break;
                 case "create_edit_order_page":
                     pageControl = new DashboardPageControl(); // 临时使用Dashboard页面
