@@ -26,46 +26,39 @@ namespace DesktopApp.Control.Page.SystemManage.UserManage
 
         #region Component Designer generated code
 
-        /// <summary> 
-        /// Required method for Designer support - do not modify 
+        /// <summary>
+        /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent()
         {
-            this.departmentComboBox = new ComboBox();
-            this.addButton = new Button();
-            this.editButton = new Button();
-            this.deleteButton = new Button();
-            this.resetPasswordButton = new Button();
-            this.usersDataGridView = new DataGridView();
-            this.departmentLabel = new Label();
+            this.departmentComboBox = new System.Windows.Forms.ComboBox();
+            this.addButton = new System.Windows.Forms.Button();
+            this.editButton = new System.Windows.Forms.Button();
+            this.deleteButton = new System.Windows.Forms.Button();
+            this.resetPasswordButton = new System.Windows.Forms.Button();
+            this.usersDataGridView = new System.Windows.Forms.DataGridView();
+            this.departmentLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.usersDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
-            // departmentLabel
-            // 
-            this.departmentLabel.AutoSize = true;
-            this.departmentLabel.Location = new System.Drawing.Point(12, 15);
-            this.departmentLabel.Name = "departmentLabel";
-            this.departmentLabel.Size = new System.Drawing.Size(41, 12);
-            this.departmentLabel.TabIndex = 0;
-            this.departmentLabel.Text = "Department:";
-            // 
             // departmentComboBox
             // 
-            this.departmentComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
+            this.departmentComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.departmentComboBox.FormattingEnabled = true;
-            this.departmentComboBox.Location = new System.Drawing.Point(59, 12);
+            this.departmentComboBox.Location = new System.Drawing.Point(169, 28);
+            this.departmentComboBox.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.departmentComboBox.Name = "departmentComboBox";
-            this.departmentComboBox.Size = new System.Drawing.Size(150, 20);
+            this.departmentComboBox.Size = new System.Drawing.Size(296, 32);
             this.departmentComboBox.TabIndex = 1;
             this.departmentComboBox.SelectedIndexChanged += new System.EventHandler(this.departmentComboBox_SelectedIndexChanged);
             // 
             // addButton
             // 
-            this.addButton.Location = new System.Drawing.Point(250, 10);
+            this.addButton.Location = new System.Drawing.Point(500, 20);
+            this.addButton.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.addButton.Name = "addButton";
-            this.addButton.Size = new System.Drawing.Size(75, 23);
+            this.addButton.Size = new System.Drawing.Size(150, 46);
             this.addButton.TabIndex = 2;
             this.addButton.Text = "Add";
             this.addButton.UseVisualStyleBackColor = true;
@@ -73,9 +66,10 @@ namespace DesktopApp.Control.Page.SystemManage.UserManage
             // 
             // editButton
             // 
-            this.editButton.Location = new System.Drawing.Point(331, 10);
+            this.editButton.Location = new System.Drawing.Point(662, 20);
+            this.editButton.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.editButton.Name = "editButton";
-            this.editButton.Size = new System.Drawing.Size(75, 23);
+            this.editButton.Size = new System.Drawing.Size(150, 46);
             this.editButton.TabIndex = 3;
             this.editButton.Text = "Edit";
             this.editButton.UseVisualStyleBackColor = true;
@@ -83,9 +77,10 @@ namespace DesktopApp.Control.Page.SystemManage.UserManage
             // 
             // deleteButton
             // 
-            this.deleteButton.Location = new System.Drawing.Point(412, 10);
+            this.deleteButton.Location = new System.Drawing.Point(824, 20);
+            this.deleteButton.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.deleteButton.Name = "deleteButton";
-            this.deleteButton.Size = new System.Drawing.Size(75, 23);
+            this.deleteButton.Size = new System.Drawing.Size(150, 46);
             this.deleteButton.TabIndex = 4;
             this.deleteButton.Text = "Delete";
             this.deleteButton.UseVisualStyleBackColor = true;
@@ -93,9 +88,10 @@ namespace DesktopApp.Control.Page.SystemManage.UserManage
             // 
             // resetPasswordButton
             // 
-            this.resetPasswordButton.Location = new System.Drawing.Point(493, 10);
+            this.resetPasswordButton.Location = new System.Drawing.Point(986, 20);
+            this.resetPasswordButton.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.resetPasswordButton.Name = "resetPasswordButton";
-            this.resetPasswordButton.Size = new System.Drawing.Size(75, 23);
+            this.resetPasswordButton.Size = new System.Drawing.Size(150, 46);
             this.resetPasswordButton.TabIndex = 5;
             this.resetPasswordButton.Text = "Reset password";
             this.resetPasswordButton.UseVisualStyleBackColor = true;
@@ -105,22 +101,31 @@ namespace DesktopApp.Control.Page.SystemManage.UserManage
             // 
             this.usersDataGridView.AllowUserToAddRows = false;
             this.usersDataGridView.AllowUserToDeleteRows = false;
-            this.usersDataGridView.Anchor = ((AnchorStyles)((((AnchorStyles.Top | AnchorStyles.Bottom) 
-            | AnchorStyles.Left) 
-            | AnchorStyles.Right)));
-            this.usersDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            this.usersDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.usersDataGridView.Location = new System.Drawing.Point(12, 45);
+            this.usersDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
+            this.usersDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.usersDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.usersDataGridView.Location = new System.Drawing.Point(24, 90);
+            this.usersDataGridView.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.usersDataGridView.Name = "usersDataGridView";
             this.usersDataGridView.ReadOnly = true;
-            this.usersDataGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            this.usersDataGridView.Size = new System.Drawing.Size(776, 403);
+            this.usersDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.usersDataGridView.Size = new System.Drawing.Size(1552, 806);
             this.usersDataGridView.TabIndex = 5;
+            // 
+            // departmentLabel
+            // 
+            this.departmentLabel.AutoSize = true;
+            this.departmentLabel.Location = new System.Drawing.Point(24, 30);
+            this.departmentLabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.departmentLabel.Name = "departmentLabel";
+            this.departmentLabel.Size = new System.Drawing.Size(142, 24);
+            this.departmentLabel.TabIndex = 0;
+            this.departmentLabel.Text = "Department:";
             // 
             // UserManagePageControl
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
-            this.AutoScaleMode = AutoScaleMode.Font;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 24F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.usersDataGridView);
             this.Controls.Add(this.resetPasswordButton);
             this.Controls.Add(this.deleteButton);
@@ -128,8 +133,9 @@ namespace DesktopApp.Control.Page.SystemManage.UserManage
             this.Controls.Add(this.addButton);
             this.Controls.Add(this.departmentComboBox);
             this.Controls.Add(this.departmentLabel);
+            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.Name = "UserManagePageControl";
-            this.Size = new System.Drawing.Size(800, 460);
+            this.Size = new System.Drawing.Size(1600, 920);
             ((System.ComponentModel.ISupportInitialize)(this.usersDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -137,12 +143,12 @@ namespace DesktopApp.Control.Page.SystemManage.UserManage
 
         #endregion
 
-        private ComboBox departmentComboBox;
+        private System.Windows.Forms.ComboBox departmentComboBox;
         private Button addButton;
         private Button editButton;
         private Button deleteButton;
         private Button resetPasswordButton;
-        private DataGridView usersDataGridView;
+        private System.Windows.Forms.DataGridView usersDataGridView;
         private Label departmentLabel;
     }
 }

@@ -53,7 +53,7 @@ namespace DesktopApp
                 mainContentPanel.Controls.Clear();
                 var noPermissionLabel = new Label
                 {
-                    Text = $"您没有权限访问页面 '{pageKey}'",
+                    Text = $"You do not have permission to access this page. '{pageKey}'",
                     Dock = DockStyle.Fill,
                     TextAlign = ContentAlignment.MiddleCenter,
                     Font = new System.Drawing.Font("Microsoft YaHei", 12F),
@@ -79,7 +79,7 @@ namespace DesktopApp
                 // 如果页面未注册，显示错误信息或默认页面
                 var errorLabel = new Label
                 {
-                    Text = $"页面 '{pageKey}' 未找到",
+                    Text = $"Page '{pageKey}' Not Found",
                     Dock = DockStyle.Fill,
                     TextAlign = ContentAlignment.MiddleCenter,
                     Font = new System.Drawing.Font("Microsoft YaHei", 12F)

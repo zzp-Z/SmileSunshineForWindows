@@ -18,8 +18,8 @@ namespace DesktopApp.Forms
             // 加载当前设置
             chkUseCustomPath.Checked = ImageConfig.UseCustomPath;
             txtCustomPath.Text = ImageConfig.CustomImagePath;
-            lblDefaultPath.Text = $"默认路径: {ImageConfig.DefaultImagePath}";
-            lblCurrentPath.Text = $"当前使用: {ImageConfig.CurrentImagePath}";
+            lblDefaultPath.Text = $"Default Path: {ImageConfig.DefaultImagePath}";
+            lblCurrentPath.Text = $"Current path used: {ImageConfig.CurrentImagePath}";
             
             // 设置控件状态
             txtCustomPath.Enabled = chkUseCustomPath.Checked;
@@ -43,7 +43,7 @@ namespace DesktopApp.Forms
         {
             using (var dialog = new FolderBrowserDialog())
             {
-                dialog.Description = "选择图片存储文件夹";
+                dialog.Description = "Select the folder where the pictures are stored";
                 dialog.ShowNewFolderButton = true;
                 
                 if (!string.IsNullOrEmpty(txtCustomPath.Text) && Directory.Exists(txtCustomPath.Text))
@@ -76,13 +76,13 @@ namespace DesktopApp.Forms
                 currentPath = ImageConfig.DefaultImagePath;
             }
             
-            lblCurrentPath.Text = $"当前使用: {currentPath}";
+            lblCurrentPath.Text = $"Current path used: {currentPath}";
             
             // 验证路径
             if (chkUseCustomPath.Checked && !string.IsNullOrEmpty(txtCustomPath.Text))
             {
                 bool isValid = ImageConfig.IsValidPath(txtCustomPath.Text);
-                lblPathStatus.Text = isValid ? "✓ 路径有效" : "✗ 路径无效或无写入权限";
+                lblPathStatus.Text = isValid ? "✓ Path is valid" : "✗ Invalid path or no write permission";
                 lblPathStatus.ForeColor = isValid ? System.Drawing.Color.Green : System.Drawing.Color.Red;
                 btnOK.Enabled = isValid;
             }
@@ -102,7 +102,7 @@ namespace DesktopApp.Forms
                 {
                     if (!ImageConfig.IsValidPath(txtCustomPath.Text))
                     {
-                        MessageBox.Show("指定的路径无效或没有写入权限，请选择其他路径。", "路径错误", 
+                        MessageBox.Show("The specified path is invalid or you do not have write permission. Please select another path.", "Path Error", 
                             MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         return;
                     }
@@ -112,7 +112,7 @@ namespace DesktopApp.Forms
                 ImageConfig.UseCustomPath = chkUseCustomPath.Checked;
                 ImageConfig.CustomImagePath = chkUseCustomPath.Checked ? txtCustomPath.Text : string.Empty;
                 
-                MessageBox.Show("设置已保存。新的图片将保存到指定位置。", "设置保存成功", 
+                MessageBox.Show("The settings have been saved. The new image will be saved to the specified location。", "Settings saved successfully", 
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
                 
                 this.DialogResult = DialogResult.OK;
@@ -120,7 +120,7 @@ namespace DesktopApp.Forms
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"保存设置时出错: {ex.Message}", "错误", 
+                MessageBox.Show($"Error saving settings: {ex.Message}", "Error", 
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
@@ -133,14 +133,14 @@ namespace DesktopApp.Forms
         
         private void btnReset_Click(object sender, EventArgs e)
         {
-            var result = MessageBox.Show("确定要重置为默认设置吗？", "确认重置", 
+            var result = MessageBox.Show("Are you sure you want to reset to default settings?", "Confirm Reset", 
                 MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             
             if (result == DialogResult.Yes)
             {
                 ImageConfig.ResetToDefault();
                 LoadCurrentSettings();
-                MessageBox.Show("已重置为默认设置。", "重置完成", 
+                MessageBox.Show("Reset to default settings。", "Reset Complete", 
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }

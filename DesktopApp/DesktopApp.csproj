@@ -290,6 +290,18 @@
     <EmbeddedResource Include="Control\Page\Customer\CustomerManagerPageControl.resx">
       <DependentUpon>CustomerManagerPageControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Control\Page\Product\AddProductForm.resx">
+      <DependentUpon>AddProductForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\Page\Product\CreateOrderForm.resx">
+      <DependentUpon>CreateOrderForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\Page\SystemManage\DepartmentManage\DepartmentAddEditForm.resx">
+      <DependentUpon>DepartmentAddEditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\Page\SystemManage\UserManage\UserManagePageControl.resx">
+      <DependentUpon>UserManagePageControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Control\Sidebar\SidebarControl.resx">
       <DependentUpon>SidebarControl.cs</DependentUpon>
     </EmbeddedResource>
@@ -340,6 +352,7 @@
   <ItemGroup>
     <Content Include="Database\Sql\init.sql" />
     <Content Include="Database\Sql\SmileSunshine.sql" />
+    <Content Include="Database\Sql\2025-06-26-17-37.sql" />
     <Content Include="Image\product\20250624111714_屏幕截图 2024-12-30 175133.png" />
     <Content Include="Image\product\20250624111949_屏幕截图 2025-06-16 211409.png" />
     <EmbeddedResource Include="Image\logo-1024x1024.png">

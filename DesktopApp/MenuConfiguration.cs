@@ -81,18 +81,7 @@ namespace DesktopApp
                     Children = new MenuConfig[]
                     {
                         new MenuConfig { Text = "Product Manage", PageKey = "/product/manage" },
-                        new MenuConfig { Text = "Product", PageKey = "/product" }
-                    }
-                },
-                new MenuConfig
-                {
-                    Text = "Dispatch Processing",
-                    PageKey = "/dispatch/processing",
-                    Children = new MenuConfig[]
-                    {
-                        new MenuConfig
-                            { Text = "Generate Delivery Notes (PDF)", PageKey = "/dispatch/delivery_notes" },
-                        new MenuConfig { Text = "Handling Goods received", PageKey = "/dispatch/goods_received" }
+                        new MenuConfig { Text = "Product", PageKey = "/product/product" }
                     }
                 },
                 new MenuConfig

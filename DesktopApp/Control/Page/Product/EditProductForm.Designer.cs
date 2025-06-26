@@ -112,7 +112,7 @@ namespace DesktopApp.Control.Page.Product
             this.lblImage.Name = "lblImage";
             this.lblImage.Size = new Size(65, 12);
             this.lblImage.TabIndex = 6;
-            this.lblImage.Text = "产品图片:";
+            this.lblImage.Text = "Product images:";
             // 
             // txtImagePath
             // 

@@ -43,178 +43,216 @@ namespace DesktopApp.Control.Page.Product
         /// </summary>
         private void InitializeComponent()
         {
-            this.lblName = new Label();
-            this.txtName = new TextBox();
-            this.lblDescription = new Label();
-            this.txtDescription = new TextBox();
-            this.lblPrice = new Label();
-            this.txtPrice = new TextBox();
-            this.lblImage = new Label();
-            this.txtImagePath = new TextBox();
-            this.btnSelectImage = new Button();
-            this.picPreview = new PictureBox();
-            this.chkSafetyCertification = new CheckBox();
-            this.chkIsPublic = new CheckBox();
-            this.lblDesignId = new Label();
-            this.txtDesignId = new TextBox();
-            this.btnSave = new Button();
-            this.btnCancel = new Button();
-            this.openFileDialog = new OpenFileDialog();
-            this.lblQuantity = new Label();
-            this.txtQuantity = new TextBox();
-            ((ISupportInitialize)(this.picPreview)).BeginInit();
+            this.lblName = new System.Windows.Forms.Label();
+            this.txtName = new System.Windows.Forms.TextBox();
+            this.lblDescription = new System.Windows.Forms.Label();
+            this.txtDescription = new System.Windows.Forms.TextBox();
+            this.lblPrice = new System.Windows.Forms.Label();
+            this.txtPrice = new System.Windows.Forms.TextBox();
+            this.lblImage = new System.Windows.Forms.Label();
+            this.txtImagePath = new System.Windows.Forms.TextBox();
+            this.btnSelectImage = new System.Windows.Forms.Button();
+            this.picPreview = new System.Windows.Forms.PictureBox();
+            this.chkSafetyCertification = new System.Windows.Forms.CheckBox();
+            this.chkIsPublic = new System.Windows.Forms.CheckBox();
+            this.lblDesignId = new System.Windows.Forms.Label();
+            this.txtDesignId = new System.Windows.Forms.TextBox();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.btnCancel = new System.Windows.Forms.Button();
+            this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
+            this.lblQuantity = new System.Windows.Forms.Label();
+            this.txtQuantity = new System.Windows.Forms.TextBox();
+            ((System.ComponentModel.ISupportInitialize)(this.picPreview)).BeginInit();
             this.SuspendLayout();
-            
+            // 
             // lblName
+            // 
             this.lblName.AutoSize = true;
-            this.lblName.Location = new Point(30, 30);
+            this.lblName.Location = new System.Drawing.Point(45, 42);
+            this.lblName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new Size(68, 17);
+            this.lblName.Size = new System.Drawing.Size(166, 24);
             this.lblName.TabIndex = 0;
             this.lblName.Text = "Product Name:";
-            
+            // 
             // txtName
-            this.txtName.Location = new Point(120, 27);
+            // 
+            this.txtName.Location = new System.Drawing.Point(209, 38);
+            this.txtName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new Size(250, 25);
+            this.txtName.Size = new System.Drawing.Size(344, 35);
             this.txtName.TabIndex = 1;
-            
+            // 
             // lblDescription
+            // 
             this.lblDescription.AutoSize = true;
-            this.lblDescription.Location = new Point(30, 70);
+            this.lblDescription.Location = new System.Drawing.Point(45, 99);
+            this.lblDescription.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDescription.Name = "lblDescription";
-            this.lblDescription.Size = new Size(68, 17);
+            this.lblDescription.Size = new System.Drawing.Size(250, 24);
             this.lblDescription.TabIndex = 2;
             this.lblDescription.Text = "Product Description:";
-            
+            // 
             // txtDescription
-            this.txtDescription.Location = new Point(120, 67);
+            // 
+            this.txtDescription.Location = new System.Drawing.Point(292, 95);
+            this.txtDescription.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtDescription.Multiline = true;
             this.txtDescription.Name = "txtDescription";
-            this.txtDescription.Size = new Size(250, 80);
+            this.txtDescription.Size = new System.Drawing.Size(261, 111);
             this.txtDescription.TabIndex = 3;
-            
+            // 
             // lblPrice
+            // 
             this.lblPrice.AutoSize = true;
-            this.lblPrice.Location = new Point(30, 170);
+            this.lblPrice.Location = new System.Drawing.Point(45, 240);
+            this.lblPrice.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPrice.Name = "lblPrice";
-            this.lblPrice.Size = new Size(80, 17);
+            this.lblPrice.Size = new System.Drawing.Size(214, 24);
             this.lblPrice.TabIndex = 4;
             this.lblPrice.Text = "Price (in cents):";
-            
+            // 
             // txtPrice
-            this.txtPrice.Location = new Point(120, 167);
+            // 
+            this.txtPrice.Location = new System.Drawing.Point(253, 236);
+            this.txtPrice.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtPrice.Name = "txtPrice";
-            this.txtPrice.Size = new Size(150, 25);
+            this.txtPrice.Size = new System.Drawing.Size(300, 35);
             this.txtPrice.TabIndex = 5;
-            
+            // 
             // lblImage
+            // 
             this.lblImage.AutoSize = true;
-            this.lblImage.Location = new Point(30, 210);
+            this.lblImage.Location = new System.Drawing.Point(45, 296);
+            this.lblImage.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblImage.Name = "lblImage";
-            this.lblImage.Size = new Size(68, 17);
+            this.lblImage.Size = new System.Drawing.Size(178, 24);
             this.lblImage.TabIndex = 6;
             this.lblImage.Text = "Product Image:";
-            
+            // 
             // txtImagePath
-            this.txtImagePath.Location = new Point(120, 207);
+            // 
+            this.txtImagePath.Location = new System.Drawing.Point(231, 292);
+            this.txtImagePath.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtImagePath.Name = "txtImagePath";
             this.txtImagePath.ReadOnly = true;
-            this.txtImagePath.Size = new Size(200, 25);
+            this.txtImagePath.Size = new System.Drawing.Size(322, 35);
             this.txtImagePath.TabIndex = 7;
-            
+            // 
             // btnSelectImage
-            this.btnSelectImage.Location = new Point(330, 205);
+            // 
+            this.btnSelectImage.Location = new System.Drawing.Point(562, 287);
+            this.btnSelectImage.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnSelectImage.Name = "btnSelectImage";
-            this.btnSelectImage.Size = new Size(80, 30);
+            this.btnSelectImage.Size = new System.Drawing.Size(120, 42);
             this.btnSelectImage.TabIndex = 8;
             this.btnSelectImage.Text = "Select Image";
             this.btnSelectImage.UseVisualStyleBackColor = true;
-            this.btnSelectImage.Click += new EventHandler(this.btnSelectImage_Click);
-            
+            this.btnSelectImage.Click += new System.EventHandler(this.btnSelectImage_Click);
+            // 
             // picPreview
-            this.picPreview.BorderStyle = BorderStyle.FixedSingle;
-            this.picPreview.Location = new Point(450, 30);
+            // 
+            this.picPreview.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.picPreview.Location = new System.Drawing.Point(690, 38);
+            this.picPreview.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.picPreview.Name = "picPreview";
-            this.picPreview.Size = new Size(200, 200);
-            this.picPreview.SizeMode = PictureBoxSizeMode.StretchImage;
+            this.picPreview.Size = new System.Drawing.Size(306, 291);
+            this.picPreview.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picPreview.TabIndex = 9;
             this.picPreview.TabStop = false;
-            
-            // lblQuantity
-            this.lblQuantity.AutoSize = true;
-            this.lblQuantity.Location = new Point(30, 250);
-            this.lblQuantity.Name = "lblQuantity";
-            this.lblQuantity.Size = new Size(68, 17);
-            this.lblQuantity.TabIndex = 16;
-            this.lblQuantity.Text = "Inventory Quantity:";
-
-            // txtQuantity
-            this.txtQuantity.Location = new Point(120, 247);
-            this.txtQuantity.Name = "txtQuantity";
-            this.txtQuantity.Size = new Size(150, 25);
-            this.txtQuantity.TabIndex = 17;
-
+            // 
             // chkSafetyCertification
+            // 
             this.chkSafetyCertification.AutoSize = true;
-            this.chkSafetyCertification.Location = new Point(120, 290);
+            this.chkSafetyCertification.Location = new System.Drawing.Point(180, 409);
+            this.chkSafetyCertification.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.chkSafetyCertification.Name = "chkSafetyCertification";
-            this.chkSafetyCertification.Size = new Size(89, 21);
+            this.chkSafetyCertification.Size = new System.Drawing.Size(282, 28);
             this.chkSafetyCertification.TabIndex = 10;
             this.chkSafetyCertification.Text = "Safety Certification";
             this.chkSafetyCertification.UseVisualStyleBackColor = true;
-            
+            // 
             // chkIsPublic
+            // 
             this.chkIsPublic.AutoSize = true;
             this.chkIsPublic.Checked = true;
-            this.chkIsPublic.CheckState = CheckState.Checked;
-            this.chkIsPublic.Location = new Point(230, 290);
+            this.chkIsPublic.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chkIsPublic.Location = new System.Drawing.Point(520, 409);
+            this.chkIsPublic.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.chkIsPublic.Name = "chkIsPublic";
-            this.chkIsPublic.Size = new Size(89, 21);
+            this.chkIsPublic.Size = new System.Drawing.Size(222, 28);
             this.chkIsPublic.TabIndex = 11;
             this.chkIsPublic.Text = "Public Products";
             this.chkIsPublic.UseVisualStyleBackColor = true;
-            
+            // 
             // lblDesignId
+            // 
             this.lblDesignId.AutoSize = true;
-            this.lblDesignId.Location = new Point(30, 330);
+            this.lblDesignId.Location = new System.Drawing.Point(45, 466);
+            this.lblDesignId.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDesignId.Name = "lblDesignId";
-            this.lblDesignId.Size = new Size(68, 17);
+            this.lblDesignId.Size = new System.Drawing.Size(130, 24);
             this.lblDesignId.TabIndex = 12;
             this.lblDesignId.Text = "Design ID:";
-            
+            // 
             // txtDesignId
-            this.txtDesignId.Location = new Point(120, 327);
+            // 
+            this.txtDesignId.Location = new System.Drawing.Point(180, 462);
+            this.txtDesignId.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtDesignId.Name = "txtDesignId";
-            this.txtDesignId.Size = new Size(150, 25);
+            this.txtDesignId.Size = new System.Drawing.Size(282, 35);
             this.txtDesignId.TabIndex = 13;
-            
+            // 
             // btnSave
-            this.btnSave.Location = new Point(450, 320);
+            // 
+            this.btnSave.Location = new System.Drawing.Point(675, 452);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new Size(90, 35);
+            this.btnSave.Size = new System.Drawing.Size(135, 49);
             this.btnSave.TabIndex = 14;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
-            this.btnSave.Click += new EventHandler(this.btnSave_Click);
-            
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
             // btnCancel
-            this.btnCancel.Location = new Point(560, 320);
+            // 
+            this.btnCancel.Location = new System.Drawing.Point(840, 452);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new Size(90, 35);
+            this.btnCancel.Size = new System.Drawing.Size(135, 49);
             this.btnCancel.TabIndex = 15;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
-            this.btnCancel.Click += new EventHandler(this.btnCancel_Click);
-            
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
             // openFileDialog
+            // 
             this.openFileDialog.Filter = "Image File|*.jpg;*.jpeg;*.png;*.bmp;*.gif";
             this.openFileDialog.Title = "Select Product Image";
-            
+            // 
+            // lblQuantity
+            // 
+            this.lblQuantity.AutoSize = true;
+            this.lblQuantity.Location = new System.Drawing.Point(45, 353);
+            this.lblQuantity.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblQuantity.Name = "lblQuantity";
+            this.lblQuantity.Size = new System.Drawing.Size(238, 24);
+            this.lblQuantity.TabIndex = 16;
+            this.lblQuantity.Text = "Inventory Quantity:";
+            // 
+            // txtQuantity
+            // 
+            this.txtQuantity.Location = new System.Drawing.Point(291, 349);
+            this.txtQuantity.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtQuantity.Name = "txtQuantity";
+            this.txtQuantity.Size = new System.Drawing.Size(262, 35);
+            this.txtQuantity.TabIndex = 17;
+            // 
             // AddProductForm
-            this.AutoScaleDimensions = new SizeF(8F, 17F);
-            this.AutoScaleMode = AutoScaleMode.Font;
-            this.ClientSize = new Size(700, 380);
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 24F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(1050, 536);
             this.Controls.Add(this.txtQuantity);
             this.Controls.Add(this.lblQuantity);
             this.Controls.Add(this.btnCancel);
@@ -233,13 +271,14 @@ namespace DesktopApp.Control.Page.Product
             this.Controls.Add(this.lblDescription);
             this.Controls.Add(this.txtName);
             this.Controls.Add(this.lblName);
-            this.FormBorderStyle = FormBorderStyle.FixedDialog;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "AddProductForm";
-            this.StartPosition = FormStartPosition.CenterParent;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Add Product";
-            ((ISupportInitialize)(this.picPreview)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picPreview)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
         }
@@ -247,23 +286,23 @@ namespace DesktopApp.Control.Page.Product
         #endregion
         
         private Label lblName;
-        private TextBox txtName;
+        private System.Windows.Forms.TextBox txtName;
         private Label lblDescription;
-        private TextBox txtDescription;
+        private System.Windows.Forms.TextBox txtDescription;
         private Label lblPrice;
-        private TextBox txtPrice;
+        private System.Windows.Forms.TextBox txtPrice;
         private Label lblImage;
-        private TextBox txtImagePath;
-        private Button btnSelectImage;
-        private PictureBox picPreview;
+        private System.Windows.Forms.TextBox txtImagePath;
+        private System.Windows.Forms.Button btnSelectImage;
+        private System.Windows.Forms.PictureBox picPreview;
         private CheckBox chkSafetyCertification;
-        private CheckBox chkIsPublic;
+        private System.Windows.Forms.CheckBox chkIsPublic;
         private Label lblDesignId;
-        private TextBox txtDesignId;
+        private System.Windows.Forms.TextBox txtDesignId;
         private Button btnSave;
         private Button btnCancel;
         private OpenFileDialog openFileDialog;
         private Label lblQuantity;
-        private TextBox txtQuantity;
+        private System.Windows.Forms.TextBox txtQuantity;
     }
 }

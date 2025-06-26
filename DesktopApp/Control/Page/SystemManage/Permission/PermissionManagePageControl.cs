@@ -25,11 +25,11 @@ namespace DesktopApp.Control.Page.SystemManage.Permission
             // 设置列
             dgvPermissions.Columns.Clear();
             dgvPermissions.Columns.Add("Id", "ID");
-            dgvPermissions.Columns.Add("PermissionName", "权限名称");
-            dgvPermissions.Columns.Add("ApiPath", "API路径");
-            dgvPermissions.Columns.Add("Description", "描述");
-            dgvPermissions.Columns.Add("CreatedAt", "创建时间");
-            dgvPermissions.Columns.Add("UpdatedAt", "更新时间");
+            dgvPermissions.Columns.Add("PermissionName", "Permission Name");
+            dgvPermissions.Columns.Add("ApiPath", "API Path");
+            dgvPermissions.Columns.Add("Description", "Description");
+            dgvPermissions.Columns.Add("CreatedAt", "Creation time");
+            dgvPermissions.Columns.Add("UpdatedAt", "Update time");
 
             // 设置列宽
             dgvPermissions.Columns["Id"].Width = 60;
@@ -64,7 +64,7 @@ namespace DesktopApp.Control.Page.SystemManage.Permission
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"加载权限数据失败：{ex.Message}", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"Failed to load permission data：{ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -81,7 +81,7 @@ namespace DesktopApp.Control.Page.SystemManage.Permission
         {
             if (dgvPermissions.SelectedRows.Count != 1)
             {
-                MessageBox.Show("请选择一条记录进行编辑", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Please select a record to edit", "Hint", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
 
@@ -99,12 +99,12 @@ namespace DesktopApp.Control.Page.SystemManage.Permission
         {
             if (dgvPermissions.SelectedRows.Count == 0)
             {
-                MessageBox.Show("请选择要删除的记录", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Please select the record to delete", "Hint", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
 
             var selectedCount = dgvPermissions.SelectedRows.Count;
-            var result = MessageBox.Show($"确定要删除选中的 {selectedCount} 条权限记录吗？", "确认删除", 
+            var result = MessageBox.Show($"Confirm that you want to delete the selected {selectedCount} permission record?？", "Confirm Delete", 
                 MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
             if (result == DialogResult.Yes)
@@ -129,12 +129,12 @@ namespace DesktopApp.Control.Page.SystemManage.Permission
 
                     if (failCount > 0)
                     {
-                        MessageBox.Show($"删除完成：成功 {deleteCount} 条，失败 {failCount} 条", "删除结果", 
+                        MessageBox.Show($"Deletion completed: Success {deleteCount} ，Fail {failCount} ", "Delete Results", 
                             MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                     else
                     {
-                        MessageBox.Show($"成功删除 {deleteCount} 条记录", "删除成功", 
+                        MessageBox.Show($"Successfully deleted {deleteCount} record", "Deleted successfully", 
                             MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
 
@@ -142,7 +142,7 @@ namespace DesktopApp.Control.Page.SystemManage.Permission
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show($"删除失败：{ex.Message}", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show($"Deletion failed：{ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }

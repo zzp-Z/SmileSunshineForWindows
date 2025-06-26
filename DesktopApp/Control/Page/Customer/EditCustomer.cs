@@ -20,7 +20,7 @@ namespace DesktopApp.Control.Page.Customer
         
         private void InitializeForm()
         {
-            this.Text = "编辑客户";
+            this.Text = "Edit Customer";
             this.StartPosition = FormStartPosition.CenterParent;
             this.FormBorderStyle = FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
@@ -50,18 +50,18 @@ namespace DesktopApp.Control.Page.Customer
                 
                 if (_customerFunc.UpdateCustomer(_customer))
                 {
-                    MessageBox.Show("客户信息更新成功！", "成功", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Customer information updated successfully！", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.DialogResult = DialogResult.OK;
                     this.Close();
                 }
                 else
                 {
-                    MessageBox.Show("客户信息更新失败，请重试。", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Customer information update failed, please try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"更新客户信息时发生错误: {ex.Message}", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"An error occurred while updating customer information: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         
@@ -75,14 +75,14 @@ namespace DesktopApp.Control.Page.Customer
         {
             if (string.IsNullOrWhiteSpace(txtName.Text))
             {
-                MessageBox.Show("请输入客户姓名。", "验证失败", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Please enter the customer name.", "Authentication failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtName.Focus();
                 return false;
             }
             
             if (string.IsNullOrWhiteSpace(txtPhone.Text))
             {
-                MessageBox.Show("请输入客户电话。", "验证失败", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Please enter the customer's phone number.", "Authentication failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtPhone.Focus();
                 return false;
             }

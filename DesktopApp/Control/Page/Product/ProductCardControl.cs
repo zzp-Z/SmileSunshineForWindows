@@ -183,7 +183,7 @@ namespace DesktopApp.Control.Page.Product
             }
             
             // 更新安全认证
-            _certificationLabel.Text = (_product.SafetyCertification ?? false) ? "已认证" : "未认证";
+            _certificationLabel.Text = (_product.SafetyCertification ?? false) ? "Certified" : "UnCertified";
             _certificationLabel.ForeColor = (_product.SafetyCertification ?? false) ? Color.Green : Color.Orange;
             
             // 更新公开状态

@@ -50,7 +50,7 @@ namespace DesktopApp.Control.Page.SystemManage.Permission
             this.lblPermissionName.Name = "lblPermissionName";
             this.lblPermissionName.Size = new Size(65, 12);
             this.lblPermissionName.TabIndex = 0;
-            this.lblPermissionName.Text = "权限名称：";
+            this.lblPermissionName.Text = "Permission Name：";
             // 
             // txtPermissionName
             // 
@@ -66,7 +66,7 @@ namespace DesktopApp.Control.Page.SystemManage.Permission
             this.lblApiPath.Name = "lblApiPath";
             this.lblApiPath.Size = new Size(59, 12);
             this.lblApiPath.TabIndex = 2;
-            this.lblApiPath.Text = "API路径：";
+            this.lblApiPath.Text = "API Path：";
             // 
             // txtApiPath
             // 
@@ -82,7 +82,7 @@ namespace DesktopApp.Control.Page.SystemManage.Permission
             this.lblDescription.Name = "lblDescription";
             this.lblDescription.Size = new Size(41, 12);
             this.lblDescription.TabIndex = 4;
-            this.lblDescription.Text = "描述：";
+            this.lblDescription.Text = "Description：";
             // 
             // txtDescription
             // 
@@ -98,7 +98,7 @@ namespace DesktopApp.Control.Page.SystemManage.Permission
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new Size(75, 30);
             this.btnSave.TabIndex = 6;
-            this.btnSave.Text = "保存";
+            this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
@@ -109,7 +109,7 @@ namespace DesktopApp.Control.Page.SystemManage.Permission
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new Size(75, 30);
             this.btnCancel.TabIndex = 7;
-            this.btnCancel.Text = "取消";
+            this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
             // 
             // AddPermission
@@ -132,7 +132,7 @@ namespace DesktopApp.Control.Page.SystemManage.Permission
             this.MinimizeBox = false;
             this.Name = "AddPermission";
             this.StartPosition = FormStartPosition.CenterParent;
-            this.Text = "添加权限";
+            this.Text = "Add Permission";
             this.ResumeLayout(false);
             this.PerformLayout();
         }

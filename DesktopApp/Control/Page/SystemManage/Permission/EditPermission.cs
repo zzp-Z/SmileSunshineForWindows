@@ -32,14 +32,14 @@ namespace DesktopApp.Control.Page.SystemManage.Permission
                 }
                 else
                 {
-                    MessageBox.Show("未找到指定的权限记录", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("The specified permission record was not found", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     this.DialogResult = DialogResult.Cancel;
                     this.Close();
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"加载权限数据失败：{ex.Message}", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"Failed to load permission data：{ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 this.DialogResult = DialogResult.Cancel;
                 this.Close();
             }
@@ -50,14 +50,14 @@ namespace DesktopApp.Control.Page.SystemManage.Permission
             // 验证输入
             if (string.IsNullOrWhiteSpace(txtPermissionName.Text))
             {
-                MessageBox.Show("请输入权限名称", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Please enter the permission name", "Hint", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtPermissionName.Focus();
                 return;
             }
 
             if (string.IsNullOrWhiteSpace(txtApiPath.Text))
             {
-                MessageBox.Show("请输入API路径", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Please enter the API path", "Hint", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtApiPath.Focus();
                 return;
             }
@@ -70,18 +70,18 @@ namespace DesktopApp.Control.Page.SystemManage.Permission
 
                 if (_permissionFunc.UpdatePermission(_currentPermission))
                 {
-                    MessageBox.Show("权限更新成功", "成功", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Permissions updated successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.DialogResult = DialogResult.OK;
                     this.Close();
                 }
                 else
                 {
-                    MessageBox.Show("权限更新失败", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Permission update failed", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"更新权限时发生错误：{ex.Message}", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"An error occurred while updating permissions：{ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

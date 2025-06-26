@@ -34,54 +34,54 @@ namespace DesktopApp.Control.Page.Product
         /// </summary>
         private void InitializeComponent()
         {
-            this.groupBoxCustomer = new GroupBox();
-            this.btnAddCustomer = new Button();
-            this.cmbCustomer = new ComboBox();
-            this.lblCustomer = new Label();
-            this.groupBoxOrderInfo = new GroupBox();
-            this.txtSpecialRequirements = new TextBox();
-            this.lblSpecialRequirements = new Label();
-            this.chkIsCustomized = new CheckBox();
-            this.chkDownPaymentPaid = new CheckBox();
-            this.numDownPaymentPercent = new NumericUpDown();
-            this.lblDownPaymentPercent = new Label();
-            this.txtPaymentTerms = new TextBox();
-            this.lblPaymentTerms = new Label();
-            this.txtShippingAddress = new TextBox();
-            this.lblShippingAddress = new Label();
-            this.cmbStatus = new ComboBox();
-            this.lblStatus = new Label();
-            this.dtpDeliveryDate = new DateTimePicker();
-            this.lblDeliveryDate = new Label();
-            this.dtpOrderDate = new DateTimePicker();
-            this.lblOrderDate = new Label();
-            this.cmbPaymentMethod = new ComboBox();
-            this.lblPaymentMethod = new Label();
-            this.txtOrderNumber = new TextBox();
-            this.lblOrderNumber = new Label();
-            this.groupBoxOrderItems = new GroupBox();
-            this.listViewOrderItems = new ListView();
-            this.columnHeaderProduct = new ColumnHeader();
-            this.columnHeaderQuantity = new ColumnHeader();
-            this.columnHeaderUnitPrice = new ColumnHeader();
-            this.columnHeaderTotalPrice = new ColumnHeader();
-            this.groupBoxTotals = new GroupBox();
-            this.lblTotalAmount = new Label();
-            this.lblTotalAmountLabel = new Label();
-            this.lblTaxAmount = new Label();
-            this.lblTaxAmountLabel = new Label();
-            this.numShippingCost = new NumericUpDown();
-            this.lblShippingCost = new Label();
-            this.lblProductAmount = new Label();
-            this.lblProductAmountLabel = new Label();
-            this.btnSave = new Button();
-            this.btnCancel = new Button();
+            this.groupBoxCustomer = new System.Windows.Forms.GroupBox();
+            this.btnAddCustomer = new System.Windows.Forms.Button();
+            this.cmbCustomer = new System.Windows.Forms.ComboBox();
+            this.lblCustomer = new System.Windows.Forms.Label();
+            this.groupBoxOrderInfo = new System.Windows.Forms.GroupBox();
+            this.txtSpecialRequirements = new System.Windows.Forms.TextBox();
+            this.lblSpecialRequirements = new System.Windows.Forms.Label();
+            this.chkIsCustomized = new System.Windows.Forms.CheckBox();
+            this.chkDownPaymentPaid = new System.Windows.Forms.CheckBox();
+            this.numDownPaymentPercent = new System.Windows.Forms.NumericUpDown();
+            this.lblDownPaymentPercent = new System.Windows.Forms.Label();
+            this.txtPaymentTerms = new System.Windows.Forms.TextBox();
+            this.lblPaymentTerms = new System.Windows.Forms.Label();
+            this.txtShippingAddress = new System.Windows.Forms.TextBox();
+            this.lblShippingAddress = new System.Windows.Forms.Label();
+            this.cmbStatus = new System.Windows.Forms.ComboBox();
+            this.lblStatus = new System.Windows.Forms.Label();
+            this.dtpDeliveryDate = new System.Windows.Forms.DateTimePicker();
+            this.lblDeliveryDate = new System.Windows.Forms.Label();
+            this.dtpOrderDate = new System.Windows.Forms.DateTimePicker();
+            this.lblOrderDate = new System.Windows.Forms.Label();
+            this.cmbPaymentMethod = new System.Windows.Forms.ComboBox();
+            this.lblPaymentMethod = new System.Windows.Forms.Label();
+            this.txtOrderNumber = new System.Windows.Forms.TextBox();
+            this.lblOrderNumber = new System.Windows.Forms.Label();
+            this.groupBoxOrderItems = new System.Windows.Forms.GroupBox();
+            this.listViewOrderItems = new System.Windows.Forms.ListView();
+            this.columnHeaderProduct = new System.Windows.Forms.ColumnHeader();
+            this.columnHeaderQuantity = new System.Windows.Forms.ColumnHeader();
+            this.columnHeaderUnitPrice = new System.Windows.Forms.ColumnHeader();
+            this.columnHeaderTotalPrice = new System.Windows.Forms.ColumnHeader();
+            this.groupBoxTotals = new System.Windows.Forms.GroupBox();
+            this.lblTotalAmount = new System.Windows.Forms.Label();
+            this.lblTotalAmountLabel = new System.Windows.Forms.Label();
+            this.lblTaxAmount = new System.Windows.Forms.Label();
+            this.lblTaxAmountLabel = new System.Windows.Forms.Label();
+            this.numShippingCost = new System.Windows.Forms.NumericUpDown();
+            this.lblShippingCost = new System.Windows.Forms.Label();
+            this.lblProductAmount = new System.Windows.Forms.Label();
+            this.lblProductAmountLabel = new System.Windows.Forms.Label();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.btnCancel = new System.Windows.Forms.Button();
             this.groupBoxCustomer.SuspendLayout();
             this.groupBoxOrderInfo.SuspendLayout();
-            ((ISupportInitialize)(this.numDownPaymentPercent)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numDownPaymentPercent)).BeginInit();
             this.groupBoxOrderItems.SuspendLayout();
             this.groupBoxTotals.SuspendLayout();
-            ((ISupportInitialize)(this.numShippingCost)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numShippingCost)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBoxCustomer
@@ -89,40 +89,45 @@ namespace DesktopApp.Control.Page.Product
             this.groupBoxCustomer.Controls.Add(this.btnAddCustomer);
             this.groupBoxCustomer.Controls.Add(this.cmbCustomer);
             this.groupBoxCustomer.Controls.Add(this.lblCustomer);
-            this.groupBoxCustomer.Location = new Point(12, 12);
+            this.groupBoxCustomer.Location = new System.Drawing.Point(24, 24);
+            this.groupBoxCustomer.Margin = new System.Windows.Forms.Padding(6);
             this.groupBoxCustomer.Name = "groupBoxCustomer";
-            this.groupBoxCustomer.Size = new Size(760, 60);
+            this.groupBoxCustomer.Padding = new System.Windows.Forms.Padding(6);
+            this.groupBoxCustomer.Size = new System.Drawing.Size(1520, 120);
             this.groupBoxCustomer.TabIndex = 0;
             this.groupBoxCustomer.TabStop = false;
             this.groupBoxCustomer.Text = "Customer Information";
             // 
-            // lblCustomer
-            // 
-            this.lblCustomer.AutoSize = true;
-            this.lblCustomer.Location = new Point(15, 25);
-            this.lblCustomer.Name = "lblCustomer";
-            this.lblCustomer.Size = new Size(41, 12);
-            this.lblCustomer.TabIndex = 0;
-            this.lblCustomer.Text = "Customer:";
-            // 
-            // cmbCustomer
-            // 
-            this.cmbCustomer.DropDownStyle = ComboBoxStyle.DropDownList;
-            this.cmbCustomer.FormattingEnabled = true;
-            this.cmbCustomer.Location = new Point(62, 22);
-            this.cmbCustomer.Name = "cmbCustomer";
-            this.cmbCustomer.Size = new Size(200, 20);
-            this.cmbCustomer.TabIndex = 1;
-            // 
             // btnAddCustomer
             // 
-            this.btnAddCustomer.Location = new Point(280, 20);
+            this.btnAddCustomer.Location = new System.Drawing.Point(562, 44);
+            this.btnAddCustomer.Margin = new System.Windows.Forms.Padding(6);
             this.btnAddCustomer.Name = "btnAddCustomer";
-            this.btnAddCustomer.Size = new Size(80, 25);
+            this.btnAddCustomer.Size = new System.Drawing.Size(160, 36);
             this.btnAddCustomer.TabIndex = 2;
             this.btnAddCustomer.Text = "Add Customer";
             this.btnAddCustomer.UseVisualStyleBackColor = true;
-            this.btnAddCustomer.Click += new EventHandler(this.btnAddCustomer_Click);
+            this.btnAddCustomer.Click += new System.EventHandler(this.btnAddCustomer_Click);
+            // 
+            // cmbCustomer
+            // 
+            this.cmbCustomer.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbCustomer.FormattingEnabled = true;
+            this.cmbCustomer.Location = new System.Drawing.Point(148, 44);
+            this.cmbCustomer.Margin = new System.Windows.Forms.Padding(6);
+            this.cmbCustomer.Name = "cmbCustomer";
+            this.cmbCustomer.Size = new System.Drawing.Size(372, 32);
+            this.cmbCustomer.TabIndex = 1;
+            // 
+            // lblCustomer
+            // 
+            this.lblCustomer.AutoSize = true;
+            this.lblCustomer.Location = new System.Drawing.Point(30, 50);
+            this.lblCustomer.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.lblCustomer.Name = "lblCustomer";
+            this.lblCustomer.Size = new System.Drawing.Size(118, 24);
+            this.lblCustomer.TabIndex = 0;
+            this.lblCustomer.Text = "Customer:";
             // 
             // groupBoxOrderInfo
             // 
@@ -146,230 +151,255 @@ namespace DesktopApp.Control.Page.Product
             this.groupBoxOrderInfo.Controls.Add(this.lblPaymentMethod);
             this.groupBoxOrderInfo.Controls.Add(this.txtOrderNumber);
             this.groupBoxOrderInfo.Controls.Add(this.lblOrderNumber);
-            this.groupBoxOrderInfo.Location = new Point(12, 78);
+            this.groupBoxOrderInfo.Location = new System.Drawing.Point(24, 156);
+            this.groupBoxOrderInfo.Margin = new System.Windows.Forms.Padding(6);
             this.groupBoxOrderInfo.Name = "groupBoxOrderInfo";
-            this.groupBoxOrderInfo.Size = new Size(760, 180);
+            this.groupBoxOrderInfo.Padding = new System.Windows.Forms.Padding(6);
+            this.groupBoxOrderInfo.Size = new System.Drawing.Size(1520, 360);
             this.groupBoxOrderInfo.TabIndex = 1;
             this.groupBoxOrderInfo.TabStop = false;
             this.groupBoxOrderInfo.Text = "Order Information";
             // 
-            // lblOrderNumber
+            // txtSpecialRequirements
             // 
-            this.lblOrderNumber.AutoSize = true;
-            this.lblOrderNumber.Location = new Point(15, 25);
-            this.lblOrderNumber.Name = "lblOrderNumber";
-            this.lblOrderNumber.Size = new Size(53, 12);
-            this.lblOrderNumber.TabIndex = 0;
-            this.lblOrderNumber.Text = "Order Number:";
-            // 
-            // txtOrderNumber
-            // 
-            this.txtOrderNumber.Location = new Point(74, 22);
-            this.txtOrderNumber.Name = "txtOrderNumber";
-            this.txtOrderNumber.Size = new Size(150, 21);
-            this.txtOrderNumber.TabIndex = 1;
-            // 
-            // lblPaymentMethod
-            // 
-            this.lblPaymentMethod.AutoSize = true;
-            this.lblPaymentMethod.Location = new Point(250, 25);
-            this.lblPaymentMethod.Name = "lblPaymentMethod";
-            this.lblPaymentMethod.Size = new Size(65, 12);
-            this.lblPaymentMethod.TabIndex = 2;
-            this.lblPaymentMethod.Text = "Payment Methods:";
-            // 
-            // cmbPaymentMethod
-            // 
-            this.cmbPaymentMethod.DropDownStyle = ComboBoxStyle.DropDownList;
-            this.cmbPaymentMethod.FormattingEnabled = true;
-            this.cmbPaymentMethod.Items.AddRange(new object[] { "Cash", "Credit Card", "Bank Transfer" });
-            this.cmbPaymentMethod.Location = new Point(321, 22);
-            this.cmbPaymentMethod.Name = "cmbPaymentMethod";
-            this.cmbPaymentMethod.Size = new Size(120, 20);
-            this.cmbPaymentMethod.TabIndex = 3;
-            // 
-            // lblOrderDate
-            // 
-            this.lblOrderDate.AutoSize = true;
-            this.lblOrderDate.Location = new Point(15, 55);
-            this.lblOrderDate.Name = "lblOrderDate";
-            this.lblOrderDate.Size = new Size(65, 12);
-            this.lblOrderDate.TabIndex = 4;
-            this.lblOrderDate.Text = "Order Date:";
-            // 
-            // dtpOrderDate
-            // 
-            this.dtpOrderDate.Format = DateTimePickerFormat.Short;
-            this.dtpOrderDate.Location = new Point(86, 52);
-            this.dtpOrderDate.Name = "dtpOrderDate";
-            this.dtpOrderDate.Size = new Size(120, 21);
-            this.dtpOrderDate.TabIndex = 5;
-            // 
-            // lblDeliveryDate
-            // 
-            this.lblDeliveryDate.AutoSize = true;
-            this.lblDeliveryDate.Location = new Point(250, 55);
-            this.lblDeliveryDate.Name = "lblDeliveryDate";
-            this.lblDeliveryDate.Size = new Size(65, 12);
-            this.lblDeliveryDate.TabIndex = 6;
-            this.lblDeliveryDate.Text = "Delivery Date:";
-            // 
-            // dtpDeliveryDate
-            // 
-            this.dtpDeliveryDate.Format = DateTimePickerFormat.Short;
-            this.dtpDeliveryDate.Location = new Point(321, 52);
-            this.dtpDeliveryDate.Name = "dtpDeliveryDate";
-            this.dtpDeliveryDate.Size = new Size(120, 21);
-            this.dtpDeliveryDate.TabIndex = 7;
-            // 
-            // lblStatus
-            // 
-            this.lblStatus.AutoSize = true;
-            this.lblStatus.Location = new Point(470, 25);
-            this.lblStatus.Name = "lblStatus";
-            this.lblStatus.Size = new Size(41, 12);
-            this.lblStatus.TabIndex = 8;
-            this.lblStatus.Text = "Status:";
-            // 
-            // cmbStatus
-            // 
-            this.cmbStatus.DropDownStyle = ComboBoxStyle.DropDownList;
-            this.cmbStatus.FormattingEnabled = true;
-            this.cmbStatus.Items.AddRange(new object[] { "Pending", "Completed", "Cancelled" });
-            this.cmbStatus.Location = new Point(517, 22);
-            this.cmbStatus.Name = "cmbStatus";
-            this.cmbStatus.Size = new Size(100, 20);
-            this.cmbStatus.TabIndex = 9;
-            // 
-            // lblShippingAddress
-            // 
-            this.lblShippingAddress.AutoSize = true;
-            this.lblShippingAddress.Location = new Point(15, 85);
-            this.lblShippingAddress.Name = "lblShippingAddress";
-            this.lblShippingAddress.Size = new Size(65, 12);
-            this.lblShippingAddress.TabIndex = 10;
-            this.lblShippingAddress.Text = "Delivery Address:";
-            // 
-            // txtShippingAddress
-            // 
-            this.txtShippingAddress.Location = new Point(86, 82);
-            this.txtShippingAddress.Multiline = true;
-            this.txtShippingAddress.Name = "txtShippingAddress";
-            this.txtShippingAddress.Size = new Size(355, 40);
-            this.txtShippingAddress.TabIndex = 11;
-            // 
-            // lblPaymentTerms
-            // 
-            this.lblPaymentTerms.AutoSize = true;
-            this.lblPaymentTerms.Location = new Point(470, 85);
-            this.lblPaymentTerms.Name = "lblPaymentTerms";
-            this.lblPaymentTerms.Size = new Size(65, 12);
-            this.lblPaymentTerms.TabIndex = 12;
-            this.lblPaymentTerms.Text = "Payment Terms:";
-            // 
-            // txtPaymentTerms
-            // 
-            this.txtPaymentTerms.Location = new Point(541, 82);
-            this.txtPaymentTerms.Multiline = true;
-            this.txtPaymentTerms.Name = "txtPaymentTerms";
-            this.txtPaymentTerms.Size = new Size(200, 40);
-            this.txtPaymentTerms.TabIndex = 13;
-            // 
-            // lblDownPaymentPercent
-            // 
-            this.lblDownPaymentPercent.AutoSize = true;
-            this.lblDownPaymentPercent.Location = new Point(15, 135);
-            this.lblDownPaymentPercent.Name = "lblDownPaymentPercent";
-            this.lblDownPaymentPercent.Size = new Size(89, 12);
-            this.lblDownPaymentPercent.TabIndex = 14;
-            this.lblDownPaymentPercent.Text = "Advance Payment Ratio (%):";
-            // 
-            // numDownPaymentPercent
-            // 
-            this.numDownPaymentPercent.Location = new Point(110, 133);
-            this.numDownPaymentPercent.Maximum = new decimal(new int[] { 100, 0, 0, 0 });
-            this.numDownPaymentPercent.Name = "numDownPaymentPercent";
-            this.numDownPaymentPercent.Size = new Size(80, 21);
-            this.numDownPaymentPercent.TabIndex = 15;
-            // 
-            // chkDownPaymentPaid
-            // 
-            this.chkDownPaymentPaid.AutoSize = true;
-            this.chkDownPaymentPaid.Location = new Point(220, 135);
-            this.chkDownPaymentPaid.Name = "chkDownPaymentPaid";
-            this.chkDownPaymentPaid.Size = new Size(96, 16);
-            this.chkDownPaymentPaid.TabIndex = 16;
-            this.chkDownPaymentPaid.Text = "Advance Payment Paid";
-            this.chkDownPaymentPaid.UseVisualStyleBackColor = true;
-            // 
-            // chkIsCustomized
-            // 
-            this.chkIsCustomized.AutoSize = true;
-            this.chkIsCustomized.Location = new Point(350, 135);
-            this.chkIsCustomized.Name = "chkIsCustomized";
-            this.chkIsCustomized.Size = new Size(72, 16);
-            this.chkIsCustomized.TabIndex = 17;
-            this.chkIsCustomized.Text = "Custom Order";
-            this.chkIsCustomized.UseVisualStyleBackColor = true;
+            this.txtSpecialRequirements.Location = new System.Drawing.Point(304, 304);
+            this.txtSpecialRequirements.Margin = new System.Windows.Forms.Padding(6);
+            this.txtSpecialRequirements.Name = "txtSpecialRequirements";
+            this.txtSpecialRequirements.Size = new System.Drawing.Size(1174, 35);
+            this.txtSpecialRequirements.TabIndex = 19;
             // 
             // lblSpecialRequirements
             // 
             this.lblSpecialRequirements.AutoSize = true;
-            this.lblSpecialRequirements.Location = new Point(15, 155);
+            this.lblSpecialRequirements.Location = new System.Drawing.Point(30, 310);
+            this.lblSpecialRequirements.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblSpecialRequirements.Name = "lblSpecialRequirements";
-            this.lblSpecialRequirements.Size = new Size(65, 12);
+            this.lblSpecialRequirements.Size = new System.Drawing.Size(262, 24);
             this.lblSpecialRequirements.TabIndex = 18;
             this.lblSpecialRequirements.Text = "Special Requirements:";
             // 
-            // txtSpecialRequirements
+            // chkIsCustomized
             // 
-            this.txtSpecialRequirements.Location = new Point(86, 152);
-            this.txtSpecialRequirements.Name = "txtSpecialRequirements";
-            this.txtSpecialRequirements.Size = new Size(655, 21);
-            this.txtSpecialRequirements.TabIndex = 19;
+            this.chkIsCustomized.AutoSize = true;
+            this.chkIsCustomized.Location = new System.Drawing.Point(757, 270);
+            this.chkIsCustomized.Margin = new System.Windows.Forms.Padding(6);
+            this.chkIsCustomized.Name = "chkIsCustomized";
+            this.chkIsCustomized.Size = new System.Drawing.Size(186, 28);
+            this.chkIsCustomized.TabIndex = 17;
+            this.chkIsCustomized.Text = "Custom Order";
+            this.chkIsCustomized.UseVisualStyleBackColor = true;
+            // 
+            // chkDownPaymentPaid
+            // 
+            this.chkDownPaymentPaid.AutoSize = true;
+            this.chkDownPaymentPaid.Location = new System.Drawing.Point(440, 270);
+            this.chkDownPaymentPaid.Margin = new System.Windows.Forms.Padding(6);
+            this.chkDownPaymentPaid.Name = "chkDownPaymentPaid";
+            this.chkDownPaymentPaid.Size = new System.Drawing.Size(282, 28);
+            this.chkDownPaymentPaid.TabIndex = 16;
+            this.chkDownPaymentPaid.Text = "Advance Payment Paid";
+            this.chkDownPaymentPaid.UseVisualStyleBackColor = true;
+            // 
+            // numDownPaymentPercent
+            // 
+            this.numDownPaymentPercent.Location = new System.Drawing.Point(220, 266);
+            this.numDownPaymentPercent.Margin = new System.Windows.Forms.Padding(6);
+            this.numDownPaymentPercent.Name = "numDownPaymentPercent";
+            this.numDownPaymentPercent.Size = new System.Drawing.Size(160, 35);
+            this.numDownPaymentPercent.TabIndex = 15;
+            // 
+            // lblDownPaymentPercent
+            // 
+            this.lblDownPaymentPercent.AutoSize = true;
+            this.lblDownPaymentPercent.Location = new System.Drawing.Point(30, 270);
+            this.lblDownPaymentPercent.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.lblDownPaymentPercent.Name = "lblDownPaymentPercent";
+            this.lblDownPaymentPercent.Size = new System.Drawing.Size(322, 24);
+            this.lblDownPaymentPercent.TabIndex = 14;
+            this.lblDownPaymentPercent.Text = "Advance Payment Ratio (%):";
+            // 
+            // txtPaymentTerms
+            // 
+            this.txtPaymentTerms.Location = new System.Drawing.Point(1113, 164);
+            this.txtPaymentTerms.Margin = new System.Windows.Forms.Padding(6);
+            this.txtPaymentTerms.Multiline = true;
+            this.txtPaymentTerms.Name = "txtPaymentTerms";
+            this.txtPaymentTerms.Size = new System.Drawing.Size(365, 76);
+            this.txtPaymentTerms.TabIndex = 13;
+            // 
+            // lblPaymentTerms
+            // 
+            this.lblPaymentTerms.AutoSize = true;
+            this.lblPaymentTerms.Location = new System.Drawing.Point(940, 170);
+            this.lblPaymentTerms.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.lblPaymentTerms.Name = "lblPaymentTerms";
+            this.lblPaymentTerms.Size = new System.Drawing.Size(178, 24);
+            this.lblPaymentTerms.TabIndex = 12;
+            this.lblPaymentTerms.Text = "Payment Terms:";
+            // 
+            // txtShippingAddress
+            // 
+            this.txtShippingAddress.Location = new System.Drawing.Point(238, 164);
+            this.txtShippingAddress.Margin = new System.Windows.Forms.Padding(6);
+            this.txtShippingAddress.Multiline = true;
+            this.txtShippingAddress.Name = "txtShippingAddress";
+            this.txtShippingAddress.Size = new System.Drawing.Size(640, 76);
+            this.txtShippingAddress.TabIndex = 11;
+            // 
+            // lblShippingAddress
+            // 
+            this.lblShippingAddress.AutoSize = true;
+            this.lblShippingAddress.Location = new System.Drawing.Point(30, 170);
+            this.lblShippingAddress.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.lblShippingAddress.Name = "lblShippingAddress";
+            this.lblShippingAddress.Size = new System.Drawing.Size(214, 24);
+            this.lblShippingAddress.TabIndex = 10;
+            this.lblShippingAddress.Text = "Delivery Address:";
+            // 
+            // cmbStatus
+            // 
+            this.cmbStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbStatus.FormattingEnabled = true;
+            this.cmbStatus.Items.AddRange(new object[] { "Pending", "Completed", "Cancelled" });
+            this.cmbStatus.Location = new System.Drawing.Point(1034, 44);
+            this.cmbStatus.Margin = new System.Windows.Forms.Padding(6);
+            this.cmbStatus.Name = "cmbStatus";
+            this.cmbStatus.Size = new System.Drawing.Size(196, 32);
+            this.cmbStatus.TabIndex = 9;
+            // 
+            // lblStatus
+            // 
+            this.lblStatus.AutoSize = true;
+            this.lblStatus.Location = new System.Drawing.Point(940, 50);
+            this.lblStatus.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.lblStatus.Name = "lblStatus";
+            this.lblStatus.Size = new System.Drawing.Size(94, 24);
+            this.lblStatus.TabIndex = 8;
+            this.lblStatus.Text = "Status:";
+            // 
+            // dtpDeliveryDate
+            // 
+            this.dtpDeliveryDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpDeliveryDate.Location = new System.Drawing.Point(700, 104);
+            this.dtpDeliveryDate.Margin = new System.Windows.Forms.Padding(6);
+            this.dtpDeliveryDate.Name = "dtpDeliveryDate";
+            this.dtpDeliveryDate.Size = new System.Drawing.Size(226, 35);
+            this.dtpDeliveryDate.TabIndex = 7;
+            // 
+            // lblDeliveryDate
+            // 
+            this.lblDeliveryDate.AutoSize = true;
+            this.lblDeliveryDate.Location = new System.Drawing.Point(500, 110);
+            this.lblDeliveryDate.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.lblDeliveryDate.Name = "lblDeliveryDate";
+            this.lblDeliveryDate.Size = new System.Drawing.Size(178, 24);
+            this.lblDeliveryDate.TabIndex = 6;
+            this.lblDeliveryDate.Text = "Delivery Date:";
+            // 
+            // dtpOrderDate
+            // 
+            this.dtpOrderDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpOrderDate.Location = new System.Drawing.Point(193, 104);
+            this.dtpOrderDate.Margin = new System.Windows.Forms.Padding(6);
+            this.dtpOrderDate.Name = "dtpOrderDate";
+            this.dtpOrderDate.Size = new System.Drawing.Size(236, 35);
+            this.dtpOrderDate.TabIndex = 5;
+            // 
+            // lblOrderDate
+            // 
+            this.lblOrderDate.AutoSize = true;
+            this.lblOrderDate.Location = new System.Drawing.Point(30, 110);
+            this.lblOrderDate.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.lblOrderDate.Name = "lblOrderDate";
+            this.lblOrderDate.Size = new System.Drawing.Size(142, 24);
+            this.lblOrderDate.TabIndex = 4;
+            this.lblOrderDate.Text = "Order Date:";
+            // 
+            // cmbPaymentMethod
+            // 
+            this.cmbPaymentMethod.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbPaymentMethod.FormattingEnabled = true;
+            this.cmbPaymentMethod.Items.AddRange(new object[] { "Cash", "Credit Card", "Bank Transfer" });
+            this.cmbPaymentMethod.Location = new System.Drawing.Point(700, 44);
+            this.cmbPaymentMethod.Margin = new System.Windows.Forms.Padding(6);
+            this.cmbPaymentMethod.Name = "cmbPaymentMethod";
+            this.cmbPaymentMethod.Size = new System.Drawing.Size(228, 32);
+            this.cmbPaymentMethod.TabIndex = 3;
+            // 
+            // lblPaymentMethod
+            // 
+            this.lblPaymentMethod.AutoSize = true;
+            this.lblPaymentMethod.Location = new System.Drawing.Point(500, 50);
+            this.lblPaymentMethod.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.lblPaymentMethod.Name = "lblPaymentMethod";
+            this.lblPaymentMethod.Size = new System.Drawing.Size(202, 24);
+            this.lblPaymentMethod.TabIndex = 2;
+            this.lblPaymentMethod.Text = "Payment Methods:";
+            // 
+            // txtOrderNumber
+            // 
+            this.txtOrderNumber.Location = new System.Drawing.Point(193, 44);
+            this.txtOrderNumber.Margin = new System.Windows.Forms.Padding(6);
+            this.txtOrderNumber.Name = "txtOrderNumber";
+            this.txtOrderNumber.Size = new System.Drawing.Size(251, 35);
+            this.txtOrderNumber.TabIndex = 1;
+            // 
+            // lblOrderNumber
+            // 
+            this.lblOrderNumber.AutoSize = true;
+            this.lblOrderNumber.Location = new System.Drawing.Point(30, 50);
+            this.lblOrderNumber.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.lblOrderNumber.Name = "lblOrderNumber";
+            this.lblOrderNumber.Size = new System.Drawing.Size(166, 24);
+            this.lblOrderNumber.TabIndex = 0;
+            this.lblOrderNumber.Text = "Order Number:";
             // 
             // groupBoxOrderItems
             // 
             this.groupBoxOrderItems.Controls.Add(this.listViewOrderItems);
-            this.groupBoxOrderItems.Location = new Point(12, 264);
+            this.groupBoxOrderItems.Location = new System.Drawing.Point(24, 528);
+            this.groupBoxOrderItems.Margin = new System.Windows.Forms.Padding(6);
             this.groupBoxOrderItems.Name = "groupBoxOrderItems";
-            this.groupBoxOrderItems.Size = new Size(500, 200);
+            this.groupBoxOrderItems.Padding = new System.Windows.Forms.Padding(6);
+            this.groupBoxOrderItems.Size = new System.Drawing.Size(1000, 400);
             this.groupBoxOrderItems.TabIndex = 2;
             this.groupBoxOrderItems.TabStop = false;
             this.groupBoxOrderItems.Text = "Order Items";
             // 
             // listViewOrderItems
             // 
-            this.listViewOrderItems.Columns.AddRange(new ColumnHeader[] { this.columnHeaderProduct, this.columnHeaderQuantity, this.columnHeaderUnitPrice, this.columnHeaderTotalPrice });
-            this.listViewOrderItems.Dock = DockStyle.Fill;
+            this.listViewOrderItems.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] { this.columnHeaderProduct, this.columnHeaderQuantity, this.columnHeaderUnitPrice, this.columnHeaderTotalPrice });
+            this.listViewOrderItems.Dock = System.Windows.Forms.DockStyle.Fill;
             this.listViewOrderItems.FullRowSelect = true;
             this.listViewOrderItems.GridLines = true;
-            this.listViewOrderItems.Location = new Point(3, 17);
+            this.listViewOrderItems.HideSelection = false;
+            this.listViewOrderItems.Location = new System.Drawing.Point(6, 34);
+            this.listViewOrderItems.Margin = new System.Windows.Forms.Padding(6);
             this.listViewOrderItems.Name = "listViewOrderItems";
-            this.listViewOrderItems.Size = new Size(494, 180);
+            this.listViewOrderItems.Size = new System.Drawing.Size(988, 360);
             this.listViewOrderItems.TabIndex = 0;
             this.listViewOrderItems.UseCompatibleStateImageBehavior = false;
-            this.listViewOrderItems.View = View.Details;
+            this.listViewOrderItems.View = System.Windows.Forms.View.Details;
             // 
             // columnHeaderProduct
             // 
             this.columnHeaderProduct.Text = "Product Name";
-            this.columnHeaderProduct.Width = 200;
+            this.columnHeaderProduct.Width = 206;
             // 
             // columnHeaderQuantity
             // 
             this.columnHeaderQuantity.Text = "Quantity";
-            this.columnHeaderQuantity.Width = 80;
+            this.columnHeaderQuantity.Width = 158;
             // 
             // columnHeaderUnitPrice
             // 
             this.columnHeaderUnitPrice.Text = "Unit Price";
-            this.columnHeaderUnitPrice.Width = 100;
+            this.columnHeaderUnitPrice.Width = 166;
             // 
             // columnHeaderTotalPrice
             // 
             this.columnHeaderTotalPrice.Text = "Subtotal";
-            this.columnHeaderTotalPrice.Width = 100;
+            this.columnHeaderTotalPrice.Width = 205;
             // 
             // groupBoxTotals
             // 
@@ -381,139 +411,152 @@ namespace DesktopApp.Control.Page.Product
             this.groupBoxTotals.Controls.Add(this.lblShippingCost);
             this.groupBoxTotals.Controls.Add(this.lblProductAmount);
             this.groupBoxTotals.Controls.Add(this.lblProductAmountLabel);
-            this.groupBoxTotals.Location = new Point(518, 264);
+            this.groupBoxTotals.Location = new System.Drawing.Point(1036, 528);
+            this.groupBoxTotals.Margin = new System.Windows.Forms.Padding(6);
             this.groupBoxTotals.Name = "groupBoxTotals";
-            this.groupBoxTotals.Size = new Size(254, 200);
+            this.groupBoxTotals.Padding = new System.Windows.Forms.Padding(6);
+            this.groupBoxTotals.Size = new System.Drawing.Size(508, 400);
             this.groupBoxTotals.TabIndex = 3;
             this.groupBoxTotals.TabStop = false;
             this.groupBoxTotals.Text = "Expense Details";
             // 
-            // lblProductAmountLabel
+            // lblTotalAmount
             // 
-            this.lblProductAmountLabel.AutoSize = true;
-            this.lblProductAmountLabel.Location = new Point(15, 30);
-            this.lblProductAmountLabel.Name = "lblProductAmountLabel";
-            this.lblProductAmountLabel.Size = new Size(65, 12);
-            this.lblProductAmountLabel.TabIndex = 0;
-            this.lblProductAmountLabel.Text = "Commodity Amount:";
-            // 
-            // lblProductAmount
-            // 
-            this.lblProductAmount.AutoSize = true;
-            this.lblProductAmount.Font = new Font("Microsoft YaHei", 9F, FontStyle.Bold);
-            this.lblProductAmount.ForeColor = Color.Red;
-            this.lblProductAmount.Location = new Point(86, 30);
-            this.lblProductAmount.Name = "lblProductAmount";
-            this.lblProductAmount.Size = new Size(42, 17);
-            this.lblProductAmount.TabIndex = 1;
-            this.lblProductAmount.Text = "$0.00";
-            // 
-            // lblShippingCost
-            // 
-            this.lblShippingCost.AutoSize = true;
-            this.lblShippingCost.Location = new Point(15, 60);
-            this.lblShippingCost.Name = "lblShippingCost";
-            this.lblShippingCost.Size = new Size(53, 12);
-            this.lblShippingCost.TabIndex = 2;
-            this.lblShippingCost.Text = "Freight:";
-            // 
-            // numShippingCost
-            // 
-            this.numShippingCost.DecimalPlaces = 2;
-            this.numShippingCost.Location = new Point(86, 58);
-            this.numShippingCost.Maximum = new decimal(new int[] { 10000, 0, 0, 0 });
-            this.numShippingCost.Name = "numShippingCost";
-            this.numShippingCost.Size = new Size(120, 21);
-            this.numShippingCost.TabIndex = 3;
-            this.numShippingCost.ValueChanged += new EventHandler(this.numShippingCost_ValueChanged);
-            // 
-            // lblTaxAmountLabel
-            // 
-            this.lblTaxAmountLabel.AutoSize = true;
-            this.lblTaxAmountLabel.Location = new Point(15, 90);
-            this.lblTaxAmountLabel.Name = "lblTaxAmountLabel";
-            this.lblTaxAmountLabel.Size = new Size(41, 12);
-            this.lblTaxAmountLabel.TabIndex = 4;
-            this.lblTaxAmountLabel.Text = "Taxes:";
-            // 
-            // lblTaxAmount
-            // 
-            this.lblTaxAmount.AutoSize = true;
-            this.lblTaxAmount.Location = new Point(86, 90);
-            this.lblTaxAmount.Name = "lblTaxAmount";
-            this.lblTaxAmount.Size = new Size(35, 12);
-            this.lblTaxAmount.TabIndex = 5;
-            this.lblTaxAmount.Text = "$0.00";
+            this.lblTotalAmount.AutoSize = true;
+            this.lblTotalAmount.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold);
+            this.lblTotalAmount.ForeColor = System.Drawing.Color.Red;
+            this.lblTotalAmount.Location = new System.Drawing.Point(274, 235);
+            this.lblTotalAmount.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.lblTotalAmount.Name = "lblTotalAmount";
+            this.lblTotalAmount.Size = new System.Drawing.Size(107, 42);
+            this.lblTotalAmount.TabIndex = 7;
+            this.lblTotalAmount.Text = "$0.00";
             // 
             // lblTotalAmountLabel
             // 
             this.lblTotalAmountLabel.AutoSize = true;
-            this.lblTotalAmountLabel.Font = new Font("Microsoft YaHei", 10F, FontStyle.Bold);
-            this.lblTotalAmountLabel.Location = new Point(15, 120);
+            this.lblTotalAmountLabel.Font = new System.Drawing.Font("微软雅黑", 10F, System.Drawing.FontStyle.Bold);
+            this.lblTotalAmountLabel.Location = new System.Drawing.Point(30, 240);
+            this.lblTotalAmountLabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblTotalAmountLabel.Name = "lblTotalAmountLabel";
-            this.lblTotalAmountLabel.Size = new Size(68, 19);
+            this.lblTotalAmountLabel.Size = new System.Drawing.Size(213, 36);
             this.lblTotalAmountLabel.TabIndex = 6;
             this.lblTotalAmountLabel.Text = "Total Amount:";
             // 
-            // lblTotalAmount
+            // lblTaxAmount
             // 
-            this.lblTotalAmount.AutoSize = true;
-            this.lblTotalAmount.Font = new Font("Microsoft YaHei", 12F, FontStyle.Bold);
-            this.lblTotalAmount.ForeColor = Color.Red;
-            this.lblTotalAmount.Location = new Point(86, 118);
-            this.lblTotalAmount.Name = "lblTotalAmount";
-            this.lblTotalAmount.Size = new Size(51, 22);
-            this.lblTotalAmount.TabIndex = 7;
-            this.lblTotalAmount.Text = "$0.00";
+            this.lblTaxAmount.AutoSize = true;
+            this.lblTaxAmount.Location = new System.Drawing.Point(274, 180);
+            this.lblTaxAmount.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.lblTaxAmount.Name = "lblTaxAmount";
+            this.lblTaxAmount.Size = new System.Drawing.Size(70, 24);
+            this.lblTaxAmount.TabIndex = 5;
+            this.lblTaxAmount.Text = "$0.00";
+            // 
+            // lblTaxAmountLabel
+            // 
+            this.lblTaxAmountLabel.AutoSize = true;
+            this.lblTaxAmountLabel.Location = new System.Drawing.Point(30, 180);
+            this.lblTaxAmountLabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.lblTaxAmountLabel.Name = "lblTaxAmountLabel";
+            this.lblTaxAmountLabel.Size = new System.Drawing.Size(82, 24);
+            this.lblTaxAmountLabel.TabIndex = 4;
+            this.lblTaxAmountLabel.Text = "Taxes:";
+            // 
+            // numShippingCost
+            // 
+            this.numShippingCost.DecimalPlaces = 2;
+            this.numShippingCost.Location = new System.Drawing.Point(274, 109);
+            this.numShippingCost.Margin = new System.Windows.Forms.Padding(6);
+            this.numShippingCost.Maximum = new decimal(new int[] { 10000, 0, 0, 0 });
+            this.numShippingCost.Name = "numShippingCost";
+            this.numShippingCost.Size = new System.Drawing.Size(200, 35);
+            this.numShippingCost.TabIndex = 3;
+            this.numShippingCost.ValueChanged += new System.EventHandler(this.numShippingCost_ValueChanged);
+            // 
+            // lblShippingCost
+            // 
+            this.lblShippingCost.AutoSize = true;
+            this.lblShippingCost.Location = new System.Drawing.Point(30, 120);
+            this.lblShippingCost.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.lblShippingCost.Name = "lblShippingCost";
+            this.lblShippingCost.Size = new System.Drawing.Size(106, 24);
+            this.lblShippingCost.TabIndex = 2;
+            this.lblShippingCost.Text = "Freight:";
+            // 
+            // lblProductAmount
+            // 
+            this.lblProductAmount.AutoSize = true;
+            this.lblProductAmount.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold);
+            this.lblProductAmount.ForeColor = System.Drawing.Color.Red;
+            this.lblProductAmount.Location = new System.Drawing.Point(274, 53);
+            this.lblProductAmount.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.lblProductAmount.Name = "lblProductAmount";
+            this.lblProductAmount.Size = new System.Drawing.Size(81, 31);
+            this.lblProductAmount.TabIndex = 1;
+            this.lblProductAmount.Text = "$0.00";
+            // 
+            // lblProductAmountLabel
+            // 
+            this.lblProductAmountLabel.AutoSize = true;
+            this.lblProductAmountLabel.Location = new System.Drawing.Point(30, 60);
+            this.lblProductAmountLabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.lblProductAmountLabel.Name = "lblProductAmountLabel";
+            this.lblProductAmountLabel.Size = new System.Drawing.Size(214, 24);
+            this.lblProductAmountLabel.TabIndex = 0;
+            this.lblProductAmountLabel.Text = "Commodity Amount:";
             // 
             // btnSave
             // 
-            this.btnSave.BackColor = Color.FromArgb(0, 122, 204);
-            this.btnSave.ForeColor = Color.White;
-            this.btnSave.Location = new Point(600, 480);
+            this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.btnSave.ForeColor = System.Drawing.Color.White;
+            this.btnSave.Location = new System.Drawing.Point(1200, 960);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(6);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new Size(80, 30);
+            this.btnSave.Size = new System.Drawing.Size(160, 60);
             this.btnSave.TabIndex = 4;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = false;
-            this.btnSave.Click += new EventHandler(this.btnSave_Click);
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new Point(692, 480);
+            this.btnCancel.Location = new System.Drawing.Point(1384, 960);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(6);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new Size(80, 30);
+            this.btnCancel.Size = new System.Drawing.Size(160, 60);
             this.btnCancel.TabIndex = 5;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
-            this.btnCancel.Click += new EventHandler(this.btnCancel_Click);
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // CreateOrderForm
             // 
-            this.AutoScaleDimensions = new SizeF(6F, 12F);
-            this.AutoScaleMode = AutoScaleMode.Font;
-            this.ClientSize = new Size(784, 522);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 24F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(1568, 1044);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.groupBoxTotals);
             this.Controls.Add(this.groupBoxOrderItems);
             this.Controls.Add(this.groupBoxOrderInfo);
             this.Controls.Add(this.groupBoxCustomer);
-            this.FormBorderStyle = FormBorderStyle.FixedDialog;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "CreateOrderForm";
-            this.StartPosition = FormStartPosition.CenterParent;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Create Order";
             this.groupBoxCustomer.ResumeLayout(false);
             this.groupBoxCustomer.PerformLayout();
             this.groupBoxOrderInfo.ResumeLayout(false);
             this.groupBoxOrderInfo.PerformLayout();
-            ((ISupportInitialize)(this.numDownPaymentPercent)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numDownPaymentPercent)).EndInit();
             this.groupBoxOrderItems.ResumeLayout(false);
             this.groupBoxTotals.ResumeLayout(false);
             this.groupBoxTotals.PerformLayout();
-            ((ISupportInitialize)(this.numShippingCost)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numShippingCost)).EndInit();
             this.ResumeLayout(false);
         }
 
@@ -521,44 +564,44 @@ namespace DesktopApp.Control.Page.Product
         
         private GroupBox groupBoxCustomer;
         private Label lblCustomer;
-        private ComboBox cmbCustomer;
-        private Button btnAddCustomer;
+        private System.Windows.Forms.ComboBox cmbCustomer;
+        private System.Windows.Forms.Button btnAddCustomer;
         private GroupBox groupBoxOrderInfo;
         private Label lblOrderNumber;
-        private TextBox txtOrderNumber;
+        private System.Windows.Forms.TextBox txtOrderNumber;
         private Label lblPaymentMethod;
-        private ComboBox cmbPaymentMethod;
+        private System.Windows.Forms.ComboBox cmbPaymentMethod;
         private Label lblOrderDate;
-        private DateTimePicker dtpOrderDate;
+        private System.Windows.Forms.DateTimePicker dtpOrderDate;
         private Label lblDeliveryDate;
-        private DateTimePicker dtpDeliveryDate;
+        private System.Windows.Forms.DateTimePicker dtpDeliveryDate;
         private Label lblStatus;
         private ComboBox cmbStatus;
         private Label lblShippingAddress;
-        private TextBox txtShippingAddress;
+        private System.Windows.Forms.TextBox txtShippingAddress;
         private Label lblPaymentTerms;
-        private TextBox txtPaymentTerms;
+        private System.Windows.Forms.TextBox txtPaymentTerms;
         private Label lblDownPaymentPercent;
         private NumericUpDown numDownPaymentPercent;
         private CheckBox chkDownPaymentPaid;
-        private CheckBox chkIsCustomized;
+        private System.Windows.Forms.CheckBox chkIsCustomized;
         private Label lblSpecialRequirements;
-        private TextBox txtSpecialRequirements;
+        private System.Windows.Forms.TextBox txtSpecialRequirements;
         private GroupBox groupBoxOrderItems;
-        private ListView listViewOrderItems;
+        private System.Windows.Forms.ListView listViewOrderItems;
         private ColumnHeader columnHeaderProduct;
         private ColumnHeader columnHeaderQuantity;
         private ColumnHeader columnHeaderUnitPrice;
         private ColumnHeader columnHeaderTotalPrice;
         private GroupBox groupBoxTotals;
         private Label lblProductAmountLabel;
-        private Label lblProductAmount;
+        private System.Windows.Forms.Label lblProductAmount;
         private Label lblShippingCost;
-        private NumericUpDown numShippingCost;
+        private System.Windows.Forms.NumericUpDown numShippingCost;
         private Label lblTaxAmountLabel;
-        private Label lblTaxAmount;
+        private System.Windows.Forms.Label lblTaxAmount;
         private Label lblTotalAmountLabel;
-        private Label lblTotalAmount;
+        private System.Windows.Forms.Label lblTotalAmount;
         private Button btnSave;
         private Button btnCancel;
     }

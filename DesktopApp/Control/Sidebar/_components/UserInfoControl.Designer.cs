@@ -41,7 +41,7 @@ namespace DesktopApp.Control.Sidebar._components
             this.usernameLabel.Name = "usernameLabel";
             this.usernameLabel.Size = new System.Drawing.Size(98, 31);
             this.usernameLabel.TabIndex = 0;
-            this.usernameLabel.Text = "用户名";
+            this.usernameLabel.Text = "Username";
             // 
             // positionLabel
             // 
@@ -53,7 +53,7 @@ namespace DesktopApp.Control.Sidebar._components
             this.positionLabel.Name = "positionLabel";
             this.positionLabel.Size = new System.Drawing.Size(61, 29);
             this.positionLabel.TabIndex = 1;
-            this.positionLabel.Text = "职位";
+            this.positionLabel.Text = "Position";
             // 
             // timeLabel
             // 
@@ -65,7 +65,7 @@ namespace DesktopApp.Control.Sidebar._components
             this.timeLabel.Name = "timeLabel";
             this.timeLabel.Size = new System.Drawing.Size(100, 26);
             this.timeLabel.TabIndex = 2;
-            this.timeLabel.Text = "系统时间";
+            this.timeLabel.Text = "System Time";
             // 
             // logoutButton
             // 
@@ -79,7 +79,7 @@ namespace DesktopApp.Control.Sidebar._components
             this.logoutButton.Name = "logoutButton";
             this.logoutButton.Size = new System.Drawing.Size(120, 46);
             this.logoutButton.TabIndex = 3;
-            this.logoutButton.Text = "退出";
+            this.logoutButton.Text = "LogOut";
             this.logoutButton.UseVisualStyleBackColor = false;
             this.logoutButton.Click += new System.EventHandler(this.LogoutButton_Click);
             // 
