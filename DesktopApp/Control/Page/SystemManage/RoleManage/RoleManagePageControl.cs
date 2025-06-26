@@ -76,6 +76,11 @@ namespace DesktopApp.Control.Page.SystemManage.RoleManage
 
         private void LoadRolesByDepartment(int departmentId)
         {
+            // 检查roleDataTable是否已初始化
+            if (roleDataTable == null)
+            {
+                InitializeDataGridView();
+            }
             roleDataTable.Clear();
             var departmentRoles = _roleFunc.GetRolesByDepartmentId(departmentId);
             var department = departments.FirstOrDefault(d => d.Id == departmentId);
