@@ -1,6 +1,7 @@
 using System;
 using System.Windows.Forms;
 using DesktopApp.Control.Page.Product;
+using DesktopApp.Utils;
 
 namespace DesktopApp
 {
@@ -14,7 +15,11 @@ namespace DesktopApp
 
             // Dependency Injection Setup - Using Singleton Database Engine
 
-            Application.Run(new MainForm());
+            // 启动登录窗口
+            Application.Run(new LoginForm());
+            
+            // 程序退出时清除用户会话
+            UserSession.ClearSession();
         }
     }
 }

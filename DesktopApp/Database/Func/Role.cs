@@ -219,5 +219,81 @@ namespace DesktopApp.Database.Func
             }
             return false;
         }
+
+        // Get permissions assigned to a role
+        public List<int> GetRolePermissions(int roleId)
+        {
+            string query = "SELECT permission_id FROM role_permission WHERE role_id = @RoleId";
+            List<int> permissionIds = new List<int>();
+
+            if (_dbEngine.OpenConnection())
+            {
+                try
+                {
+                    MySqlCommand cmd = new MySqlCommand(query, _dbEngine.GetConnection());
+                    cmd.Parameters.AddWithValue("@RoleId", roleId);
+                    MySqlDataReader dataReader = cmd.ExecuteReader();
+
+                    while (dataReader.Read())
+                    {
+                        permissionIds.Add(Convert.ToInt32(dataReader["permission_id"]));
+                    }
+                    dataReader.Close();
+                }
+                catch (MySqlException ex)
+                {
+                    Console.WriteLine($"Error getting role permissions: {ex.Message}");
+                }
+                finally
+                {
+                    _dbEngine.CloseConnection();
+                }
+            }
+            return permissionIds;
+        }
+
+        // Assign permissions to a role
+        public bool AssignPermissionsToRole(int roleId, List<int> permissionIds)
+        {
+            if (_dbEngine.OpenConnection())
+            {
+                MySqlTransaction transaction = _dbEngine.GetConnection().BeginTransaction();
+                try
+                {
+                    // First, remove all existing permissions for this role
+                    string deleteQuery = "DELETE FROM role_permission WHERE role_id = @RoleId";
+                    MySqlCommand deleteCmd = new MySqlCommand(deleteQuery, _dbEngine.GetConnection(), transaction);
+                    deleteCmd.Parameters.AddWithValue("@RoleId", roleId);
+                    deleteCmd.ExecuteNonQuery();
+
+                    // Then, insert new permissions
+                    if (permissionIds.Count > 0)
+                    {
+                        string insertQuery = "INSERT INTO role_permission (role_id, permission_id) VALUES (@RoleId, @PermissionId)";
+                        foreach (int permissionId in permissionIds)
+                        {
+                            MySqlCommand insertCmd = new MySqlCommand(insertQuery, _dbEngine.GetConnection(), transaction);
+                            insertCmd.Parameters.AddWithValue("@RoleId", roleId);
+                            insertCmd.Parameters.AddWithValue("@PermissionId", permissionId);
+                            insertCmd.ExecuteNonQuery();
+                        }
+                    }
+
+                    transaction.Commit();
+                    return true;
+                }
+                catch (MySqlException ex)
+                {
+                    transaction.Rollback();
+                    Console.WriteLine($"Error assigning permissions to role: {ex.Message}");
+                    return false;
+                }
+                finally
+                {
+                    _dbEngine.CloseConnection();
+                }
+            }
+            return false;
+        }
     }
 }

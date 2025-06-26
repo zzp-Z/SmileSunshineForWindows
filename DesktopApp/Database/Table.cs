@@ -145,7 +145,7 @@ namespace DesktopApp.Database
         public string PermissionName { get; set; }
 
         /// <summary>
-        /// 对应的API路径
+        /// 对应的API路径, 如“/product/manage”
         /// </summary>
         public string ApiPath { get; set; }
 

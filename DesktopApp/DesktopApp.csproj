@@ -198,6 +198,24 @@
     <Compile Include="Control\Page\SystemManage\DepartmentManage\DepartmentManagePageControl.Designer.cs">
       <DependentUpon>DepartmentManagePageControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Control\Page\SystemManage\Permission\AddPermission.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Control\Page\SystemManage\Permission\AddPermission.Designer.cs">
+      <DependentUpon>AddPermission.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control\Page\SystemManage\Permission\EditPermission.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Control\Page\SystemManage\Permission\EditPermission.Designer.cs">
+      <DependentUpon>EditPermission.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control\Page\SystemManage\Permission\PermissionManagePageControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control\Page\SystemManage\Permission\PermissionManagePageControl.Designer.cs">
+      <DependentUpon>PermissionManagePageControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Control\Page\SystemManage\RoleManage\RoleAddEditForm.Designer.cs" />
     <Compile Include="Control\Page\SystemManage\RoleManage\RoleManagePageControl.cs">
       <SubType>UserControl</SubType>
@@ -265,6 +283,7 @@
     <Compile Include="Utils\ImageConfig.cs" />
     <Compile Include="Utils\ImageManager.cs" />
     <Compile Include="Utils\ImageMigrationHelper.cs" />
+    <Compile Include="Utils\UserSession.cs" />
     <EmbeddedResource Include="Control\Page\Customer\AddCustomer.resx">
       <DependentUpon>AddCustomer.cs</DependentUpon>
     </EmbeddedResource>
@@ -276,6 +295,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Control\Sidebar\_components\LogoControl.resx">
       <DependentUpon>LogoControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\Sidebar\_components\UserInfoControl.resx">
+      <DependentUpon>UserInfoControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>

@@ -1,4 +1,4 @@
-﻿using MySql.Data.MySqlClient;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 
@@ -321,6 +321,96 @@ namespace DesktopApp.Database.Func
                 }
             }
             return false;
+        }
+
+        // Get user by username
+        public User GetUserByUsername(string username)
+        {
+            string query = "SELECT id, username, password, email, phone, real_name, gender, created_at, updated_at FROM user WHERE username = @Username";
+            User user = null;
+
+            if (_dbEngine.OpenConnection())
+            {
+                try
+                {
+                    MySqlCommand cmd = new MySqlCommand(query, _dbEngine.GetConnection());
+                    cmd.Parameters.AddWithValue("@Username", username);
+                    MySqlDataReader dataReader = cmd.ExecuteReader();
+
+                    if (dataReader.Read())
+                    {
+                        user = new User
+                        {
+                            Id = Convert.ToInt32(dataReader["id"]),
+                            Username = dataReader["username"].ToString(),
+                            Password = dataReader["password"].ToString(),
+                            Email = dataReader["email"].ToString(),
+                            Phone = dataReader["phone"].ToString(),
+                            RealName = dataReader["real_name"].ToString(),
+                            Gender = dataReader["gender"].ToString(),
+                            CreatedAt = Convert.ToDateTime(dataReader["created_at"]),
+                            UpdatedAt = Convert.ToDateTime(dataReader["updated_at"])
+                        };
+                    }
+                    dataReader.Close();
+                }
+                catch (MySqlException ex)
+                {
+                    Console.WriteLine($"Error getting user by username: {ex.Message}");
+                }
+                finally
+                {
+                    _dbEngine.CloseConnection();
+                }
+            }
+            return user;
+        }
+
+        /// <summary>
+        /// 获取用户的所有角色
+        /// </summary>
+        /// <param name="userId">用户ID</param>
+        /// <returns>角色列表</returns>
+        public List<Role> GetUserRoles(int userId)
+        {
+            string query = @"SELECT r.id, r.role_name, r.department_id, r.description, r.created_at, r.updated_at 
+                            FROM role r 
+                            INNER JOIN user_role ur ON r.id = ur.role_id 
+                            WHERE ur.user_id = @UserId";
+            List<Role> roles = new List<Role>();
+
+            if (_dbEngine.OpenConnection())
+            {
+                try
+                {
+                    MySqlCommand cmd = new MySqlCommand(query, _dbEngine.GetConnection());
+                    cmd.Parameters.AddWithValue("@UserId", userId);
+                    MySqlDataReader dataReader = cmd.ExecuteReader();
+
+                    while (dataReader.Read())
+                    {
+                        roles.Add(new Role
+                        {
+                            Id = Convert.ToInt32(dataReader["id"]),
+                            RoleName = dataReader["role_name"].ToString(),
+                            DepartmentId = Convert.ToInt32(dataReader["department_id"]),
+                            Description = dataReader["description"].ToString(),
+                            CreatedAt = Convert.ToDateTime(dataReader["created_at"]),
+                            UpdatedAt = Convert.ToDateTime(dataReader["updated_at"])
+                        });
+                    }
+                    dataReader.Close();
+                }
+                catch (MySqlException ex)
+                {
+                    Console.WriteLine($"Error getting user roles: {ex.Message}");
+                }
+                finally
+                {
+                    _dbEngine.CloseConnection();
+                }
+            }
+            return roles;
         }
     }
 }

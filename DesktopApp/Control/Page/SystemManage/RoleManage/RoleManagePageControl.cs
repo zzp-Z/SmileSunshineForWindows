@@ -119,16 +119,32 @@ namespace DesktopApp.Control.Page.SystemManage.RoleManage
                         DepartmentId = addForm.Role.DepartmentId,
                         Description = addForm.Role.Description,
                     };
-                    _roleFunc.CreateRole(newRole);
                     
-
-                    // 如果新角色属于当前选中的部门，刷新显示
-                    if (cmbDepartment.SelectedValue != null && newRole.DepartmentId == (int)cmbDepartment.SelectedValue)
+                    if (_roleFunc.CreateRole(newRole))
                     {
-                        LoadRolesByDepartment(newRole.DepartmentId);
-                    }
+                        // 获取新创建角色的ID（需要重新查询获取ID）
+                        var createdRole = _roleFunc.GetAllRoles().LastOrDefault(r => 
+                            r.RoleName == newRole.RoleName && 
+                            r.DepartmentId == newRole.DepartmentId);
+                        
+                        if (createdRole != null)
+                        {
+                            // 分配权限给新角色
+                            _roleFunc.AssignPermissionsToRole(createdRole.Id, addForm.SelectedPermissionIds);
+                        }
+                        
+                        // 如果新角色属于当前选中的部门，刷新显示
+                        if (cmbDepartment.SelectedValue != null && newRole.DepartmentId == (int)cmbDepartment.SelectedValue)
+                        {
+                            LoadRolesByDepartment(newRole.DepartmentId);
+                        }
 
-                    MessageBox.Show("Role added successfully!", "Prompt", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Role added successfully!", "Prompt", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Failed to add role!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
             }
         }
@@ -153,14 +169,24 @@ namespace DesktopApp.Control.Page.SystemManage.RoleManage
                         role.RoleName = editForm.Role.RoleName;
                         role.DepartmentId = editForm.Role.DepartmentId;
                         role.Description = editForm.Role.Description;
-                        _roleFunc.UpdateRole(role);
-                        // 刷新当前部门的显示
-                        if (cmbDepartment.SelectedValue != null)
+                        
+                        if (_roleFunc.UpdateRole(role))
                         {
-                            LoadRolesByDepartment((int)cmbDepartment.SelectedValue);
-                        }
+                            // 更新角色权限
+                            _roleFunc.AssignPermissionsToRole(role.Id, editForm.SelectedPermissionIds);
+                            
+                            // 刷新当前部门的显示
+                            if (cmbDepartment.SelectedValue != null)
+                            {
+                                LoadRolesByDepartment((int)cmbDepartment.SelectedValue);
+                            }
 
-                        MessageBox.Show("Role modified successfully!", "Prompt", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            MessageBox.Show("Role modified successfully!", "Prompt", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Failed to update role!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
                     }
                 }
             }
@@ -198,113 +224,81 @@ namespace DesktopApp.Control.Page.SystemManage.RoleManage
     public partial class RoleAddEditForm : Form
     {
         public Role Role { get; private set; }
+        public List<int> SelectedPermissionIds { get; private set; }
         private List<Department> departments;
+        private List<Database.Permission> permissions;
         private bool isEdit;
-
-        private ComboBox _cmbDepartment;
-        private TextBox txtRoleName;
-        private TextBox txtDescription;
-        private Button btnOK;
-        private Button btnCancel;
-        private Label lblDepartment;
-        private Label lblRoleName;
-        private Label lblDescription;
+        private readonly Database.Func.PermissionFunc _permissionFunc;
+        private readonly Database.Func.RoleFunc _roleFunc;
 
         public RoleAddEditForm(List<Department> departments, Role role)
         {
             this.departments = departments;
             this.isEdit = role != null;
             this.Role = role ?? new Role();
+            this._permissionFunc = new Database.Func.PermissionFunc();
+            this._roleFunc = new Database.Func.RoleFunc();
+            this.SelectedPermissionIds = new List<int>();
+            
             InitializeComponent();
             InitializeForm();
         }
 
-        private void InitializeComponent()
-        {
-            this._cmbDepartment = new ComboBox();
-            this.txtRoleName = new TextBox();
-            this.txtDescription = new TextBox();
-            this.btnOK = new Button();
-            this.btnCancel = new Button();
-            this.lblDepartment = new Label();
-            this.lblRoleName = new Label();
-            this.lblDescription = new Label();
-            this.SuspendLayout();
-
-            // Form
-            this.Text = isEdit ? "Modify Role" : "Add Role";
-            this.Size = new System.Drawing.Size(400, 250);
-            this.StartPosition = FormStartPosition.CenterParent;
-            this.FormBorderStyle = FormBorderStyle.FixedDialog;
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
-
-            // lblDepartment
-            this.lblDepartment.Text = "Department:";
-            this.lblDepartment.Location = new System.Drawing.Point(20, 20);
-            this.lblDepartment.Size = new System.Drawing.Size(60, 23);
-
-            // cmbDepartment
-            this._cmbDepartment.Location = new System.Drawing.Point(90, 20);
-            this._cmbDepartment.Size = new System.Drawing.Size(280, 21);
-            this._cmbDepartment.DropDownStyle = ComboBoxStyle.DropDownList;
-
-            // lblRoleName
-            this.lblRoleName.Text = "Role Name:";
-            this.lblRoleName.Location = new System.Drawing.Point(20, 60);
-            this.lblRoleName.Size = new System.Drawing.Size(60, 23);
-
-            // txtRoleName
-            this.txtRoleName.Location = new System.Drawing.Point(90, 60);
-            this.txtRoleName.Size = new System.Drawing.Size(280, 20);
-
-            // lblDescription
-            this.lblDescription.Text = "Description:";
-            this.lblDescription.Location = new System.Drawing.Point(20, 100);
-            this.lblDescription.Size = new System.Drawing.Size(60, 23);
-
-            // txtDescription
-            this.txtDescription.Location = new System.Drawing.Point(90, 100);
-            this.txtDescription.Size = new System.Drawing.Size(280, 60);
-            this.txtDescription.Multiline = true;
-
-            // btnOK
-            this.btnOK.Text = "Confirm";
-            this.btnOK.Location = new System.Drawing.Point(215, 180);
-            this.btnOK.Size = new System.Drawing.Size(75, 23);
-            this.btnOK.DialogResult = DialogResult.OK;
-            this.btnOK.Click += new EventHandler(this.btnOK_Click);
-
-            // btnCancel
-            this.btnCancel.Text = "Cancel";
-            this.btnCancel.Location = new System.Drawing.Point(295, 180);
-            this.btnCancel.Size = new System.Drawing.Size(75, 23);
-            this.btnCancel.DialogResult = DialogResult.Cancel;
-
-            this.Controls.Add(this.lblDepartment);
-            this.Controls.Add(this._cmbDepartment);
-            this.Controls.Add(this.lblRoleName);
-            this.Controls.Add(this.txtRoleName);
-            this.Controls.Add(this.lblDescription);
-            this.Controls.Add(this.txtDescription);
-            this.Controls.Add(this.btnOK);
-            this.Controls.Add(this.btnCancel);
-            this.ResumeLayout(false);
-        }
-
         private void InitializeForm()
         {
+            // 设置窗体标题
+            this.Text = isEdit ? "Modify Role" : "Add Role";
+            
             // 初始化部门下拉框
-            _cmbDepartment.DisplayMember = "Name";
-            _cmbDepartment.ValueMember = "Id";
-            _cmbDepartment.DataSource = departments;
+            cmbDepartment.DisplayMember = "Name";
+            cmbDepartment.ValueMember = "Id";
+            cmbDepartment.DataSource = departments;
+
+            // 加载所有权限
+            LoadPermissions();
 
             if (isEdit)
             {
                 // 编辑模式，填充现有数据
-                _cmbDepartment.SelectedValue = Role.DepartmentId;
+                cmbDepartment.SelectedValue = Role.DepartmentId;
                 txtRoleName.Text = Role.RoleName;
                 txtDescription.Text = Role.Description;
+                
+                // 加载角色已有的权限
+                LoadRolePermissions();
+            }
+        }
+
+        private void LoadPermissions()
+        {
+            permissions = _permissionFunc.GetAllPermissions();
+            clbPermissions.Items.Clear();
+            
+            foreach (var permission in permissions)
+            {
+                clbPermissions.Items.Add(new PermissionItem
+                {
+                    Id = permission.Id,
+                    Name = permission.PermissionName,
+                    Description = permission.Description
+                });
+            }
+        }
+
+        private void LoadRolePermissions()
+        {
+            if (isEdit && Role.Id > 0)
+            {
+                var rolePermissionIds = _roleFunc.GetRolePermissions(Role.Id);
+                
+                for (int i = 0; i < clbPermissions.Items.Count; i++)
+                {
+                    var permissionItem = (PermissionItem)clbPermissions.Items[i];
+                    if (rolePermissionIds.Contains(permissionItem.Id))
+                    {
+                        clbPermissions.SetItemChecked(i, true);
+                    }
+                }
             }
         }
 
@@ -312,19 +306,43 @@ namespace DesktopApp.Control.Page.SystemManage.RoleManage
         {
             if (string.IsNullOrWhiteSpace(txtRoleName.Text))
             {
-                MessageBox.Show("Please enter the character name!", "Prompt", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Please enter the role name!", "Prompt", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            if (_cmbDepartment.SelectedValue == null)
+            if (cmbDepartment.SelectedValue == null)
             {
                 MessageBox.Show("Please select the department!", "Prompt", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
+            // 获取选中的权限ID
+            SelectedPermissionIds.Clear();
+            for (int i = 0; i < clbPermissions.Items.Count; i++)
+            {
+                if (clbPermissions.GetItemChecked(i))
+                {
+                    var permissionItem = (PermissionItem)clbPermissions.Items[i];
+                    SelectedPermissionIds.Add(permissionItem.Id);
+                }
+            }
+
             Role.RoleName = txtRoleName.Text.Trim();
-            Role.DepartmentId = (int)_cmbDepartment.SelectedValue;
+            Role.DepartmentId = (int)cmbDepartment.SelectedValue;
             Role.Description = txtDescription.Text.Trim();
+        }
+    }
+
+    // 权限项类，用于CheckedListBox显示
+    public class PermissionItem
+    {
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public string Description { get; set; }
+
+        public override string ToString()
+        {
+            return $"{Name} - {Description}";
         }
     }
 }

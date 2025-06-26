@@ -1,6 +1,7 @@
 using System;
 using System.Windows.Forms;
 using DesktopApp.Properties;
+using DesktopApp.Utils;
 
 namespace DesktopApp
 {
@@ -26,6 +27,13 @@ namespace DesktopApp
             }
             if (_userFunc.ValidateUser(username, password))
             {
+                // 获取用户信息并存储到会话中
+                var user = _userFunc.GetUserByUsername(username);
+                if (user != null)
+                {
+                    UserSession.SetCurrentUser(user);
+                }
+
                 if (chkRememberMe.Checked)
                 {
                     Settings.Default.RememberUsername = true;

@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System;
 using System.Drawing;
 using System.Windows.Forms;
 using DesktopApp.Control.Page.Customer;
@@ -9,6 +10,7 @@ using DesktopApp.Control.Page.Product;
 using DesktopApp.Control.Page.SystemManage.DepartmentManage;
 using DesktopApp.Control.Page.SystemManage.RoleManage;
 using DesktopApp.Control.Page.SystemManage.UserManage;
+using DesktopApp.Utils;
 
 namespace DesktopApp
 {
@@ -21,10 +23,8 @@ namespace DesktopApp
             // 初始化页面工厂
             MenuConfiguration.InitializePageFactories();
             
-            // 方式1：使用配置数组（最简洁）
-            var menuItems = new MenuBuilder(ShowPage)
-                .FromConfig(MenuConfiguration.GetMenuConfigs())
-                .Build();
+            // 使用权限过滤的菜单配置
+            var menuItems = MenuConfiguration.CreateFilteredMenuBuilder(ShowPage).Build();
             
             // 方式2：使用流式API（可选）
             // var menuItems = MenuConfiguration.CreateMenuBuilder(ShowPage).Build();
@@ -46,6 +46,23 @@ namespace DesktopApp
         
         private void ShowPage(string pageKey)
         {
+            // 检查用户权限
+            if (!UserSession.HasPermission(pageKey))
+            {
+                // 显示无权限访问的提示
+                mainContentPanel.Controls.Clear();
+                var noPermissionLabel = new Label
+                {
+                    Text = $"您没有权限访问页面 '{pageKey}'",
+                    Dock = DockStyle.Fill,
+                    TextAlign = ContentAlignment.MiddleCenter,
+                    Font = new System.Drawing.Font("Microsoft YaHei", 12F),
+                    ForeColor = Color.Red
+                };
+                mainContentPanel.Controls.Add(noPermissionLabel);
+                return;
+            }
+
             // 清除当前内容
             mainContentPanel.Controls.Clear();
             

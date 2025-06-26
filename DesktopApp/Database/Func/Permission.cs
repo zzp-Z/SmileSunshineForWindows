@@ -178,5 +178,41 @@ namespace DesktopApp.Database.Func
             }
             return false;
         }
+
+        /// <summary>
+        /// 检查用户是否拥有指定权限
+        /// </summary>
+        /// <param name="userId">用户ID</param>
+        /// <param name="permissionId">权限ID</param>
+        /// <returns>如果用户拥有该权限返回true，否则返回false</returns>
+        public bool CheckUserPermission(int userId, int permissionId)
+        {
+            string query = @"SELECT COUNT(*) FROM user_role ur 
+                            INNER JOIN role_permission rp ON ur.role_id = rp.role_id 
+                            WHERE ur.user_id = @UserId AND rp.permission_id = @PermissionId";
+            
+            if (_dbEngine.OpenConnection())
+            {
+                try
+                {
+                    MySqlCommand cmd = new MySqlCommand(query, _dbEngine.GetConnection());
+                    cmd.Parameters.AddWithValue("@UserId", userId);
+                    cmd.Parameters.AddWithValue("@PermissionId", permissionId);
+                    
+                    int count = Convert.ToInt32(cmd.ExecuteScalar());
+                    return count > 0;
+                }
+                catch (MySqlException ex)
+                {
+                    Console.WriteLine($"Error checking user permission: {ex.Message}");
+                    return false;
+                }
+                finally
+                {
+                    _dbEngine.CloseConnection();
+                }
+            }
+            return false;
+        }
     }
 }
