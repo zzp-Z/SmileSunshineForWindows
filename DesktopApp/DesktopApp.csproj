@@ -225,6 +225,7 @@
     <Compile Include="Control\Sidebar\_components\LogoControl.Designer.cs">
       <DependentUpon>LogoControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Control\Sidebar\_components\MenuBuilder.cs" />
     <Compile Include="Control\Sidebar\_components\MenuControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -258,6 +259,7 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="MenuConfiguration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utils\ImageConfig.cs" />
