@@ -21,14 +21,14 @@ namespace DesktopApp.Properties {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class Resources {
+    internal class Image {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal Resources() {
+        internal Image() {
         }
         
         /// <summary>
@@ -38,7 +38,7 @@ namespace DesktopApp.Properties {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("DesktopApp.Properties.Resources", typeof(Resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("DesktopApp.Properties.Image", typeof(Image).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -60,48 +60,11 @@ namespace DesktopApp.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to login error.
+        ///   Looks up a localized string similar to /image/logo.png.
         /// </summary>
-        internal static string LoginForm_btnLogin_Click_login_error {
+        internal static string Logo {
             get {
-                return ResourceManager.GetString("LoginForm_btnLogin_Click_login_error", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Username and password cannot be empty!.
-        /// </summary>
-        internal static string LoginForm_btnLogin_Click_Username_and_password_cannot_be_empty_ {
-            get {
-                return ResourceManager.GetString("LoginForm_btnLogin_Click_Username_and_password_cannot_be_empty_", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Username or password error!.
-        /// </summary>
-        internal static string LoginForm_btnLogin_Click_Username_or_password_error_ {
-            get {
-                return ResourceManager.GetString("LoginForm_btnLogin_Click_Username_or_password_error_", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Please contact the administrator or use the password recovery function..
-        /// </summary>
-        internal static string LoginForm_linkForgotPassword_Click_Please_contact_the_administrator_or_use_the_password_recovery_function_ {
-            get {
-                return ResourceManager.GetString("LoginForm_linkForgotPassword_Click_Please_contact_the_administrator_or_use_the_pa" +
-                        "ssword_recovery_function_", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Recover your password.
-        /// </summary>
-        internal static string LoginForm_linkForgotPassword_Click_Recover_your_password {
-            get {
-                return ResourceManager.GetString("LoginForm_linkForgotPassword_Click_Recover_your_password", resourceCulture);
+                return ResourceManager.GetString("Logo", resourceCulture);
             }
         }
     }
