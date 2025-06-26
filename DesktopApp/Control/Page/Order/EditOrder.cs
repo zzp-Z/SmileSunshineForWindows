@@ -82,7 +82,7 @@ namespace DesktopApp.Control.Page.Order
                 bool success = orderFunc.UpdateSalesOrder(currentOrder);
                 if (success)
                 {
-                    MessageBox.Show("订单更新成功！", "成功", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Order updated successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     
                     // 设置对话框结果为OK
                     var parentForm = this.FindForm();
@@ -94,12 +94,12 @@ namespace DesktopApp.Control.Page.Order
                 }
                 else
                 {
-                    MessageBox.Show("订单更新失败，请重试。", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Order update failed, please try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"保存订单时发生错误: {ex.Message}", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"An error occurred while saving the order: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         
@@ -117,28 +117,28 @@ namespace DesktopApp.Control.Page.Order
         {
             if (string.IsNullOrWhiteSpace(txtOrderNumber.Text))
             {
-                MessageBox.Show("请输入订单号", "验证错误", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Please enter your order number", "Validation Errors", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtOrderNumber.Focus();
                 return false;
             }
             
             if (!int.TryParse(txtCustomerId.Text, out _))
             {
-                MessageBox.Show("请输入有效的客户ID", "验证错误", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Please enter a valid customer ID", "Validation Errors", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtCustomerId.Focus();
                 return false;
             }
             
             if (cmbPaymentMethod.SelectedIndex < 0)
             {
-                MessageBox.Show("请选择支付方式", "验证错误", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Please select payment method", "Validation Errors", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 cmbPaymentMethod.Focus();
                 return false;
             }
             
             if (cmbStatus.SelectedIndex < 0)
             {
-                MessageBox.Show("请选择订单状态", "验证错误", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Please select order status", "Validation Errors", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 cmbStatus.Focus();
                 return false;
             }
@@ -147,7 +147,7 @@ namespace DesktopApp.Control.Page.Order
             {
                 if (!decimal.TryParse(txtTotalAmount.Text, out decimal amount) || amount < 0)
                 {
-                    MessageBox.Show("请输入有效的总金额", "验证错误", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Please enter a valid total amount", "Validation Errors", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     txtTotalAmount.Focus();
                     return false;
                 }

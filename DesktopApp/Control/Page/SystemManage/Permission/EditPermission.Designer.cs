@@ -33,70 +33,77 @@ namespace DesktopApp.Control.Page.SystemManage.Permission
         /// </summary>
         private void InitializeComponent()
         {
-            this.lblPermissionName = new Label();
-            this.txtPermissionName = new TextBox();
-            this.lblApiPath = new Label();
-            this.txtApiPath = new TextBox();
-            this.lblDescription = new Label();
-            this.txtDescription = new TextBox();
-            this.btnSave = new Button();
-            this.btnCancel = new Button();
+            this.lblPermissionName = new System.Windows.Forms.Label();
+            this.txtPermissionName = new System.Windows.Forms.TextBox();
+            this.lblApiPath = new System.Windows.Forms.Label();
+            this.txtApiPath = new System.Windows.Forms.TextBox();
+            this.lblDescription = new System.Windows.Forms.Label();
+            this.txtDescription = new System.Windows.Forms.TextBox();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.btnCancel = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblPermissionName
             // 
             this.lblPermissionName.AutoSize = true;
-            this.lblPermissionName.Location = new Point(30, 30);
+            this.lblPermissionName.Location = new System.Drawing.Point(45, 45);
+            this.lblPermissionName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPermissionName.Name = "lblPermissionName";
-            this.lblPermissionName.Size = new Size(65, 12);
+            this.lblPermissionName.Size = new System.Drawing.Size(161, 18);
             this.lblPermissionName.TabIndex = 0;
             this.lblPermissionName.Text = "Permission Name：";
             // 
             // txtPermissionName
             // 
-            this.txtPermissionName.Location = new Point(100, 27);
+            this.txtPermissionName.Location = new System.Drawing.Point(199, 40);
+            this.txtPermissionName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtPermissionName.Name = "txtPermissionName";
-            this.txtPermissionName.Size = new Size(250, 21);
+            this.txtPermissionName.Size = new System.Drawing.Size(324, 28);
             this.txtPermissionName.TabIndex = 1;
             // 
             // lblApiPath
             // 
             this.lblApiPath.AutoSize = true;
-            this.lblApiPath.Location = new Point(30, 70);
+            this.lblApiPath.Location = new System.Drawing.Point(45, 105);
+            this.lblApiPath.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblApiPath.Name = "lblApiPath";
-            this.lblApiPath.Size = new Size(59, 12);
+            this.lblApiPath.Size = new System.Drawing.Size(98, 18);
             this.lblApiPath.TabIndex = 2;
             this.lblApiPath.Text = "API Path：";
             // 
             // txtApiPath
             // 
-            this.txtApiPath.Location = new Point(100, 67);
+            this.txtApiPath.Location = new System.Drawing.Point(199, 100);
+            this.txtApiPath.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtApiPath.Name = "txtApiPath";
-            this.txtApiPath.Size = new Size(250, 21);
+            this.txtApiPath.Size = new System.Drawing.Size(324, 28);
             this.txtApiPath.TabIndex = 3;
             // 
             // lblDescription
             // 
             this.lblDescription.AutoSize = true;
-            this.lblDescription.Location = new Point(30, 110);
+            this.lblDescription.Location = new System.Drawing.Point(45, 165);
+            this.lblDescription.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDescription.Name = "lblDescription";
-            this.lblDescription.Size = new Size(41, 12);
+            this.lblDescription.Size = new System.Drawing.Size(125, 18);
             this.lblDescription.TabIndex = 4;
             this.lblDescription.Text = "Description：";
             // 
             // txtDescription
             // 
-            this.txtDescription.Location = new Point(100, 107);
+            this.txtDescription.Location = new System.Drawing.Point(199, 160);
+            this.txtDescription.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtDescription.Multiline = true;
             this.txtDescription.Name = "txtDescription";
-            this.txtDescription.Size = new Size(250, 80);
+            this.txtDescription.Size = new System.Drawing.Size(324, 118);
             this.txtDescription.TabIndex = 5;
             // 
             // btnSave
             // 
-            this.btnSave.Location = new Point(100, 220);
+            this.btnSave.Location = new System.Drawing.Point(150, 330);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new Size(75, 30);
+            this.btnSave.Size = new System.Drawing.Size(112, 45);
             this.btnSave.TabIndex = 6;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
@@ -104,10 +111,11 @@ namespace DesktopApp.Control.Page.SystemManage.Permission
             // 
             // btnCancel
             // 
-            this.btnCancel.DialogResult = DialogResult.Cancel;
-            this.btnCancel.Location = new Point(200, 220);
+            this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnCancel.Location = new System.Drawing.Point(300, 330);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new Size(75, 30);
+            this.btnCancel.Size = new System.Drawing.Size(112, 45);
             this.btnCancel.TabIndex = 7;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
@@ -115,10 +123,10 @@ namespace DesktopApp.Control.Page.SystemManage.Permission
             // EditPermission
             // 
             this.AcceptButton = this.btnSave;
-            this.AutoScaleDimensions = new SizeF(6F, 12F);
-            this.AutoScaleMode = AutoScaleMode.Font;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnCancel;
-            this.ClientSize = new Size(400, 300);
+            this.ClientSize = new System.Drawing.Size(600, 450);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.txtDescription);
@@ -127,11 +135,12 @@ namespace DesktopApp.Control.Page.SystemManage.Permission
             this.Controls.Add(this.lblApiPath);
             this.Controls.Add(this.txtPermissionName);
             this.Controls.Add(this.lblPermissionName);
-            this.FormBorderStyle = FormBorderStyle.FixedDialog;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "EditPermission";
-            this.StartPosition = FormStartPosition.CenterParent;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Edit Permission";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -140,11 +149,11 @@ namespace DesktopApp.Control.Page.SystemManage.Permission
         #endregion
 
         private Label lblPermissionName;
-        private TextBox txtPermissionName;
+        private System.Windows.Forms.TextBox txtPermissionName;
         private Label lblApiPath;
-        private TextBox txtApiPath;
+        private System.Windows.Forms.TextBox txtApiPath;
         private Label lblDescription;
-        private TextBox txtDescription;
+        private System.Windows.Forms.TextBox txtDescription;
         private Button btnSave;
         private Button btnCancel;
     }

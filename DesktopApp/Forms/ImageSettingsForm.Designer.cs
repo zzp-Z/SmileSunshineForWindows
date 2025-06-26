@@ -54,7 +54,7 @@ namespace DesktopApp.Forms
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new Size(120, 20);
             this.lblTitle.TabIndex = 0;
-            this.lblTitle.Text = "图片存储设置";
+            this.lblTitle.Text = "Image storage settings";
             
             // 
             // lblDefaultPath
@@ -64,7 +64,7 @@ namespace DesktopApp.Forms
             this.lblDefaultPath.Name = "lblDefaultPath";
             this.lblDefaultPath.Size = new Size(200, 13);
             this.lblDefaultPath.TabIndex = 1;
-            this.lblDefaultPath.Text = "默认路径: ";
+            this.lblDefaultPath.Text = "Default Path: ";
             
             // 
             // chkUseCustomPath
@@ -74,7 +74,7 @@ namespace DesktopApp.Forms
             this.chkUseCustomPath.Name = "chkUseCustomPath";
             this.chkUseCustomPath.Size = new Size(120, 17);
             this.chkUseCustomPath.TabIndex = 2;
-            this.chkUseCustomPath.Text = "使用自定义路径";
+            this.chkUseCustomPath.Text = "Using a custom path";
             this.chkUseCustomPath.UseVisualStyleBackColor = true;
             this.chkUseCustomPath.CheckedChanged += new System.EventHandler(this.chkUseCustomPath_CheckedChanged);
             
@@ -86,7 +86,7 @@ namespace DesktopApp.Forms
             this.lblCustomPath.Name = "lblCustomPath";
             this.lblCustomPath.Size = new Size(67, 13);
             this.lblCustomPath.TabIndex = 3;
-            this.lblCustomPath.Text = "自定义路径:";
+            this.lblCustomPath.Text = "User-defined path:";
             
             // 
             // txtCustomPath
@@ -104,7 +104,7 @@ namespace DesktopApp.Forms
             this.btnBrowse.Name = "btnBrowse";
             this.btnBrowse.Size = new Size(75, 23);
             this.btnBrowse.TabIndex = 5;
-            this.btnBrowse.Text = "浏览...";
+            this.btnBrowse.Text = "Browse...";
             this.btnBrowse.UseVisualStyleBackColor = true;
             this.btnBrowse.Click += new System.EventHandler(this.btnBrowse_Click);
             
@@ -117,7 +117,7 @@ namespace DesktopApp.Forms
             this.lblCurrentPath.Name = "lblCurrentPath";
             this.lblCurrentPath.Size = new Size(200, 13);
             this.lblCurrentPath.TabIndex = 6;
-            this.lblCurrentPath.Text = "当前使用: ";
+            this.lblCurrentPath.Text = "Currently using:";
             
             // 
             // lblPathStatus
@@ -135,7 +135,7 @@ namespace DesktopApp.Forms
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new Size(75, 23);
             this.btnOK.TabIndex = 8;
-            this.btnOK.Text = "确定";
+            this.btnOK.Text = "Sure";
             this.btnOK.UseVisualStyleBackColor = true;
             this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
             
@@ -146,7 +146,7 @@ namespace DesktopApp.Forms
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new Size(75, 23);
             this.btnCancel.TabIndex = 9;
-            this.btnCancel.Text = "取消";
+            this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             
@@ -157,7 +157,7 @@ namespace DesktopApp.Forms
             this.btnReset.Name = "btnReset";
             this.btnReset.Size = new Size(75, 23);
             this.btnReset.TabIndex = 10;
-            this.btnReset.Text = "重置";
+            this.btnReset.Text = "Reset";
             this.btnReset.UseVisualStyleBackColor = true;
             this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             
@@ -183,7 +183,7 @@ namespace DesktopApp.Forms
             this.MinimizeBox = false;
             this.Name = "ImageSettingsForm";
             this.StartPosition = FormStartPosition.CenterParent;
-            this.Text = "图片存储设置";
+            this.Text = "Image storage settings";
             this.ResumeLayout(false);
             this.PerformLayout();
         }
