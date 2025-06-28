@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
+using DesktopApp.Control.Page;
 using DesktopApp.Control.Sidebar._components;
 using DesktopApp.Control.Page.Customer;
 using DesktopApp.Control.Page.Dashboard;
@@ -12,6 +13,7 @@ using DesktopApp.Control.Page.SystemManage.Permission;
 using DesktopApp.Control.Page.SystemManage.RoleManage;
 using DesktopApp.Control.Page.SystemManage.UserManage;
 using DesktopApp.Utils;
+using SmileSunshine.DesktopApp.Control.Page;
 
 namespace DesktopApp
 {
@@ -36,6 +38,8 @@ namespace DesktopApp
                 { "/system/role/manage", () => new RoleManagePageControl() },
                 { "/system/user/manage", () => new UserManagePageControl() },
                 { "/system/permission/manage", () => new PermissionManagePageControl() },
+                { "/material", () => new MaterialManage() },
+                { "/after-service", () => new AfterSalesService() },
 
                 // 临时使用Dashboard页面的其他页面
                 { "/order/create_edit", () => new DashboardPageControl() },
@@ -91,25 +95,13 @@ namespace DesktopApp
                 },
                 new MenuConfig
                 {
-                    Text = "Inventory Control",
-                    PageKey = "/inventory/control",
-                    Children = new MenuConfig[]
-                    {
-                        new MenuConfig { Text = "Record of inward goods", PageKey = "/inventory/inward_goods" },
-                        new MenuConfig { Text = "Product Catalog", PageKey = "/product/catalog" },
-                        new MenuConfig { Text = "Product Addition", PageKey = "/product/addition" }
-                    }
+                    Text = "Material manege",
+                    PageKey = "/material",
                 },
                 new MenuConfig
                 {
                     Text = "After-service Management",
-                    PageKey = "/service/management",
-                    Children = new MenuConfig[]
-                    {
-                        new MenuConfig { Text = "Refund Processing", PageKey = "/service/refund" },
-                        new MenuConfig { Text = "Return Processing", PageKey = "/service/return" },
-                        new MenuConfig { Text = "Repair Processing", PageKey = "/service/repair" }
-                    }
+                    PageKey = "/after-service",
                 },
                 new MenuConfig
                 {

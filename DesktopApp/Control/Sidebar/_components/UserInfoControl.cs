@@ -30,7 +30,7 @@ namespace DesktopApp.Control.Sidebar._components
                     // 获取用户角色信息
                     if (currentUser.Username == "Admin")
                     {
-                        positionLabel.Text = "System Administrator";
+                        positionLabel.Text = "系统管理员";
                     }
                     else
                     {
@@ -42,19 +42,19 @@ namespace DesktopApp.Control.Sidebar._components
                         }
                         else
                         {
-                            positionLabel.Text = "User";
+                            positionLabel.Text = "用户";
                         }
                     }
                 }
                 else
                 {
-                    usernameLabel.Text = "Unknown user";
+                    usernameLabel.Text = "未知用户";
                     positionLabel.Text = "";
                 }
             }
             else
             {
-                usernameLabel.Text = "Not Logged in";
+                usernameLabel.Text = "未登录";
                 positionLabel.Text = "";
             }
             UpdateSystemTime();
@@ -88,7 +88,7 @@ namespace DesktopApp.Control.Sidebar._components
         // 退出登录按钮点击事件
         private void LogoutButton_Click(object sender, EventArgs e)
         {
-            var result = MessageBox.Show("Are you sure you want to log out?", "Confirm Exit", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            var result = MessageBox.Show("确定要退出登录吗？", "确认退出", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (result == DialogResult.Yes)
             {
                 // 清除用户会话

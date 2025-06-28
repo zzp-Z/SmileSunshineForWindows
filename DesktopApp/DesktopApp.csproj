@@ -102,6 +102,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Control\Page\AfterSalesService.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control\Page\AfterSalesService.Designer.cs">
+      <DependentUpon>AfterSalesService.cs</DependentUpon>
+    </Compile>
     <Compile Include="Control\Page\Customer\AddCustomer.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -125,6 +131,12 @@
     </Compile>
     <Compile Include="Control\Page\Dashboard\DashboardPageControl.Designer.cs">
       <DependentUpon>DashboardPageControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control\Page\MaterialManage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control\Page\MaterialManage.Designer.cs">
+      <DependentUpon>MaterialManage.cs</DependentUpon>
     </Compile>
     <Compile Include="Control\Page\Order\AddOrder.cs">
       <SubType>UserControl</SubType>
