@@ -49,7 +49,7 @@ namespace DesktopApp.Control.Page.Customer
             this.lblName.Name = "lblName";
             this.lblName.Size = new System.Drawing.Size(65, 17);
             this.lblName.TabIndex = 0;
-            this.lblName.Text = "客户姓名:";
+            this.lblName.Text = "Customer Name:";
             // 
             // txtName
             // 
@@ -65,7 +65,7 @@ namespace DesktopApp.Control.Page.Customer
             this.lblAddress.Name = "lblAddress";
             this.lblAddress.Size = new System.Drawing.Size(65, 17);
             this.lblAddress.TabIndex = 2;
-            this.lblAddress.Text = "客户地址:";
+            this.lblAddress.Text = "Customer Address:";
             // 
             // txtAddress
             // 
@@ -82,7 +82,7 @@ namespace DesktopApp.Control.Page.Customer
             this.lblPhone.Name = "lblPhone";
             this.lblPhone.Size = new System.Drawing.Size(65, 17);
             this.lblPhone.TabIndex = 4;
-            this.lblPhone.Text = "联系电话:";
+            this.lblPhone.Text = "Contact Number:";
             // 
             // txtPhone
             // 
@@ -97,7 +97,7 @@ namespace DesktopApp.Control.Page.Customer
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(100, 35);
             this.btnSave.TabIndex = 6;
-            this.btnSave.Text = "保存";
+            this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
@@ -107,7 +107,7 @@ namespace DesktopApp.Control.Page.Customer
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(100, 35);
             this.btnCancel.TabIndex = 7;
-            this.btnCancel.Text = "取消";
+            this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
@@ -125,7 +125,7 @@ namespace DesktopApp.Control.Page.Customer
             this.Controls.Add(this.txtName);
             this.Controls.Add(this.lblName);
             this.Name = "EditCustomer";
-            this.Text = "编辑客户";
+            this.Text = "Edit Customer";
             this.ResumeLayout(false);
             this.PerformLayout();
         }

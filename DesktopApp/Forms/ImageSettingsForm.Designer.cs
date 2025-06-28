@@ -64,7 +64,7 @@ namespace DesktopApp.Forms
             this.lblDefaultPath.Name = "lblDefaultPath";
             this.lblDefaultPath.Size = new Size(200, 13);
             this.lblDefaultPath.TabIndex = 1;
-            this.lblDefaultPath.Text = "Default path:";
+            this.lblDefaultPath.Text = "默认路径: ";
             
             // 
             // chkUseCustomPath
@@ -74,7 +74,7 @@ namespace DesktopApp.Forms
             this.chkUseCustomPath.Name = "chkUseCustomPath";
             this.chkUseCustomPath.Size = new Size(120, 17);
             this.chkUseCustomPath.TabIndex = 2;
-            this.chkUseCustomPath.Text = "Use custom paths";
+            this.chkUseCustomPath.Text = "使用自定义路径";
             this.chkUseCustomPath.UseVisualStyleBackColor = true;
             this.chkUseCustomPath.CheckedChanged += new System.EventHandler(this.chkUseCustomPath_CheckedChanged);
             
@@ -86,7 +86,7 @@ namespace DesktopApp.Forms
             this.lblCustomPath.Name = "lblCustomPath";
             this.lblCustomPath.Size = new Size(67, 13);
             this.lblCustomPath.TabIndex = 3;
-            this.lblCustomPath.Text = "Custom path:";
+            this.lblCustomPath.Text = "自定义路径:";
             
             // 
             // txtCustomPath
@@ -117,7 +117,7 @@ namespace DesktopApp.Forms
             this.lblCurrentPath.Name = "lblCurrentPath";
             this.lblCurrentPath.Size = new Size(200, 13);
             this.lblCurrentPath.TabIndex = 6;
-            this.lblCurrentPath.Text = "Current use:";
+            this.lblCurrentPath.Text = "当前使用: ";
             
             // 
             // lblPathStatus

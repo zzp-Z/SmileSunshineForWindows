@@ -302,6 +302,9 @@
     <EmbeddedResource Include="Control\Page\Customer\CustomerManagerPageControl.resx">
       <DependentUpon>CustomerManagerPageControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Control\Page\Order\EditOrder.resx">
+      <DependentUpon>EditOrder.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Control\Page\Product\AddProductForm.resx">
       <DependentUpon>AddProductForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -310,6 +313,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Control\Page\SystemManage\DepartmentManage\DepartmentAddEditForm.resx">
       <DependentUpon>DepartmentAddEditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\Page\SystemManage\Permission\AddPermission.resx">
+      <DependentUpon>AddPermission.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\Page\SystemManage\Permission\EditPermission.resx">
+      <DependentUpon>EditPermission.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Control\Page\SystemManage\UserManage\UserManagePageControl.resx">
       <DependentUpon>UserManagePageControl.cs</DependentUpon>
